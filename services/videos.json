@@ -1,0 +1,43 @@
+{
+  "tags": [
+    "All",
+    "Login",
+    "Keys",
+    "State",
+    "Account"
+  ],
+  "collection": [
+    "All",
+    "Near CLI",
+    "NEAR Explorer",
+    "NEAR Wallet",
+    "Account"
+  ],
+  "projects": [
+    {
+      "link": "73c2b9142c094d09ad7c9ec7744a45eb",
+      "title": "Refactor contract to alpha release",
+      "shortDescription": "In this video we refactor and finalize the models and contract to alpha release.",
+      "tags": [
+        "Login",
+        "State",
+        "All"
+      ],
+      "collection": [
+        "Near CLI"
+      ]
+    },
+    {
+      "link": "104c702752e84ab486060ea052bc4438",
+      "title": "Account",
+      "shortDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corporis.",
+      "tags": [
+        "Keys",
+        "All"
+      ],
+      "collection": [
+        "Near CLI"
+      ]
+    }
+  ]
+}
