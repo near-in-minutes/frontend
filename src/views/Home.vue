@@ -1,14 +1,14 @@
 <template>
-  <Video />
+  <Main />
 </template>
 
 <script>
-import Video from "../components/Videos.vue";
+import Main from "../components/Main.vue";
 
 export default {
   name: "Home",
   components: {
-    Video,
+    Main,
   },
 };
 </script>
