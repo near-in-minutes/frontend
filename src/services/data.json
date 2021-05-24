@@ -1,0 +1,102 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "video": "link",
+      "title": "English video 1",
+      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "tags": [
+        "Login",
+        "State",
+        "All"
+      ],
+      "transcription": "Near CLI"
+    },
+    {
+      "id": 2,
+      "video": "link",
+      "title": "English video 2",
+      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "tags": [
+        "Login",
+        "State",
+        "All"
+      ],
+      "transcription": "Near CLI"
+    },
+    {
+      "id": 3,
+      "video": "link",
+      "title": "English video 3",
+      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "tags": [
+        "Login",
+        "State",
+        "All"
+      ],
+      "transcription": "Near CLI"
+    },
+    {
+      "id": 4,
+      "video": "link",
+      "title": "English video 4",
+      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "tags": [
+        "Login",
+        "State",
+        "All"
+      ],
+      "transcription": "Near CLI"
+    }
+  ],
+  "tr": [
+    {
+      "id": 1,
+      "video": "link",
+      "title": "Turkish video 1",
+      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "tags": [
+        "Login",
+        "State",
+        "All"
+      ],
+      "transcription": "Near CLI"
+    },
+    {
+      "id": 2,
+      "video": "link",
+      "title": "Turkish video 2",
+      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "tags": [
+        "Login",
+        "State",
+        "All"
+      ],
+      "transcription": "Near CLI"
+    },
+    {
+      "id": 3,
+      "video": "link",
+      "title": "Turkish video 3",
+      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "tags": [
+        "Login",
+        "State",
+        "All"
+      ],
+      "transcription": "Near CLI"
+    },
+    {
+      "id": 4,
+      "video": "link",
+      "title": "Turkish video 4",
+      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "tags": [
+        "Login",
+        "State",
+        "All"
+      ],
+      "transcription": "Near CLI"
+    }
+  ]
+}
