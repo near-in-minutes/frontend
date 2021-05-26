@@ -3,7 +3,9 @@
     <div class="max-w-full mx-auto mb-4 px-10 sm:px-12">
       <div class="flex justify-between h-28 items-center">
         <div class="flex-shrink-0 flex items-center">
-          <img class="w-28" src="@/assets/logo.png" alt="logo" />
+          <a href="/">
+            <img class="w-28" src="@/assets/logo.png" alt="logo" />
+          </a>
           <div class="hidden lg:py-2 lg:flex lg:space-x-8 ml-20 items-center">
             <a
               v-for="item in navigation"
