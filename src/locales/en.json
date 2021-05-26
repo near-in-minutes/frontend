@@ -2,5 +2,9 @@
   "main": {
     "title1": "Learn NEAR in a ",
     "title2": "Community-based initiative"
+  },
+  "videos": {
+    "title": "Recent videos",
+    "desc": "Check out our latest tutorials and learn NEAR"
   }
 }

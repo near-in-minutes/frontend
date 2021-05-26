@@ -2,5 +2,9 @@
   "main": {
     "title1": "NEAR bir arada öğrenin ",
     "title2": "Topluluğa dayalı eğiticiler"
+  },
+  "videos": {
+    "title": "Son videolar",
+    "desc": "En son öğreticilerimize göz atın ve NEAR öğrenin"
   }
 }
