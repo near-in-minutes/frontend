@@ -2,43 +2,58 @@
   "en": [
     {
       "id": 1,
-      "video": "link",
-      "title": "English video 1",
-      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "link": "dd3b45231cd145b4846b13e716c13398",
+      "title": "near state",
+      "description": "near state shows the details of an account's state.",
       "tags": [
-        "Login",
-        "State",
-        "All"
+        "NEAR CLI"
       ],
-      "transcription": "Near CLI"
+      "transcription": "Near CLI",
+      "date": "May 26, 2021",
+      "datetime": "2021-05-26",
+      "time": "6 min",
+      "creator": {
+        "name": "Sherif Abushadi",
+        "imageUrl": "https://github.com/amgando.png"
+      }
     },
     {
       "id": 2,
-      "video": "link",
-      "title": "English video 2",
-      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "link": "054b4ef450a342b297e252a98c2bcda8",
+      "title": "near login",
+      "description": "near login locally stores a full access key of an account you created with NEAR Wallet.",
       "tags": [
-        "Login",
-        "State",
-        "All"
+        "NEAR CLI"
       ],
-      "transcription": "Near CLI"
+      "transcription": "Near CLI",
+      "date": "May 26, 2021",
+      "datetime": "2021-05-26",
+      "time": "16 min",
+      "creator": {
+        "name": "Sherif Abushadi",
+        "imageUrl": "https://github.com/amgando.png"
+      }
     },
     {
       "id": 3,
-      "video": "link",
-      "title": "English video 3",
-      "description": "In this video we refactor and finalize the models and contract to alpha release.",
+      "link": "3f94e357f6ec4ca685b05edf165546f7",
+      "title": "near keys",
+      "description": "near keys displays all access keys for a given account.",
       "tags": [
-        "Login",
-        "State",
-        "All"
+        "NEAR CLI"
       ],
-      "transcription": "Near CLI"
+      "transcription": "Near CLI",
+      "date": "May 26, 2021",
+      "datetime": "2021-05-26",
+      "time": "7 min",
+      "creator": {
+        "name": "Sherif Abushadi",
+        "imageUrl": "https://github.com/amgando.png"
+      }
     },
     {
       "id": 4,
-      "video": "link",
+      "link": "link",
       "title": "English video 4",
       "description": "In this video we refactor and finalize the models and contract to alpha release.",
       "tags": [
@@ -46,7 +61,10 @@
         "State",
         "All"
       ],
-      "transcription": "Near CLI"
+      "transcription": "Near CLI",
+      "date": "Mar 16, 2020",
+      "datetime": "2021-05-26",
+      "time": "6 min"
     }
   ],
   "tr": [
@@ -60,7 +78,10 @@
         "State",
         "All"
       ],
-      "transcription": "Near CLI"
+      "transcription": "Near CLI",
+      "date": "Mar 16, 2020",
+      "datetime": "2020-03-16",
+      "time": "6 min"
     },
     {
       "id": 2,
@@ -72,7 +93,10 @@
         "State",
         "All"
       ],
-      "transcription": "Near CLI"
+      "transcription": "Near CLI",
+      "date": "Mar 16, 2020",
+      "datetime": "2020-03-16",
+      "time": "6 min"
     },
     {
       "id": 3,
@@ -84,7 +108,10 @@
         "State",
         "All"
       ],
-      "transcription": "Near CLI"
+      "transcription": "Near CLI",
+      "date": "Mar 16, 2020",
+      "datetime": "2020-03-16",
+      "time": "6 min"
     },
     {
       "id": 4,
@@ -96,7 +123,10 @@
         "State",
         "All"
       ],
-      "transcription": "Near CLI"
+      "transcription": "Near CLI",
+      "date": "Mar 16, 2020",
+      "datetime": "2020-03-16",
+      "time": "6 min"
     }
   ]
 }

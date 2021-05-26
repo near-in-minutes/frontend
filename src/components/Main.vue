@@ -1,5 +1,5 @@
 <template>
-  <main class="py-20 mx-auto max-w-full px-4 bg-black">
+  <main class="py-20 mx-auto max-w-full px-4 bg-white">
     <div class="flex flex-col items-center">
       <img class="w-10/12 my-10" src="@/assets/main-image.png" alt="Workflow" />
       <h1
@@ -13,8 +13,7 @@
           md:text-6xl
         "
       >
-        <span class="block xl:inline text-white">{{ t("main.title1") }}</span>
-        {{ " " }}
+        <span class="block xl:inline text-red">{{ t("main.title1") }}</span>
         <span class="block text-green-400 xl:inline">{{
           t("main.title2")
         }}</span>
@@ -25,6 +24,7 @@
 
 <script>
 import { useI18n } from "vue-i18n";
+
 export default {
   name: "Main",
   setup() {

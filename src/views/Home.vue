@@ -1,6 +1,7 @@
 <template>
   <Main />
-  <Videos show="all" />
+  <!--To show all videos we need to pass show="all" as props  -->
+  <Videos show="3" />
 </template>
 
 <script>
