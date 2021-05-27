@@ -71,14 +71,15 @@
                   py-1
                   bg-white
                   ring-1 ring-green ring-opacity-5
+                  z-10
                   focus:outline-none
                 "
               >
                 <div class="py-1">
-                  <MenuItem v-for="language in languges" :key="language.index">
+                  <MenuItem v-for="language in languages" :key="language.index">
                     <button
                       class="block px-4 py-2 w-full text-md hover:bg-gray"
-                      @click="changeLanguge(language.code)"
+                      @click="changeLanguage(language.code)"
                     >
                       {{ language.name }}
                     </button>
@@ -129,10 +130,10 @@
         >
         <div class="pt-4 pb-3 border-t border-gray">
           <button
-            v-for="language in languges"
+            v-for="language in languages"
             :key="language.index"
             class="block px-4 py-2 text-sm hover:bg-gray"
-            @click="changeLanguge(language.code)"
+            @click="changeLanguage(language.code)"
           >
             {{ language.name }}
           </button>
@@ -167,7 +168,7 @@ const navigation = [
   { name: "Videos", href: "/videos", current: false },
 ];
 
-const languges = [
+const languages = [
   { name: "English", code: "en" },
   { name: "Turkish", code: "tr" },
 ];
@@ -190,7 +191,7 @@ export default {
   setup() {
     const open = ref(false);
     const { locale } = useI18n();
-    const changeLanguge = (lng) => {
+    const changeLanguage = (lng) => {
       locale.value = lng;
     };
 
@@ -208,7 +209,7 @@ export default {
       }
     });
 
-    return { languges, changeLanguge, open, nav };
+    return { languages, changeLanguage, open, nav };
   },
 };
 </script>
