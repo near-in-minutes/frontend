@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
-import Video from "@/components/Video.vue";
+import Video from "@/views/Video.vue";
 
 const routes = [
   {

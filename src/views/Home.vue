@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Main from "../components/Main.vue";
-import Videos from "../components/Videos.vue";
+import Main from "@/components/Main.vue";
+import Videos from "@/components/Videos.vue";
 
 export default {
   name: "Home",
