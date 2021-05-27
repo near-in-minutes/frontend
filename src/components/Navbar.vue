@@ -164,9 +164,7 @@ import {
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "Videos", href: "videos", current: false },
-  { name: "Glossary", href: "#", current: false },
-  { name: "Updates", href: "#", current: false },
+  { name: "Videos", href: "/videos", current: false },
 ];
 
 const languges = [
