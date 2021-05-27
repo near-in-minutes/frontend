@@ -13,10 +13,11 @@
           md:text-6xl
         "
       >
-        <span class="block xl:inline text-red">{{ t("main.title1") }}</span>
-        <span class="block text-green-400 xl:inline">{{
-          t("main.title2")
-        }}</span>
+        <i18n-t keypath="main.title" tag="p" class="block xl:inline">
+          <span class="block text-green xl:inline">{{
+            t("main.titleHighlight")
+          }}</span>
+        </i18n-t>
       </h1>
     </div>
   </main>
@@ -29,6 +30,7 @@ export default {
   name: "Main",
   setup() {
     const { t } = useI18n();
+
     return { t };
   },
 };

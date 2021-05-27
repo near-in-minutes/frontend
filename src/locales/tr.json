@@ -1,7 +1,7 @@
 {
   "main": {
-    "title1": "NEAR bir arada öğrenin ",
-    "title2": "Topluluğa dayalı eğiticiler"
+    "title": "NEAR bir arada öğrenin {0} eğiticiler",
+    "titleHighlight": "Topluluğa dayalı "
   },
   "videos": {
     "title": "Son videolar",
