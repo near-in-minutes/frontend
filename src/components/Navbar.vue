@@ -20,7 +20,7 @@
               :aria-current="item.current ? 'page' : undefined"
             >
               {{ item.name }}
-            </a>
+            </router-link>
           </div>
         </div>
         <div class="hidden sm:ml-6 sm:flex sm:items-center">
