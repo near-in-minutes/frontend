@@ -1,15 +1,15 @@
 <template>
   <!--To show all videos we need to pass show="all" as props  -->
-  <Videos show="all" />
+  <VideosList show="all" />
 </template>
 
 <script>
-import Videos from "@/components/Videos.vue";
+import VideosList from "@/components/VideosList.vue";
 
 export default {
-  name: "VideoList",
+  name: "VideosPage",
   components: {
-    Videos,
+    VideosList,
   },
 };
 </script>

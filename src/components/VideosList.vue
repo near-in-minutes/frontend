@@ -105,8 +105,8 @@ import { useI18n } from "vue-i18n";
 import { useVideos } from "@/composables/videos";
 
 export default {
-  name: "Videos",
-  props: ["show"],
+  name: "VideosList",
+  props: ["show", "title"],
   setup(props) {
     const { t, locale } = useI18n();
     const { videos, setLimit } = useVideos(locale);
