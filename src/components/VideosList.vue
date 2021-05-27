@@ -36,21 +36,30 @@
               style="position: relative; padding-bottom: 56.25%; height: 0"
               class="h-48 w-full object-cover"
             >
-              <div
-                class="flex content-center justify-center justify-items-center"
-              >
-                <div class="absolute pt-10 flex-column">
-                  <p
-                    class="text-sm font-medium text-green"
-                    v-for="tag in video.tags"
-                    :key="tag"
-                  >
-                    {{ tag }}
-                  </p>
+              <div class="flex justify-center">
+                <div class="absolute pt-10">
+                  <div class="flex flex-col items-center">
+                    <p class="text-sm font-medium text-green text-center">
+                      {{ video.collection }}
+                    </p>
 
-                  <p class="text-xl font-semibold text-white">
-                    {{ video.title }}
-                  </p>
+                    <p class="text-3xl font-semibold text-white">
+                      {{ video.title }}
+                    </p>
+                    <router-link :to="`/videos/${video.id}`">
+                      <PlayIcon
+                        class="
+                          text-white
+                          w-14
+                          pt-5
+                          hover:text-green
+                          hover:w-20
+                          hover:pt-2
+                          cursor-pointer
+                        "
+                      />
+                    </router-link>
+                  </div>
                 </div>
               </div>
               <img src="@/assets/video-thumbnail.png" alt="logo" />
@@ -60,8 +69,12 @@
           <div class="flex-1 bg-white p-6 flex flex-col justify-between">
             <router-link :to="`/videos/${video.id}`">
               <div class="flex-1">
-                <p class="text-sm font-medium text-green">
-                  {{ video.collection }}
+                <p
+                  class="text-sm font-medium text-green"
+                  v-for="tag in video.tags"
+                  :key="tag"
+                >
+                  {{ tag }}
                 </p>
 
                 <p class="text-xl font-semibold text-gray-900">
@@ -103,10 +116,14 @@
 <script>
 import { useI18n } from "vue-i18n";
 import { useVideos } from "@/composables/videos";
+import { PlayIcon } from "@heroicons/vue/outline";
 
 export default {
   name: "VideosList",
   props: ["show", "title"],
+  components: {
+    PlayIcon,
+  },
   setup(props) {
     const { t, locale } = useI18n();
     const { videos, setLimit } = useVideos(locale);

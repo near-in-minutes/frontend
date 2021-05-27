@@ -31,6 +31,8 @@ module.exports = {
       "hover",
       "focus",
     ],
+    width: ["hover"],
+    padding: ["hover"],
     extend: {},
   },
   plugins: [],
