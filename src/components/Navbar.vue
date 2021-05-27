@@ -7,10 +7,10 @@
             <img class="w-28" src="@/assets/logo.png" alt="logo" />
           </a>
           <div class="hidden lg:py-2 lg:flex lg:space-x-8 ml-20 items-center">
-            <a
-              v-for="item in navigation"
+            <router-link
+              v-for="item in nav"
               :key="item.name"
-              :href="item.href"
+              :to="item.href"
               :class="[
                 item.current
                   ? 'bg-gray '
@@ -144,7 +144,8 @@
 
 <script>
 import { useI18n } from "vue-i18n";
-import { ref } from "vue";
+import { ref, computed, watch, reactive } from "vue";
+import { useRoute } from "vue-router";
 import {
   Disclosure,
   DisclosureButton,
@@ -195,7 +196,27 @@ export default {
       locale.value = lng;
     };
 
-    return { languges, changeLanguge, open, navigation };
+    const route = useRoute();
+    const name = computed(() => route.name);
+    const nav = reactive(navigation);
+
+    watch(name, (newValue, _) => {
+      for (let i = 0; i < nav.length; i++) {
+        const route = nav[i];
+        route.current = false;
+        if (route.name === newValue) {
+          route.current = true;
+        }
+      }
+    });
+
+    return { languges, changeLanguge, open, nav };
   },
 };
 </script>
+
+<style scoped>
+/* .router-link-active {
+  border: 1px solid red;
+} */
+</style>
