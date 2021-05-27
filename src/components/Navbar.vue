@@ -115,10 +115,10 @@
 
     <DisclosurePanel class="sm:hidden">
       <div class="pt-2 pb-3 px-2 space-y-1">
-        <a
-          v-for="item in navigation"
+        <router-link
+          v-for="item in nav"
           :key="item.name"
-          :href="item.href"
+          :to="item.href"
           :class="[
             item.current
               ? 'bg-gray-100 text-gray-900'
@@ -126,7 +126,7 @@
             'block rounded-md py-2 px-3 text-base font-medium',
           ]"
           :aria-current="item.current ? 'page' : undefined"
-          >{{ item.name }}</a
+          >{{ item.name }}</router-link
         >
         <div class="pt-4 pb-3 border-t border-gray">
           <button
