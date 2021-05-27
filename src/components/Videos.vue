@@ -36,21 +36,24 @@
               style="position: relative; padding-bottom: 56.25%; height: 0"
               class="h-48 w-full object-cover"
             >
-              <iframe
-                :src="`https://www.loom.com/embed/${video.link}`"
-                frameborder="0"
-                webkitallowfullscreen
-                mozallowfullscreen
-                allowfullscreen
-                style="
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                "
+              <div
+                class="flex content-center justify-center justify-items-center"
               >
-              </iframe>
+                <div class="absolute pt-10 flex-column">
+                  <p
+                    class="text-sm font-medium text-green"
+                    v-for="tag in video.tags"
+                    :key="tag"
+                  >
+                    {{ tag }}
+                  </p>
+
+                  <p class="text-xl font-semibold text-white">
+                    {{ video.title }}
+                  </p>
+                </div>
+              </div>
+              <img src="@/assets/video-thumbnail.png" alt="logo" />
             </div>
           </div>
 
