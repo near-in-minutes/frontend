@@ -5,7 +5,7 @@
     <div class="absolute inset-0">
       <div class="bg-white h-1/3 sm:h-2/3" />
     </div>
-    <div class="relative max-w-10xl ml-10 pl-60 pr-60 mx-auto">
+    <div class="relative max-w-7xl m-auto">
       <div class="text-center">
         <h2
           class="
@@ -18,13 +18,13 @@
         >
           {{ t("videos.title") }}
         </h2>
-        <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+        <p class="mt-3 max-w-7xl mx-auto text-xl sm:mt-4">
           {{ t("videos.desc") }}
         </p>
       </div>
 
       <div
-        class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
+        class="mt-12 max-w-lg mx-auto grid gap-12 lg:grid-cols-3 lg:max-w-none"
       >
         <div
           v-for="video in videos"
@@ -32,29 +32,24 @@
           class="flex flex-col rounded-lg shadow-lg overflow-hidden"
         >
           <div class="flex-shrink-0">
-            <div
-              style="position: relative; padding-bottom: 56.25%; height: 0"
-              class="h-48 w-full object-cover"
-            >
+            <div class="h-50 w-full object-cover">
               <div class="flex justify-center">
-                <div class="absolute pt-10">
-                  <div class="flex flex-col items-center">
+                <div class="absolute">
+                  <div class="flex flex-col items-center justify-center h-48">
                     <p class="text-sm font-medium text-green text-center">
                       {{ video.collection }}
                     </p>
 
-                    <p class="text-3xl font-semibold text-white">
+                    <p class="text-2xl font-semibold text-white">
                       {{ video.title }}
                     </p>
                     <router-link :to="`/videos/${video.id}`">
                       <PlayIcon
                         class="
                           text-white
-                          w-14
-                          pt-5
+                          w-10
                           hover:text-green
-                          hover:w-20
-                          hover:pt-2
+                          hover:w-12
                           cursor-pointer
                         "
                       />
