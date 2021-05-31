@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative bg-gray pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
+    class="relative bg-gray pt-16 pb-20 px-4 sm:px-6 lg:pt-25 lg:pb-28 lg:px-8"
   >
     <div class="absolute inset-0">
       <div class="bg-white h-1/3 sm:h-2/3" />
@@ -82,16 +82,16 @@
 
               <div class="mt-6 flex items-center">
                 <div class="flex-shrink-0">
-                  <span class="sr-only">{{ video.creator.name }}</span>
+                  <span class="sr-only">{{ video.creator_name }}</span>
                   <img
                     class="h-10 w-10 rounded-full"
-                    :src="video.creator.imageUrl"
+                    :src="video.creator_imageUrl"
                     alt=""
                   />
                 </div>
                 <div class="ml-3">
                   <p class="text-sm font-medium text-gray-900">
-                    {{ video.creator.name }}
+                    {{ video.creator_name }}
                   </p>
                   <div class="flex space-x-1 text-sm text-gray-500">
                     <time :datetime="video.datetime"> {{ video.date }} </time>
