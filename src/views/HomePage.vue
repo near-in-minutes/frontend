@@ -1,27 +1,27 @@
 <template>
-  <Main />
+  <HeroSection />
   <!--To show all videos we need to pass show="all" as props  -->
   <VideosList show="3" />
   <div class="bg-gray">
-    <VideosButton />
+    <BaseButton />
   </div>
   <CTASection />
 </template>
 
 <script>
-import Main from "@/components/Main.vue";
+import HeroSection from "@/components/HeroSection.vue";
 import VideosList from "@/components/VideosList.vue";
 import CTASection from "@/components/CTASection.vue";
-import VideosButton from "@/components/VideosButton.vue";
+import BaseButton from "@/components/BaseButton.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
   name: "Home",
   components: {
-    Main,
+    HeroSection,
     VideosList,
     CTASection,
-    VideosButton,
+    BaseButton,
   },
   setup() {
     const { t } = useI18n();

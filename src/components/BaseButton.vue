@@ -14,12 +14,12 @@
           py-3
           font-medium
           rounded-md
-          text-black
-          bg-white
-          hover:bg-green
+          text-white
+          bg-green
+          hover:bg-green-dark
           hover:text-white
           transform
-          hover:scale-110
+          hover:scale-105
           sm:w-auto
         "
       >
