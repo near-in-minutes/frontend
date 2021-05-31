@@ -1,14 +1,18 @@
 <template>
-  <main class="py-20 mx-auto max-w-full px-4 bg-white">
+  <main class="py-20 mx-auto max-w-7xl px-4 bg-white">
     <div class="flex flex-col items-center">
-      <img class="w-10/12 my-10" src="@/assets/main-image.png" alt="Workflow" />
+      <img
+        class="w-10/12 my-10 hidden md:block"
+        src="@/assets/main-image.png"
+        alt="Workflow"
+      />
       <h1
         class="
           text-4xl
           tracking-tight
           my-6
           font-extrabold
-          text-gray-900
+          text-gray-900 text-center
           sm:text-5xl
           md:text-6xl
         "
