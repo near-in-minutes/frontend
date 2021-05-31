@@ -31,6 +31,7 @@ module.exports = {
       "hover",
       "focus",
     ],
+    scale: ["hover", "active", "group-hover"],
     width: ["hover"],
     padding: ["hover"],
     extend: {},
