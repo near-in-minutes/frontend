@@ -13,10 +13,8 @@
       "date": "May 26, 2021",
       "datetime": "2021-05-26",
       "time": "6 min",
-      "creator": {
-        "name": "Sherif Abushadi",
-        "imageUrl": "https://github.com/amgando.png"
-      }
+      "creator_name": "Sherif Abushadi",
+      "creator_imageUrl": "https://github.com/amgando.png"
     },
     {
       "id": 2,
@@ -31,10 +29,8 @@
       "date": "May 26, 2021",
       "datetime": "2021-05-26",
       "time": "16 min",
-      "creator": {
-        "name": "Sherif Abushadi",
-        "imageUrl": "https://github.com/amgando.png"
-      }
+      "creator_name": "Sherif Abushadi",
+      "creator_imageUrl": "https://github.com/amgando.png"
     },
     {
       "id": 3,
@@ -49,10 +45,8 @@
       "date": "May 26, 2021",
       "datetime": "2021-05-26",
       "time": "7 min",
-      "creator": {
-        "name": "Sherif Abushadi",
-        "imageUrl": "https://github.com/amgando.png"
-      }
+      "creator_name": "Sherif Abushadi",
+      "creator_imageUrl": "https://github.com/amgando.png"
     },
     {
       "id": 4,
@@ -67,10 +61,8 @@
       "date": "May 26, 2021",
       "datetime": "2021-05-26",
       "time": "7 min",
-      "creator": {
-        "name": "Sherif Abushadi",
-        "imageUrl": "https://github.com/amgando.png"
-      }
+      "creator_name": "Sherif Abushadi",
+      "creator_imageUrl": "https://github.com/amgando.png"
     },
     {
       "id": 5,
@@ -85,10 +77,8 @@
       "date": "May 26, 2021",
       "datetime": "2021-05-26",
       "time": "7 min",
-      "creator": {
-        "name": "Sherif Abushadi",
-        "imageUrl": "https://github.com/amgando.png"
-      }
+      "creator_name": "Sherif Abushadi",
+      "creator_imageUrl": "https://github.com/amgando.png"
     },
     {
       "id": 6,
@@ -103,10 +93,8 @@
       "date": "May 26, 2021",
       "datetime": "2021-05-26",
       "time": "7 min",
-      "creator": {
-        "name": "Sherif Abushadi",
-        "imageUrl": "https://github.com/amgando.png"
-      }
+      "creator_name": "Sherif Abushadi",
+      "creator_imageUrl": "https://github.com/amgando.png"
     }
   ],
   "tr": [
@@ -123,10 +111,8 @@
       "date": "May 26, 2021",
       "datetime": "2021-05-26",
       "time": "6 min",
-      "creator": {
-        "name": "Ozan İşgör",
-        "imageUrl": "https://github.com/ozanisgor.png"
-      }
+      "creator_name": "Ozan İşgör",
+      "creator_imageUrl": "https://github.com/ozanisgor.png"
     },
     {
       "id": 2,
@@ -141,10 +127,8 @@
       "date": "May 26, 2021",
       "datetime": "2021-05-26",
       "time": "16 min",
-      "creator": {
-        "name": "Çağatay Soyer",
-        "imageUrl": "https://github.com/norrec99.png"
-      }
+      "creator_name": "Ozan İşgör",
+      "creator_imageUrl": "https://github.com/ozanisgor.png"
     },
     {
       "id": 3,
@@ -159,10 +143,8 @@
       "date": "May 26, 2021",
       "datetime": "2021-05-26",
       "time": "7 min",
-      "creator": {
-        "name": "Ozan İşgör",
-        "imageUrl": "https://github.com/ozanisgor.png"
-      }
+      "creator_name": "Ozan İşgör",
+      "creator_imageUrl": "https://github.com/ozanisgor.png"
     }
   ]
 }
