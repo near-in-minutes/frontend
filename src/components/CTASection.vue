@@ -3,9 +3,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-extrabold sm:text-4xl">
-          Would you like to Contribute?
+          {{ t("cta.title") }}
         </h2>
-        <p class="mt-3 text-xl sm:mt-4 text-green">Let's hear from you</p>
+        <p class="mt-3 text-xl sm:mt-4 text-green">{{ t("cta.subTitle") }}</p>
       </div>
     </div>
     <div class="mt-10 pb-12 bg-white sm:pb-16">
@@ -15,6 +15,8 @@
           <div class="max-w-4xl mx-auto">
             <dl class="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-3">
               <div
+                v-for="item in contribution"
+                :key="item.name"
                 class="
                   flex flex-col
                   border-b border-gray
@@ -24,7 +26,7 @@
                 "
               >
                 <a
-                  href="https://github.com/near-in-minutes/community/issues/new/choose"
+                  :href="item.href"
                   class="
                     inline-flex
                     items-center
@@ -35,54 +37,9 @@
                     hover:text-green
                     hover:font-bold
                   "
+                  target="_blank"
                 >
-                  Submit New Content
-                </a>
-              </div>
-              <div
-                class="
-                  flex flex-col
-                  border-t border-b border-gray
-                  p-6
-                  text-center
-                  sm:border-0 sm:border-l sm:border-r
-                "
-              >
-                <a
-                  href="https://github.com/near-in-minutes/community/issues/new/choose"
-                  class="
-                    inline-flex
-                    items-center
-                    justify-center
-                    p-6
-                    text-base
-                    font-medium
-                  "
-                >
-                  Suggest New Topic
-                </a>
-              </div>
-              <div
-                class="
-                  flex flex-col
-                  border-t border-gray
-                  p-6
-                  text-center
-                  sm:border-0 sm:border-l
-                "
-              >
-                <a
-                  href="https://github.com/near-in-minutes/community/issues/new/choose"
-                  class="
-                    inline-flex
-                    items-center
-                    justify-center
-                    p-6
-                    text-base
-                    font-medium
-                  "
-                >
-                  Translate Content
+                  {{ item.name }}
                 </a>
               </div>
             </dl>
@@ -95,37 +52,29 @@
 
 <script>
 import { useI18n } from "vue-i18n";
+import { computed, reactive } from "vue";
 
 export default {
   name: "CTASection",
   setup() {
     const { t } = useI18n();
 
-    return { t };
+    const contribution = reactive([
+      {
+        name: computed(() => t("cta.newContent")),
+        href: "https://github.com/near-in-minutes/community/issues/new?assignees=&labels=in+progress%2C+incoming&template=submit-new-content.md&title=%5BNEW+CONTENT%5D",
+      },
+      {
+        name: computed(() => t("cta.newTopic")),
+        href: "https://github.com/near-in-minutes/community/issues/new?assignees=ozanisgor&labels=looking+for+creator%2C+incoming&template=suggest-new-topic.md&title=%5BNEW+TOPIC%5D",
+      },
+      {
+        name: computed(() => t("cta.translate")),
+        href: "https://github.com/near-in-minutes/community/issues/new?assignees=&labels=translation%2C+incoming&template=translate-existing-content.md&title=%5BNEW+TRANSLATION%5D",
+      },
+    ]);
+
+    return { t, contribution };
   },
 };
 </script>
-
-<div class="ml-3 inline-flex rounded-md shadow">
-          <a
-            href="https://github.com/near-in-minutes/community/issues/new/choose"
-            class="
-              inline-flex
-              items-center
-              justify-center
-              px-6
-              py-4
-              text-base
-              font-medium
-              rounded-md
-              text-green
-              bg-gray
-              hover:bg-green
-              hover:text-white
-              transform
-              hover:scale-110
-            "
-          >
-            Contribute Now
-          </a>
-        </div>

@@ -11,5 +11,12 @@
     "title": "Video tutorials",
     "desc": "Check out our latest tutorials and learn NEAR",
     "btn": "Check out all videos"
+  },
+  "cta": {
+    "title": "Would you like to Contribute?",
+    "subTitle": "Let's hear from you",
+    "newContent": "Submit New Content",
+    "newTopic": "Suggest New Topic",
+    "translate": "Translate Content"
   }
 }

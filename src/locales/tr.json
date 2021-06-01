@@ -11,5 +11,12 @@
     "title": "Son videolar",
     "desc": "En son öğreticilerimize göz atın ve NEAR öğrenin",
     "btn": "turkish:: Check out all videos"
+  },
+  "cta": {
+    "title": "Would you like to Contribute?",
+    "subTitle": "Let's hear from you",
+    "newContent": "Submit New Content",
+    "newTopic": "Suggest New Topic",
+    "translate": "Translate Content"
   }
 }
