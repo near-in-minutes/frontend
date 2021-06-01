@@ -32,30 +32,29 @@
           class="flex flex-col rounded-lg shadow-lg overflow-hidden"
         >
           <div class="flex-shrink-0">
-            <div class="h-50 w-full object-cover">
-              <div class="flex justify-center">
-                <div class="absolute">
-                  <div class="flex flex-col items-center justify-center h-48">
-                    <p class="text-sm font-medium text-green text-center">
-                      {{ video.collection }}
-                    </p>
+            <div class="h-50 w-full object-cover flex justify-center">
+              <div class="absolute h-40 flex flex-col">
+                <div class="pt-12">
+                  <p class="text-sm font-medium text-green text-center">
+                    {{ video.collection }}
+                  </p>
 
-                    <p class="text-2xl font-semibold text-white">
-                      {{ video.title }}
-                    </p>
-                    <router-link :to="`/videos/${video.id}`">
-                      <PlayIcon
-                        class="
-                          text-white
-                          w-10
-                          hover:text-green
-                          hover:w-12
-                          cursor-pointer
-                        "
-                      />
-                    </router-link>
-                  </div>
+                  <p class="text-2xl font-semibold text-white">
+                    {{ video.title }}
+                  </p>
                 </div>
+                <router-link :to="`/videos/${video.id}`">
+                  <PlayIcon
+                    class="
+                      text-white
+                      w-10
+                      mx-auto
+                      hover:text-green
+                      hover:w-12
+                      cursor-pointer
+                    "
+                  />
+                </router-link>
               </div>
               <img src="@/assets/video-thumbnail.png" alt="logo" />
             </div>
