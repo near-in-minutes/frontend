@@ -1,4 +1,8 @@
 {
+  "navbar": {
+    "home": "turkish",
+    "videos": "turkish"
+  },
   "main": {
     "title": "NEAR bir arada öğrenin {0} eğiticiler",
     "titleHighlight": "Topluluğa dayalı "

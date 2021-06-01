@@ -1,6 +1,6 @@
 <template>
   <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
-    <div class="max-w-7xl mx-auto mb-4 px-10 sm:px-12">
+    <div class="max-w-7xl mx-auto mb-4 px-10">
       <div class="flex justify-between h-28 items-center">
         <div class="flex-shrink-0 flex items-center">
           <a href="/">
@@ -163,11 +163,6 @@ import {
   TranslateIcon,
 } from "@heroicons/vue/outline";
 
-const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Videos", href: "/videos", current: false },
-];
-
 const languages = [
   { name: "English", code: "en" },
   { name: "Turkish", code: "tr" },
@@ -190,15 +185,29 @@ export default {
   name: "Navbar",
   setup() {
     const open = ref(false);
-    const { locale } = useI18n();
+    const { locale, t } = useI18n();
     const changeLanguage = (lng) => {
       locale.value = lng;
     };
+
+    const navigation = [
+      {
+        name: computed(() => t("navbar.home")),
+        href: "/",
+        current: true,
+      },
+      {
+        name: computed(() => t("navbar.videos")),
+        href: "/videos",
+        current: false,
+      },
+    ];
 
     const route = useRoute();
     const name = computed(() => route.name);
     const nav = reactive(navigation);
 
+    //this method watchs the router link's current page to add the hover affect
     watch(name, (newValue, _) => {
       for (let i = 0; i < nav.length; i++) {
         const route = nav[i];
@@ -213,9 +222,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-/* .router-link-active {
-  border: 1px solid red;
-} */
-</style>

@@ -1,4 +1,8 @@
 {
+  "navbar": {
+    "home": "Home",
+    "videos": "Videos"
+  },
   "main": {
     "title": "Learn NEAR in a {0} initiative",
     "titleHighlight": "Community-based"
