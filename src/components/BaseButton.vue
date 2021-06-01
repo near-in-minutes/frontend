@@ -23,21 +23,15 @@
           sm:w-auto
         "
       >
-        Check out all videos
+        {{ btnText }}
       </div>
     </router-link>
   </div>
 </template>
 
 <script>
-import { useI18n } from "vue-i18n";
-
 export default {
   name: "VideosButton",
-  setup() {
-    const { t } = useI18n();
-
-    return { t };
-  },
+  props: ["btnText"],
 };
 </script>

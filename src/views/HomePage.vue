@@ -3,7 +3,7 @@
   <!--To show all videos we need to pass show="all" as props  -->
   <VideosList show="3" />
   <div class="bg-gray">
-    <BaseButton />
+    <BaseButton :btn-text="btnText" />
   </div>
   <CTASection />
 </template>
@@ -14,6 +14,7 @@ import VideosList from "@/components/VideosList.vue";
 import CTASection from "@/components/CTASection.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import { useI18n } from "vue-i18n";
+import { computed } from "vue";
 
 export default {
   name: "Home",
@@ -25,8 +26,9 @@ export default {
   },
   setup() {
     const { t } = useI18n();
+    const btnText = computed(() => t("videos.btn"));
 
-    return { t };
+    return { btnText };
   },
 };
 </script>

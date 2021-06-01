@@ -9,6 +9,7 @@
   },
   "videos": {
     "title": "Video tutorials",
-    "desc": "Check out our latest tutorials and learn NEAR"
+    "desc": "Check out our latest tutorials and learn NEAR",
+    "btn": "Check out all videos"
   }
 }
