@@ -35,6 +35,7 @@ module.exports = {
     scale: ["hover", "active", "group-hover"],
     width: ["hover"],
     padding: ["hover"],
+    fontWeight: ["hover"],
     extend: {},
   },
   plugins: [],

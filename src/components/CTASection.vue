@@ -5,7 +5,7 @@
         <h2 class="text-3xl font-extrabold sm:text-4xl">
           Would you like to Contribute?
         </h2>
-        <p class="mt-3 text-xl sm:mt-4">Let's hear from you</p>
+        <p class="mt-3 text-xl sm:mt-4 text-green">Let's hear from you</p>
       </div>
     </div>
     <div class="mt-10 pb-12 bg-white sm:pb-16">
@@ -32,6 +32,8 @@
                     p-6
                     text-base
                     font-medium
+                    hover:text-green
+                    hover:font-bold
                   "
                 >
                   Submit New Content
