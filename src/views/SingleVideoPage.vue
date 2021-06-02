@@ -185,7 +185,6 @@
 <script>
 import { useVideo } from "@/composables/videos";
 import { useI18n } from "vue-i18n";
-import { onMounted, watch } from "vue";
 
 export default {
   name: "Video",
@@ -193,9 +192,6 @@ export default {
   setup(props) {
     const { locale } = useI18n();
     const video = useVideo(locale, parseInt(props.id));
-    watch(video, () => {
-      console.log(video);
-    });
 
     return { video };
   },
