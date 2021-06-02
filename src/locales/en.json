@@ -18,5 +18,11 @@
     "newContent": "Submit New Content",
     "newTopic": "Suggest New Topic",
     "translate": "Translate Content"
+  },
+  "footer": {
+    "rights": "2021 NEAR in Minutes, All rights reserved."
+  },
+  "singleVideo": {
+    "learnMore": "Learn more about"
   }
 }

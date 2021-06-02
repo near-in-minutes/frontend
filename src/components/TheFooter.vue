@@ -5,10 +5,15 @@
         class="-mx-5 -my-2 flex flex-wrap justify-center"
         aria-label="Footer"
       >
-        <div v-for="item in navigation.main" :key="item.name" class="px-5 py-2">
+        <div
+          v-for="item in navigation.main"
+          :key="item.name"
+          class="px-5 py-2 hover:font-bold"
+        >
           <a
             :href="item.href"
             class="text-base text-gray-500 hover:text-gray-900"
+            target="_blank"
           >
             {{ item.name }}
           </a>
@@ -16,7 +21,7 @@
       </nav>
 
       <p class="mt-8 text-center text-base text-gray-400">
-        &copy; 2021 NEAR in Minutres, All rights reserved.
+        &copy; {{ t("footer.rights") }}
       </p>
     </div>
   </footer>
@@ -26,8 +31,10 @@
 import { useI18n } from "vue-i18n";
 const navigation = {
   main: [
-    { name: "Contribute", href: "" },
-    { name: "Videos", href: "/videos" },
+    {
+      name: "Contribute",
+      href: "https://github.com/near-in-minutes/community/issues/new/choose",
+    },
     { name: "NEAR Protocol", href: "https://near.org/" },
     { name: "NEAR Token", href: "https://near.org/tokens/" },
   ],
