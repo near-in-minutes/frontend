@@ -102,7 +102,11 @@
             />
           </div>
           <div class="mt-10 border-t-2 border-gray pt-6">
-            <a href="#" class="text-base font-medium">
+            <a
+              :href="video.reference"
+              target="_blank"
+              class="text-base font-medium"
+            >
               {{ t("singleVideo.learnMore") }}
               <span aria-hidden="true">{{ video.title }} &rarr;</span>
             </a>

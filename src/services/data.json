@@ -14,7 +14,8 @@
       "datetime": "2021-05-26",
       "time": "6 min",
       "creator_name": "Sherif Abushadi",
-      "creator_imageUrl": "https://github.com/amgando.png"
+      "creator_imageUrl": "https://github.com/amgando.png",
+      "reference": "https://docs.near.org/docs/tools/near-cli#near-state"
     },
     {
       "id": 2,
@@ -30,7 +31,8 @@
       "datetime": "2021-05-26",
       "time": "16 min",
       "creator_name": "Sherif Abushadi",
-      "creator_imageUrl": "https://github.com/amgando.png"
+      "creator_imageUrl": "https://github.com/amgando.png",
+      "reference": "https://docs.near.org/docs/tools/near-cli#near-state"
     },
     {
       "id": 3,
@@ -46,7 +48,8 @@
       "datetime": "2021-05-26",
       "time": "7 min",
       "creator_name": "Sherif Abushadi",
-      "creator_imageUrl": "https://github.com/amgando.png"
+      "creator_imageUrl": "https://github.com/amgando.png",
+      "reference": "https://docs.near.org/docs/tools/near-cli#near-state"
     },
     {
       "id": 4,
@@ -62,7 +65,8 @@
       "datetime": "2021-05-26",
       "time": "7 min",
       "creator_name": "Sherif Abushadi",
-      "creator_imageUrl": "https://github.com/amgando.png"
+      "creator_imageUrl": "https://github.com/amgando.png",
+      "reference": "https://docs.near.org/docs/tools/near-cli#near-state"
     },
     {
       "id": 5,
@@ -78,7 +82,8 @@
       "datetime": "2021-05-26",
       "time": "7 min",
       "creator_name": "Sherif Abushadi",
-      "creator_imageUrl": "https://github.com/amgando.png"
+      "creator_imageUrl": "https://github.com/amgando.png",
+      "reference": "https://docs.near.org/docs/tools/near-cli#near-state"
     },
     {
       "id": 6,
@@ -94,7 +99,8 @@
       "datetime": "2021-05-26",
       "time": "7 min",
       "creator_name": "Sherif Abushadi",
-      "creator_imageUrl": "https://github.com/amgando.png"
+      "creator_imageUrl": "https://github.com/amgando.png",
+      "reference": "https://docs.near.org/docs/tools/near-cli#near-state"
     }
   ],
   "tr": [
@@ -112,7 +118,8 @@
       "datetime": "2021-05-26",
       "time": "6 min",
       "creator_name": "Ozan İşgör",
-      "creator_imageUrl": "https://github.com/ozanisgor.png"
+      "creator_imageUrl": "https://github.com/ozanisgor.png",
+      "reference": "https://docs.near.org/docs/tools/near-cli#near-state"
     },
     {
       "id": 2,
@@ -128,7 +135,8 @@
       "datetime": "2021-05-26",
       "time": "16 min",
       "creator_name": "Ozan İşgör",
-      "creator_imageUrl": "https://github.com/ozanisgor.png"
+      "creator_imageUrl": "https://github.com/ozanisgor.png",
+      "reference": "https://docs.near.org/docs/tools/near-cli#near-state"
     },
     {
       "id": 3,
@@ -144,7 +152,8 @@
       "datetime": "2021-05-26",
       "time": "7 min",
       "creator_name": "Ozan İşgör",
-      "creator_imageUrl": "https://github.com/ozanisgor.png"
+      "creator_imageUrl": "https://github.com/ozanisgor.png",
+      "reference": "https://docs.near.org/docs/tools/near-cli#near-state"
     }
   ]
 }
