@@ -1,16 +1,16 @@
 {
   "navbar": {
-    "home": "turkish",
-    "videos": "turkish"
+    "home": "Home",
+    "videos": "Videos"
   },
   "main": {
-    "title": "NEAR bir arada öğrenin {0} eğiticiler",
-    "titleHighlight": "Topluluğa dayalı "
+    "title": "Learn NEAR in a {0} initiative",
+    "titleHighlight": "Community-based"
   },
   "videos": {
-    "title": "Son videolar",
-    "desc": "En son öğreticilerimize göz atın ve NEAR öğrenin",
-    "btn": "turkish:: Check out all videos"
+    "title": "Video tutorials",
+    "desc": "Check out our latest tutorials and learn NEAR",
+    "btn": "Check out all videos"
   },
   "cta": {
     "title": "Would you like to Contribute?",
@@ -18,5 +18,11 @@
     "newContent": "Submit New Content",
     "newTopic": "Suggest New Topic",
     "translate": "Translate Content"
+  },
+  "footer": {
+    "rights": "2021 NEAR in Minutes, All rights reserved."
+  },
+  "singleVideo": {
+    "learnMore": "Learn more about"
   }
 }
