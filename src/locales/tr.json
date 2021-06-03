@@ -1,26 +1,26 @@
 {
   "navbar": {
-    "home": "Home",
-    "videos": "Videos"
+    "home": "Anasayfa",
+    "videos": "Videolar"
   },
   "main": {
-    "title": "Learn NEAR in a {0} initiative",
-    "titleHighlight": "Community-based"
+    "title": "{0} girişim ile NEAR öğren",
+    "titleHighlight": "Topluluk-bazlı"
   },
   "videos": {
-    "title": "Video tutorials",
-    "desc": "Check out our latest tutorials and learn NEAR",
-    "btn": "Check out all videos"
+    "title": "Video eğitimleri",
+    "desc": "En son eğitimlerimize göz atın ve NEAR öğrenin",
+    "btn": "Tüm videolara göz atın"
   },
   "cta": {
-    "title": "Would you like to Contribute?",
-    "subTitle": "Let's hear from you",
-    "newContent": "Submit New Content",
-    "newTopic": "Suggest New Topic",
-    "translate": "Translate Content"
+    "title": "Katkıda bulunmak ister miydiniz?",
+    "subTitle": "Sizi dinleyelim",
+    "newContent": "Yeni İçerik Gönder",
+    "newTopic": "Yeni Konu Öner",
+    "translate": "İçeriği Çevir"
   },
   "footer": {
-    "rights": "2021 NEAR in Minutes, All rights reserved."
+    "rights": "2021 NEAR in Minutes, Tüm hakları saklıdır."
   },
   "singleVideo": {
     "learnMore": "Learn more about"
