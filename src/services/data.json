@@ -12,7 +12,7 @@
       "transcription": "https://api.github.com/repos/near-in-minutes/community/issues/comments/842263538",
       "date": "Mayıs 26, 2021",
       "datetime": "2021-05-26",
-      "time": "6 min",
+      "time": "6 dk",
       "creator_name": "Sherif Abushadi",
       "creator_imageUrl": "https://github.com/amgando.png",
       "reference": "https://docs.near.org/docs/tools/near-cli#near-state"
@@ -38,7 +38,7 @@
       "id": 3,
       "link": "3f94e357f6ec4ca685b05edf165546f7",
       "title": "near keys",
-      "description": "near keys belirtilen hesap için bütün accass anahtarlarını gösterir.",
+      "description": "near keys belirtilen hesap için bütün access anahtarlarını gösterir.",
       "collection": "NEAR CLI",
       "tags": [
         "NEAR CLI"
@@ -55,7 +55,7 @@
       "id": 4,
       "link": "3f94e357f6ec4ca685b05edf165546f7",
       "title": "near keys",
-      "description": "near keys belirtilen hesap için bütün accass anahtarlarını gösterir.",
+      "description": "near keys belirtilen hesap için bütün access anahtarlarını gösterir.",
       "collection": "NEAR CLI",
       "tags": [
         "NEAR CLI"
@@ -72,7 +72,7 @@
       "id": 5,
       "link": "3f94e357f6ec4ca685b05edf165546f7",
       "title": "near keys",
-      "description": "near keys belirtilen hesap için bütün accass anahtarlarını gösterir.",
+      "description": "near keys belirtilen hesap için bütün access anahtarlarını gösterir.",
       "collection": "NEAR CLI",
       "tags": [
         "NEAR CLI"
