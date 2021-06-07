@@ -4,12 +4,14 @@ import router from "./router";
 import { createI18n } from "vue-i18n";
 import en from "./locales/en.json";
 import tr from "./locales/tr.json";
+import hi from "./locales/hi.json";
 import "tailwindcss/tailwind.css";
 
 const i18n = createI18n({
   messages: {
     en: en,
     tr: tr,
+    hi: hi,
   },
   locale: "en",
   fallbackLocale: "en",

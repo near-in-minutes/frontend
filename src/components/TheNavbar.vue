@@ -166,6 +166,7 @@ import {
 const languages = [
   { name: "English", code: "en" },
   { name: "Turkish", code: "tr" },
+  { name: "Hindi", code: "hi" },
 ];
 
 export default {
