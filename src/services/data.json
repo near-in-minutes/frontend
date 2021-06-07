@@ -21,7 +21,7 @@
       "id": 2,
       "link": "054b4ef450a342b297e252a98c2bcda8",
       "title": "near login",
-      "description": "near login NEAR Wallet ile oluşturduğunuz full access anahtarını lokal olarak depolar.",
+      "description": "near login NEAR Wallet ile oluşturduğunuz tam erişim anahtarını lokal olarak depolar.",
       "collection": "NEAR CLI",
       "tags": [
         "NEAR CLI"
@@ -38,7 +38,7 @@
       "id": 3,
       "link": "3f94e357f6ec4ca685b05edf165546f7",
       "title": "near keys",
-      "description": "near keys belirtilen hesap için bütün access anahtarlarını gösterir.",
+      "description": "near keys belirtilen hesap için bütün erişim anahtarlarını gösterir.",
       "collection": "NEAR CLI",
       "tags": [
         "NEAR CLI"
@@ -55,7 +55,7 @@
       "id": 4,
       "link": "3f94e357f6ec4ca685b05edf165546f7",
       "title": "near keys",
-      "description": "near keys belirtilen hesap için bütün access anahtarlarını gösterir.",
+      "description": "near keys belirtilen hesap için bütün erişim anahtarlarını gösterir.",
       "collection": "NEAR CLI",
       "tags": [
         "NEAR CLI"
@@ -72,7 +72,7 @@
       "id": 5,
       "link": "3f94e357f6ec4ca685b05edf165546f7",
       "title": "near keys",
-      "description": "near keys belirtilen hesap için bütün access anahtarlarını gösterir.",
+      "description": "near keys belirtilen hesap için bütün erişim anahtarlarını gösterir.",
       "collection": "NEAR CLI",
       "tags": [
         "NEAR CLI"
@@ -89,7 +89,7 @@
       "id": 6,
       "link": "3f94e357f6ec4ca685b05edf165546f7",
       "title": "near keys",
-      "description": "near keys displays all access keys for a given account.",
+      "description": "near keys belirtilen hesap için bütün erişim anahtarlarını gösterir.",
       "collection": "NEAR CLI",
       "tags": [
         "NEAR CLI"
