@@ -1,28 +1,28 @@
 {
   "navbar": {
-    "home": "मुख पृष्ठ",
-    "videos": "वीडियो"
+    "home": "होम",
+    "videos": "वीडियोस "
   },
   "main": {
-    "title": "Learn NEAR in a {0} initiative",
-    "titleHighlight": "Community-based"
+    "title": "नियर सीखिए  एक {0}  पहल",
+    "titleHighlight": "कम्युनिटी बेस्ड "
   },
   "videos": {
-    "title": "वीडियो शिक्षण",
-    "desc": "Check out our latest tutorials and learn NEAR",
-    "btn": "Check out all videos"
+    "title": "वीडियो टुटोरिअल ",
+    "desc": "नियर सीखने के लिए हमारे नए टुटोरिअल्स ",
+    "btn": "सब वीडियोस देखिये "
   },
   "cta": {
-    "title": "Would you like to Contribute?",
-    "subTitle": "Let's hear from you",
-    "newContent": "Submit New Content",
-    "newTopic": "Suggest New Topic",
-    "translate": "Translate Content"
+    "title": "कंट्रीब्यूट करना चाहेंगे?",
+    "subTitle": "आप से सुनते है ",
+    "newContent": "नया कॉन्टेंट",
+    "newTopic": "नए विषय का सुझाव",
+    "translate": "कॉन्टेंट अनुवाद कीजिए"
   },
   "footer": {
-    "rights": "2021 NEAR in Minutes, All rights reserved."
+    "rights": "२०२१ नियर इन मिनिट्स, आल राइट्स रिजर्व्ड "
   },
   "singleVideo": {
-    "learnMore": "Learn more about"
+    "learnMore": "और जानिए"
   }
 }
