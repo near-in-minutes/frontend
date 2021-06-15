@@ -109,7 +109,7 @@ const projects = [
       ],
       translations: ["recGeZaKhvJwUZF3d"],
       name: "NEAR CLI",
-      total_posts: 1,
+      total_posts: 15,
       bgColor: "bg-red",
       authors: [
         "Sherif Abushadi",
