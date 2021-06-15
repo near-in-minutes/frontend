@@ -15,6 +15,18 @@ module.exports = {
         DEFAULT: "#00C08B",
         dark: "#00A677",
       },
+      red: {
+        DEFAULT: "#FF585D",
+        dark: "#FF585D",
+      },
+      royal: {
+        DEFAULT: "#0072CE",
+        dark: "#0072CE",
+      },
+      orange: {
+        DEFAULT: "#FFB259",
+        dark: "#FFB259",
+      },
     },
     extend: {
       fontFamily: {
