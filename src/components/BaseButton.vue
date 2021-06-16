@@ -2,7 +2,7 @@
   <div
     class="max-w-2xl mx-auto text-center pb-28 px-4 sm:py-20 sm:px-6 lg:px-8"
   >
-    <router-link to="/videos">
+    <router-link :to="link">
       <div
         class="
           mt-8
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: "VideosButton",
-  props: ["btnText"],
+  name: "BaseButton",
+  props: ["btnText", "link"],
 };
 </script>
