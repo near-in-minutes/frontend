@@ -7,6 +7,11 @@
     "title": "Learn NEAR in a {0} initiative",
     "titleHighlight": "Community-based"
   },
+  "collections": {
+    "title": "Collections",
+    "subTitle": "Take a look at our collections",
+    "desc": "Start your journey with series of videos in each collection"
+  },
   "videos": {
     "title": "Video tutorials",
     "desc": "Check out our latest tutorials and learn NEAR",

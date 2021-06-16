@@ -16,7 +16,7 @@
       <h2
         class="text-base font-semibold tracking-wider text-cyan-600 uppercase"
       >
-        Collections
+        {{ t("collections.title") }}
       </h2>
       <p
         class="
@@ -28,10 +28,10 @@
           sm:text-4xl
         "
       >
-        Take a look at our collections
+        {{ t("collections.subTitle") }}
       </p>
       <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-        Start your journey with series of videos in each collection
+        {{ t("collections.desc") }}
       </p>
     </div>
   </div>
@@ -40,13 +40,13 @@
       class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3"
     >
       <li
-        v-for="project in projects"
+        v-for="(project, index) in projects"
         :key="project.fields.name"
         class="col-span-1 flex shadow-sm rounded-md"
       >
         <div
           :class="[
-            project.fields.bgColor,
+            collectionsColors[index],
             'flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md',
           ]"
         >
@@ -57,7 +57,7 @@
             flex-1 flex
             items-center
             justify-between
-            border-t border-r border-b border-gray-200
+            border-t border-r border-b border-gray-light
             bg-white
             rounded-r-md
             truncate
@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
 const projects = [
   {
     id: "recAjxhCp2Drmwrqq",
@@ -108,7 +109,6 @@ const projects = [
       translations: ["recGeZaKhvJwUZF3d"],
       name: "NEAR CLI",
       total_posts: 15,
-      bgColor: "bg-red",
       authors: [
         "Sherif Abushadi",
         "Anuj Duggal",
@@ -146,7 +146,7 @@ const projects = [
       ],
       name: "NEAR Academy",
       total_posts: 10,
-      bgColor: "bg-royal",
+      bgColor: "bg-orange",
       authors: ["Hiba Machfej"],
     },
   },
@@ -156,17 +156,21 @@ const projects = [
       content: ["recapkZOWlD6q6XlE"],
       name: "near-api-js",
       total_posts: 1,
-      bgColor: "bg-orange",
+      bgColor: "bg-green",
       authors: ["Hiba Machfej"],
     },
   },
 ];
 
+const collectionsColors = ["bg-green", "bg-orange", "bg-royal"];
+
 export default {
-  components: {},
   setup() {
+    const { t } = useI18n();
     return {
       projects,
+      t,
+      collectionsColors,
     };
   },
 };
