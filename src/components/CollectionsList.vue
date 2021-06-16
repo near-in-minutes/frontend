@@ -1,4 +1,3 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <div class="relative bg-white py-16 sm:py-24 lg:py-32">
     <div
@@ -40,17 +39,17 @@
       class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3"
     >
       <li
-        v-for="(project, index) in projects"
-        :key="project.fields.name"
+        v-for="(collections) in collections"
+        :key="collections.fields.name"
         class="col-span-1 flex shadow-sm rounded-md"
       >
         <div
           :class="[
-            collectionsColors[index],
+            randomColor(),
             'flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md',
           ]"
         >
-          {{ project.fields.total_posts }}
+          {{ collections.fields.total_posts }}
         </div>
         <div
           class="
@@ -67,14 +66,14 @@
             <router-link
               to="/videos"
               class="text-gray-900 font-medium hover:text-gray-600"
-              >{{ project.fields.name }}
+              >{{ collections.fields.name }}
             </router-link>
 
-            <p v-if="project.fields.total_posts > 1" class="text-gray-500">
-              {{ project.fields.total_posts }} Videos
+            <p v-if="collections.fields.total_posts > 1" class="text-gray-500">
+              {{ collections.fields.total_posts }} Videos
             </p>
             <p v-else class="text-gray-500">
-              {{ project.fields.total_posts }} Video
+              {{ collections.fields.total_posts }} Video
             </p>
           </div>
         </div>
@@ -85,7 +84,8 @@
 
 <script>
 import { useI18n } from "vue-i18n";
-const projects = [
+
+const collections = [
   {
     id: "recAjxhCp2Drmwrqq",
     fields: {
@@ -146,7 +146,6 @@ const projects = [
       ],
       name: "NEAR Academy",
       total_posts: 10,
-      bgColor: "bg-orange",
       authors: ["Hiba Machfej"],
     },
   },
@@ -156,22 +155,33 @@ const projects = [
       content: ["recapkZOWlD6q6XlE"],
       name: "near-api-js",
       total_posts: 1,
-      bgColor: "bg-green",
       authors: ["Hiba Machfej"],
     },
   },
 ];
 
-const collectionsColors = ["bg-green", "bg-orange", "bg-royal"];
-
 export default {
   setup() {
     const { t } = useI18n();
+
+    function randomColor() {
+      const colors = ['gray', 'red', 'yellow', 'green', 'blue', 'indigo', 'purple', 'pink'];
+      const shade = [300, 400, 500, 600, 700];
+      const [c, s] = [rand(colors), rand(shade)];
+      const color = `bg-${colors[c]}-${shade[s]}`;
+      console.log(color);
+      return color;
+
+      function rand(list) {
+        return Math.floor(Math.random() * list.length);
+      }
+    }
+
     return {
-      projects,
+      collections,
       t,
-      collectionsColors,
+      randomColor
     };
-  },
+  }
 };
 </script>
