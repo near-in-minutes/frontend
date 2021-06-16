@@ -3,9 +3,10 @@
   <!--To show all videos we need to pass show="all" as props  -->
   <VideosList show="3" />
   <div class="bg-gray">
-    <BaseButton :btn-text="btnText" />
+    <BaseButton :btn-text="videosBtn" link="/videos" />
   </div>
   <CTASection />
+  <BaseButton :btn-text="ctaBtn" link="/instructions" />
 </template>
 
 <script>
@@ -26,9 +27,10 @@ export default {
   },
   setup() {
     const { t } = useI18n();
-    const btnText = computed(() => t("videos.btn"));
+    const videosBtn = computed(() => t("videos.btn"));
+    const ctaBtn = computed(() => t("cta.btn"));
 
-    return { btnText };
+    return { videosBtn, ctaBtn };
   },
 };
 </script>
