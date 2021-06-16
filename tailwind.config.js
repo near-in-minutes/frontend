@@ -1,4 +1,6 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
@@ -12,9 +14,11 @@ module.exports = {
         dark: "#D1D5DB",
       },
       green: {
+        50: "#ECFDF5",
         DEFAULT: "#00C08B",
         dark: "#00A677",
       },
+      yellow: colors.amber,
     },
     extend: {
       fontFamily: {
