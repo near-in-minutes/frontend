@@ -17,15 +17,12 @@ module.exports = {
       },
       red: {
         DEFAULT: "#FF585D",
-        dark: "#FF585D",
       },
       royal: {
         DEFAULT: "#0072CE",
-        dark: "#0072CE",
       },
       orange: {
         DEFAULT: "#FFB259",
-        dark: "#FFB259",
       },
     },
     extend: {

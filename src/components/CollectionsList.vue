@@ -31,9 +31,7 @@
         Take a look at our collections
       </p>
       <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-        Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan
-        in quis quis nunc, ullamcorper malesuada. Eleifend condimentum id
-        viverra nulla.
+        Start your journey with series of videos in each collection
       </p>
     </div>
   </div>
