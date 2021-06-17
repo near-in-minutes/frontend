@@ -15,8 +15,8 @@
           font-medium
           rounded-md
           text-white
-          bg-green
-          hover:bg-green-dark
+          bg-near-green
+          hover:bg-green-600
           hover:text-white
           transform
           hover:scale-105

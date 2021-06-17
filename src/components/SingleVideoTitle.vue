@@ -1,7 +1,14 @@
 <template>
   <div class="mt-10">
     <dl class="grid grid-cols-2">
-      <h2 class="text-3xl text-green font-extrabold tracking-tight sm:text-4xl">
+      <h2
+        class="
+          text-3xl text-near-green
+          font-extrabold
+          tracking-tight
+          sm:text-4xl
+        "
+      >
         {{ video.collection }} -
         {{ video.title }}
       </h2>

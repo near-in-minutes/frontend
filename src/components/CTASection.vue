@@ -1,16 +1,18 @@
 <template>
-  <div class="bg-gray pt-16 sm:pt-16">
+  <div class="bg-near-gray pt-16 sm:pt-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-extrabold sm:text-4xl">
           {{ t("cta.title") }}
         </h2>
-        <p class="mt-3 text-xl sm:mt-4 text-green">{{ t("cta.subTitle") }}</p>
+        <p class="mt-3 text-xl sm:mt-4 text-near-green">
+          {{ t("cta.subTitle") }}
+        </p>
       </div>
     </div>
     <div class="mt-10 pb-12 bg-white sm:pb-16">
       <div class="relative">
-        <div class="absolute inset-0 h-1/2 bg-gray" />
+        <div class="absolute inset-0 h-1/2 bg-near-gray" />
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-4xl mx-auto">
             <dl class="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-3">
@@ -19,7 +21,7 @@
                 :key="item.name"
                 class="
                   flex flex-col
-                  border-b border-gray
+                  border-b border-near-gray
                   p-6
                   text-center
                   sm:border-0 sm:border-r
@@ -34,7 +36,7 @@
                     p-6
                     text-base
                     font-medium
-                    hover:text-green
+                    hover:text-near-green
                     hover:font-bold
                   "
                   target="_blank"
