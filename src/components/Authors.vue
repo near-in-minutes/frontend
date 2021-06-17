@@ -54,7 +54,6 @@ export default {
       this.profiles.forEach((element) => {
         element.fields.githubAvatar = element.fields.github + ".png";
       });
-
       this.profiles.forEach((element) => {
         element.fields.githubUname = element.fields.github.slice(
           element.fields.github.indexOf(text) + text.length
@@ -182,7 +181,7 @@ export default {
       ],
     };
   },
-  mounted() {
+  created() {
     this.getAvatars();
   },
 };
