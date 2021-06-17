@@ -6,6 +6,7 @@
     <BaseButton :btn-text="btnText" />
   </div>
   <CTASection />
+  <authors/>
 </template>
 
 <script>
@@ -13,8 +14,10 @@ import HeroSection from "@/components/HeroSection.vue";
 import VideosList from "@/components/VideosList.vue";
 import CTASection from "@/components/CTASection.vue";
 import BaseButton from "@/components/BaseButton.vue";
+import Authors from "@/components/Authors.vue";
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
+
 
 export default {
   name: "Home",
@@ -23,6 +26,7 @@ export default {
     VideosList,
     CTASection,
     BaseButton,
+    Authors
   },
   setup() {
     const { t } = useI18n();
