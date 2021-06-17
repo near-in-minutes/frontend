@@ -1,5 +1,7 @@
 <template>
   <HeroSection />
+  <CollectionsList />
+
   <!--To show all videos we need to pass show="all" as props  -->
   <VideosList show="3" />
   <div class="bg-gray">
@@ -11,6 +13,7 @@
 
 <script>
 import HeroSection from "@/components/HeroSection.vue";
+import CollectionsList from "@/components/CollectionsList.vue";
 import VideosList from "@/components/VideosList.vue";
 import CTASection from "@/components/CTASection.vue";
 import BaseButton from "@/components/BaseButton.vue";
@@ -26,6 +29,7 @@ export default {
     VideosList,
     CTASection,
     BaseButton,
+    CollectionsList,
     Authors
   },
   setup() {
