@@ -1,5 +1,13 @@
 /* eslint-disable */
 <template>
+<div class="mx-auto
+        max-w-md
+        px-4
+        text-center
+        sm:max-w-3xl
+        sm:px-6
+        lg:px-8
+        lg:max-w-7xl">
   <div class="text-center py-16">
     <h3 class="text-3xl font-extrabold sm:text-4xl">Contributors</h3>
     <p class="mt-3 max-w-7xl mx-auto text-xl sm:mt-4">Meet our Contributors</p>
@@ -13,7 +21,7 @@
       class="col-span-1 flex flex-col text-center bg-white rounded-lg"
     >
       <div
-        class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100"
+        class="group block w-full py-3 aspect-w-10 aspect-h-7 rounded-lg bg-gray-100"
       >
         <a :href="person.fields.github">
           <img
@@ -45,6 +53,7 @@
       </div>
     </li>
   </ul>
+</div>
 </template>
 <script>
 export default {
