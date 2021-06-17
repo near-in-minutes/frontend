@@ -8,6 +8,7 @@
     <BaseButton :btn-text="btnText" />
   </div>
   <CTASection />
+  <authors/>
 </template>
 
 <script>
@@ -16,8 +17,10 @@ import CollectionsList from "@/components/CollectionsList.vue";
 import VideosList from "@/components/VideosList.vue";
 import CTASection from "@/components/CTASection.vue";
 import BaseButton from "@/components/BaseButton.vue";
+import Authors from "@/components/Authors.vue";
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
+
 
 export default {
   name: "Home",
@@ -27,6 +30,7 @@ export default {
     CTASection,
     BaseButton,
     CollectionsList,
+    Authors
   },
   setup() {
     const { t } = useI18n();
