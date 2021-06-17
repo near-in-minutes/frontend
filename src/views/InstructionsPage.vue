@@ -45,7 +45,7 @@
       <h2 class="font-extrabold text-xl pb-4 text-green">
         {{ t("contributionInstruction.subTitle") }}
       </h2>
-      <ol class="list-decimal">
+      <ol class="list-decimal font-bold">
         <li>
           {{ t("contributionInstruction.stepOne") }}
           <a
