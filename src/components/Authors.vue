@@ -1,34 +1,44 @@
 /* eslint-disable */
 <template>
-<div class="text-center py-16">
-<h3 class="text-3xl font-extrabold sm:text-4xl   ">
-        Contributors
-        </h3>
-<p class="mt-3 max-w-7xl mx-auto text-xl sm:mt-4">
-Meet our Contributors   
-</p>
-</div>
+  <div class="text-center py-16">
+    <h3 class="text-3xl font-extrabold sm:text-4xl">Contributors</h3>
+    <p class="mt-3 max-w-7xl mx-auto text-xl sm:mt-4">Meet our Contributors</p>
+  </div>
   <ul
     class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
   >
     <li
       v-for="person in profiles"
       :key="person.email"
-      class="col-span-1 flex flex-col text-center bg-white rounded-lg ">
-      <div class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 ">
-
+      class="col-span-1 flex flex-col text-center bg-white rounded-lg"
+    >
+      <div
+        class="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100"
+      >
         <a :href="person.fields.github">
           <img
-            class="w-32 h-32 flex-shrink-0 mx-auto bg-black rounded-full object-cover pointer-events-none group-hover:opacity-75"
+            class="
+              w-32
+              h-32
+              flex-shrink-0
+              mx-auto
+              bg-black
+              rounded-full
+              object-cover
+              pointer-events-none
+              group-hover:opacity-75
+            "
             :src="person.fields.githubAvatar"
             alt="profileImg"
           />
+
+          <h3 class="mt-6 text-gray-900 text-sm font-medium">
+            {{ person.fields.name }}
+          </h3>
+          <p class="text-sm mt-3 text-gray-500">
+            github / {{ person.fields.githubUname }}
+          </p>
         </a>
-  
-        <h3 class="mt-6 text-gray-900 text-sm font-medium">
-          {{ person.fields.name }}
-        </h3>
-       
       </div>
       <div>
         <div class="-mt-px flex divide-x divide-gray-200"></div>
@@ -37,12 +47,18 @@ Meet our Contributors
   </ul>
 </template>
 <script>
-
 export default {
   methods: {
     getAvatars() {
+      let text = ".com/";
       this.profiles.forEach((element) => {
-        element.fields.githubAvatar  = element.fields.github + ".png";
+        element.fields.githubAvatar = element.fields.github + ".png";
+      });
+
+      this.profiles.forEach((element) => {
+        element.fields.githubUname = element.fields.github.slice(
+          element.fields.github.indexOf(text) + text.length
+        );
       });
     },
   },
@@ -164,12 +180,10 @@ export default {
           },
         },
       ],
-      avatars: [],
-    
     };
   },
-  mounted(){
+  mounted() {
     this.getAvatars();
-  }
+  },
 };
 </script>
