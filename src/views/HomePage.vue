@@ -1,5 +1,7 @@
 <template>
   <HeroSection />
+  <CollectionsList />
+
   <!--To show all videos we need to pass show="all" as props  -->
   <VideosList show="3" />
   <div class="bg-gray">
@@ -7,13 +9,16 @@
   </div>
   <CTASection />
   <BaseButton :btn-text="ctaBtn" link="/instructions" />
+  <authors />
 </template>
 
 <script>
 import HeroSection from "@/components/HeroSection.vue";
+import CollectionsList from "@/components/CollectionsList.vue";
 import VideosList from "@/components/VideosList.vue";
 import CTASection from "@/components/CTASection.vue";
 import BaseButton from "@/components/BaseButton.vue";
+import Authors from "@/components/Authors.vue";
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
 
@@ -24,6 +29,8 @@ export default {
     VideosList,
     CTASection,
     BaseButton,
+    CollectionsList,
+    Authors,
   },
   setup() {
     const { t } = useI18n();

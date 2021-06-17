@@ -7,6 +7,11 @@
     "title": "नियर सीखिए  एक {0}  पहल",
     "titleHighlight": "कम्युनिटी बेस्ड "
   },
+  "collections": {
+    "title": "Collections",
+    "subTitle": "Take a look at our collections",
+    "desc": "Start your journey with series of videos in each collection"
+  },
   "videos": {
     "title": "वीडियो टुटोरिअल ",
     "desc": "नियर सीखने के लिए हमारे नए टुटोरिअल्स ",

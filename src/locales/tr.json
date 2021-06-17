@@ -7,6 +7,11 @@
     "title": "{0} girişim ile NEAR öğren",
     "titleHighlight": "Topluluk-bazlı"
   },
+  "collections": {
+    "title": "KOLEKSİYONLAR",
+    "subTitle": "Take a look at our collections",
+    "desc": "Start your journey with series of videos in each collection"
+  },
   "videos": {
     "title": "Video eğitimleri",
     "desc": "En son eğitimlerimize göz atın ve NEAR öğrenin",
