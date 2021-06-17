@@ -22,12 +22,31 @@
     "subTitle": "Let's hear from you",
     "newContent": "Submit New Content",
     "newTopic": "Suggest New Topic",
-    "translate": "Translate Content"
+    "translate": "Translate Content",
+    "btn": "Learn how to contribute"
   },
   "footer": {
     "rights": "2021 NEAR in Minutes, All rights reserved."
   },
   "singleVideo": {
     "learnMore": "Learn more about"
+  },
+  "contributionInstruction": {
+    "title": "How to contribute?",
+    "desc": "Thank you for thinking to contribute to NEAR in Minutes 🚀. If you are wondering how the contribution process works. Check this quickstart guide that will help you get starting in no time.",
+    "warning": "Currently we accept {0} videos only.",
+    "loomLink": "Loom",
+    "subTitle": "How to fill form/issue",
+    "stepOne": "Go to the issues section in",
+    "issues": "NEAR in Minutes Community",
+    "stepTwo": "Click on a  New issue and choose the type of content you would like to contribute.",
+    "stepThree": "Choose how you want to contribute and fill in the information accordingly.",
+    "seeExample": "If you like to see an example of a submitted issue",
+    "learnMore": "If you want to get more information on how to make a good video",
+    "clickHere": "click here",
+    "types": "Currently we have three types of contribution:",
+    "newContentDesc": "if you have a video in mind you would like to create and add to the collection of videos.",
+    "newTopicDesc": "if you would like to translate the content to another language. Currently we support Turkish and Hindi.",
+    "translateDesc": "if you have a topic in mind and you would like to suggest so someone else can make a tutorial about it."
   }
 }

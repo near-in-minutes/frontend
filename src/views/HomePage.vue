@@ -5,10 +5,11 @@
   <!--To show all videos we need to pass show="all" as props  -->
   <VideosList show="3" />
   <div class="bg-gray">
-    <BaseButton :btn-text="btnText" />
+    <BaseButton :btn-text="videosBtn" link="/videos" />
   </div>
   <CTASection />
-  <authors/>
+  <BaseButton :btn-text="ctaBtn" link="/instructions" />
+  <authors />
 </template>
 
 <script>
@@ -21,7 +22,6 @@ import Authors from "@/components/Authors.vue";
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
 
-
 export default {
   name: "Home",
   components: {
@@ -30,13 +30,14 @@ export default {
     CTASection,
     BaseButton,
     CollectionsList,
-    Authors
+    Authors,
   },
   setup() {
     const { t } = useI18n();
-    const btnText = computed(() => t("videos.btn"));
+    const videosBtn = computed(() => t("videos.btn"));
+    const ctaBtn = computed(() => t("cta.btn"));
 
-    return { btnText };
+    return { videosBtn, ctaBtn };
   },
 };
 </script>
