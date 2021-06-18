@@ -18,7 +18,7 @@
         "
       >
         <i18n-t keypath="main.title" tag="p" class="block xl:inline">
-          <span class="block text-green xl:inline">{{
+          <span class="block text-near-green xl:inline">{{
             t("main.titleHighlight")
           }}</span>
         </i18n-t>

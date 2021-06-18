@@ -1,6 +1,16 @@
 <template>
   <div
-    class="relative bg-gray pt-16 pb-20 px-4 sm:px-6 lg:pt-25 lg:pb-28 lg:px-8"
+    class="
+      relative
+      bg-near-gray
+      pt-16
+      pb-20
+      px-4
+      sm:px-6
+      lg:pt-25
+      lg:pb-28
+      lg:px-8
+    "
   >
     <div class="absolute inset-0">
       <div class="bg-white h-1/3 sm:h-2/3" />
@@ -35,7 +45,7 @@
             <div class="h-50 w-full object-cover flex justify-center">
               <div class="absolute h-40 flex flex-col">
                 <div class="pt-12">
-                  <p class="text-sm font-medium text-green text-center">
+                  <p class="text-sm font-medium text-near-green text-center">
                     {{ video.collection }}
                   </p>
 
@@ -49,7 +59,7 @@
                       text-white
                       w-10
                       mx-auto
-                      hover:text-green
+                      hover:text-near-green
                       hover:w-12
                       cursor-pointer
                     "
@@ -64,7 +74,7 @@
             <router-link :to="`/videos/${video.id}`">
               <div class="flex-1">
                 <p
-                  class="text-sm font-medium text-green"
+                  class="text-sm font-medium text-near-green"
                   v-for="tag in video.tags"
                   :key="tag"
                 >

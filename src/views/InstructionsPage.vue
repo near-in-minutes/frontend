@@ -8,7 +8,7 @@
           tracking-tight
           font-extrabold
           sm:text-4xl
-          text-green
+          text-near-green
         "
       >
         {{ t("contributionInstruction.title") }}
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="px-4">
-      <h2 class="font-extrabold text-xl pb-4 text-green">
+      <h2 class="font-extrabold text-xl pb-4 text-near-green">
         {{ t("contributionInstruction.subTitle") }}
       </h2>
       <ol class="list-decimal font-bold">
@@ -84,20 +84,20 @@
         <div class="flex">
           <div class="flex-shrink-0">
             <InformationCircleIcon
-              class="h-8 w-8 text-green"
+              class="h-8 w-8 text-near-green"
               aria-hidden="true"
             />
           </div>
           <div class="ml-3 flex-1 md:flex md:justify-between flex flex-col">
-            <p class="text-sm text-green">
+            <p class="text-sm text-near-green">
               {{ t("contributionInstruction.seeExample") }}
               <a
                 href="#"
                 class="
                   whitespace-nowrap
                   font-medium
-                  text-blue-700
-                  hover:text-blue-600
+                  text-green-700
+                  hover:text-green-600
                 "
                 target="_blank"
                 >{{ t("contributionInstruction.clickHere")
@@ -105,15 +105,15 @@
               >
             </p>
             <br />
-            <p class="text-sm text-green">
+            <p class="text-sm text-near-green">
               {{ t("contributionInstruction.learnMore") }}
               <a
                 href="https://github.com/near-in-minutes/community/issues/4"
                 class="
                   whitespace-nowrap
                   font-medium
-                  text-blue-700
-                  hover:text-blue-600
+                  text-green-700
+                  hover:text-green-600
                 "
                 target="_blank"
                 >{{ t("contributionInstruction.clickHere")
@@ -129,7 +129,7 @@
 
           <ul class="list-disc" v-for="item in contribution" :key="item.name">
             <li>
-              <span class="font-bold text-green"> {{ item.name }}</span>
+              <span class="font-bold text-near-green"> {{ item.name }}</span>
               {{ item.description }}
             </li>
           </ul>

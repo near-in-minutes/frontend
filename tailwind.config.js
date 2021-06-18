@@ -1,5 +1,4 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
@@ -19,26 +18,6 @@ module.exports = {
         "near-green": "#00C08B",
         "near-blue": "#00C1DE",
         "near-royal": "#0072CE",
-        gray: {
-          DEFAULT: "#f2f2f2",
-          light: "#E5E7EB",
-          dark: "#D1D5DB",
-        },
-        green: {
-          50: "#ECFDF5",
-          DEFAULT: "#00C08B",
-          dark: "#00A677",
-        },
-        red: {
-          DEFAULT: "#FF585D",
-        },
-        royal: {
-          DEFAULT: "#0072CE",
-        },
-        orange: {
-          DEFAULT: "#FFB259",
-        },
-        yellow: colors.amber,
       },
     },
   },

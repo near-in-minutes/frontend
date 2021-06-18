@@ -13,8 +13,8 @@
               :to="item.href"
               :class="[
                 item.current
-                  ? 'bg-gray '
-                  : 'text-black hover:bg-gray hover:text-black',
+                  ? 'bg-near-gray '
+                  : 'text-black hover:bg-near-gray hover:text-black',
                 'rounded-md py-3 px-3 inline-flex items-center text-lg font-medium h-15',
               ]"
               :aria-current="item.current ? 'page' : undefined"
@@ -31,7 +31,7 @@
                 justify-center
                 w-full
                 rounded-md
-                border border-gray-dark
+                border border-gray-400
                 shadow-sm
                 px-4
                 py-2
@@ -39,12 +39,12 @@
                 text-sm
                 font-medium
                 text-black
-                hover:bg-gray
+                hover:bg-near-gray
                 focus:outline-none
                 focus:ring-2
                 focus:ring-offset-2
-                focus:ring-offset-gray
-                focus:ring-green
+                focus:ring-offset-near-gray
+                focus:ring-green-200
               "
             >
               <TranslateIcon class="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
@@ -70,7 +70,7 @@
                   shadow-lg
                   py-1
                   bg-white
-                  ring-1 ring-green ring-opacity-5
+                  ring-1 ring-green-200 ring-opacity-5
                   z-10
                   focus:outline-none
                 "
@@ -78,7 +78,7 @@
                 <div class="py-1">
                   <MenuItem v-for="language in languages" :key="language.index">
                     <button
-                      class="block px-4 py-2 w-full text-md hover:bg-gray"
+                      class="block px-4 py-2 w-full text-md hover:bg-near-gray"
                       @click="changeLanguage(language.code)"
                     >
                       {{ language.name }}
@@ -128,11 +128,11 @@
           :aria-current="item.current ? 'page' : undefined"
           >{{ item.name }}</router-link
         >
-        <div class="pt-4 pb-3 border-t border-gray">
+        <div class="pt-4 pb-3 border-t border-gray-100">
           <button
             v-for="language in languages"
             :key="language.index"
-            class="block px-4 py-2 text-sm hover:bg-gray"
+            class="block px-4 py-2 text-sm hover:bg-near-gray"
             @click="changeLanguage(language.code)"
           >
             {{ language.name }}

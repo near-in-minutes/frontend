@@ -4,7 +4,7 @@
 
   <!--To show all videos we need to pass show="all" as props  -->
   <VideosList show="3" />
-  <div class="bg-gray">
+  <div class="bg-near-gray">
     <BaseButton :btn-text="videosBtn" link="/videos" />
   </div>
   <CTASection />
