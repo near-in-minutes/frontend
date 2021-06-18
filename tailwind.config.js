@@ -1,7 +1,12 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  purge: {
+    content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+    options: {
+      safelist: [/bg-(gray|red|yellow|green|blue|indigo|purple|pink)-[3-7]00/],
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
