@@ -1,59 +1,79 @@
 /* eslint-disable */
 <template>
-<div class="mx-auto
-        max-w-md
-        px-4
-        text-center
-        sm:max-w-3xl
-        sm:px-6
-        lg:px-8
-        lg:max-w-7xl">
-  <div class="text-center py-16">
-    <h3 class="text-3xl font-extrabold sm:text-4xl">Contributors</h3>
-    <p class="mt-3 max-w-7xl mx-auto text-xl sm:mt-4">Meet our Contributors</p>
-  </div>
-  <ul
-    class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+  <div
+    class="
+      mx-auto
+      max-w-md
+      px-4
+      text-center
+      sm:max-w-3xl
+      sm:px-6
+      lg:px-8
+      lg:max-w-7xl
+    "
   >
-    <li
-      v-for="person in profiles"
-      :key="person.email"
-      class="col-span-1 flex flex-col text-center bg-white rounded-lg"
+    <div class="text-center py-16">
+      <h3 class="text-3xl font-extrabold sm:text-4xl">Contributors</h3>
+      <p class="mt-3 max-w-7xl mx-auto text-xl sm:mt-4">
+        Meet our Contributors
+      </p>
+    </div>
+    <ul
+      class="
+        grid grid-cols-1
+        gap-6
+        sm:grid-cols-2
+        md:grid-cols-3
+        lg:grid-cols-4
+      "
     >
-      <div
-        class="group block w-full py-3 aspect-w-10 aspect-h-7 rounded-lg bg-gray-100"
+      <li
+        v-for="person in profiles"
+        :key="person.email"
+        class="col-span-1 flex flex-col text-center bg-white rounded-lg"
       >
-        <a :href="person.fields.github">
-          <img
-            class="
-              w-32
-              h-32
-              flex-shrink-0
-              mx-auto
-              bg-black
-              rounded-full
-              object-cover
-              pointer-events-none
-              group-hover:opacity-75
-            "
-            :src="person.fields.githubAvatar"
-            alt="profileImg"
-          />
+        <div
+          class="
+            group
+            block
+            w-full
+            py-3
+            aspect-w-10 aspect-h-7
+            rounded-lg
+            bg-gray-100
+          "
+        >
+          <router-link :to="{ name: 'Author', params: { id: person.id } }">
+            <img
+              class="
+                w-32
+                h-32
+                flex-shrink-0
+                mx-auto
+                bg-black
+                rounded-full
+                object-cover
+                pointer-events-none
+                group-hover:opacity-75
+              "
+              :src="person.fields.githubAvatar"
+              alt="profileImg"
+            />
 
-          <h3 class="mt-6 text-gray-900 text-sm font-medium">
-            {{ person.fields.name }}
-          </h3>
-          <p class="text-sm mt-3 text-gray-500">
-            github / {{ person.fields.githubUname }}
-          </p>
-        </a>
-      </div>
-      <div>
-        <div class="-mt-px flex divide-x divide-gray-200"></div>
-      </div>
-    </li>
-  </ul>
-</div>
+            <h3 class="mt-6 text-gray-900 text-sm font-medium">
+              {{ person.fields.name }}
+            </h3>
+            <p class="text-sm mt-3 text-gray-500">
+              github / {{ person.fields.githubUname }}
+            </p>
+          </router-link>
+        </div>
+        <div>
+          <div class="-mt-px flex divide-x divide-gray-200"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
 export default {

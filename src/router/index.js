@@ -3,6 +3,7 @@ import HomePage from "@/views/HomePage.vue";
 import SingleVideoPage from "@/views/SingleVideoPage.vue";
 import AllVideosPage from "@/views/AllVideosPage.vue";
 import InstructionsPage from "@/views/InstructionsPage.vue";
+import AuthorProfilePage from "@/views/AuthorProfilePage.vue";
 
 const routes = [
   {
@@ -20,6 +21,12 @@ const routes = [
     path: "/videos/:id",
     name: "Video",
     component: SingleVideoPage,
+    props: true,
+  },
+  {
+    path: "/authors/:id",
+    name: "Author",
+    component: AuthorProfilePage,
     props: true,
   },
   {
