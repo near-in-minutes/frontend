@@ -116,7 +116,7 @@
                 />
               </div>
               <blockquote class="mt-8">
-                <div
+                <!-- <div
                   class="relative text-lg font-medium text-white md:flex-grow"
                 >
                   <svg
@@ -143,7 +143,7 @@
                     Consectetur pretium in volutpat, diam. Montes, magna cursus
                     nulla feugiat dignissim id lobortis amet.
                   </p>
-                </div>
+                </div> -->
 
                 <footer class="mt-4">
                   <p class="text-base font-semibold text-indigo-200">
@@ -167,9 +167,9 @@
               sm:text-4xl
             "
           >
-            On a mission to empower teams
+            {{ author.fields.name }}'s Stats
           </h2>
-          <div class="mt-6 text-gray-500 space-y-6">
+          <!-- <div class="mt-6 text-gray-500 space-y-6">
             <p class="text-lg">
               Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
               urna sed consectetur neque tristique pellentesque. Blandit amet,
@@ -184,7 +184,7 @@
               Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut
               volutpat donec laoreet quam urna.
             </p>
-          </div>
+          </div> -->
         </div>
 
         <!-- Stats section -->
@@ -204,10 +204,13 @@
             </div>
           </dl>
           <div class="mt-10">
-            <a href="#" class="text-base font-medium text-indigo-600">
-              Learn more about how we're changing the world
+            <router-link
+              to="/videos"
+              class="text-base font-medium text-indigo-600"
+            >
+              Learn more about NEAR by watching some videos
               <span aria-hidden="true">&rarr;</span>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
