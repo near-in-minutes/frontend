@@ -23,7 +23,58 @@
             </router-link>
           </div>
         </div>
+
         <div class="hidden sm:ml-6 sm:flex sm:items-center">
+          <button
+            v-if="!accountId"
+            @click="signIn"
+            class="
+              mx-8
+              w-30
+              inline-flex
+              items-center
+              justify-center
+              px-5
+              py-2
+              font-medium
+              rounded-md
+              text-white
+              bg-near-green
+              hover:bg-green-600
+              hover:text-white
+              transform
+              hover:scale-105
+              sm:w-auto
+            "
+          >
+            Sign in to NEAR
+          </button>
+          <div v-else class="flex items-center">
+            <h1>{{ accountId }}</h1>
+            <button
+              @click="signOut"
+              class="
+                mr-8
+                ml-2
+                w-30
+                inline-flex
+                items-center
+                justify-center
+                px-5
+                py-2
+                font-medium
+                rounded-md
+                bg-near-gray
+                hover:bg-green-600
+                hover:text-white
+                transform
+                hover:scale-105
+                sm:w-auto
+              "
+            >
+              Log out
+            </button>
+          </div>
           <Menu as="div" class="relative inline-block text-left">
             <MenuButton
               class="
@@ -128,6 +179,51 @@
           :aria-current="item.current ? 'page' : undefined"
           >{{ item.name }}</router-link
         >
+        <div class="pt-4 pb-3 px-2 space-y-1 border-t border-gray-100">
+          <button
+            v-if="!accountId"
+            @click="signIn"
+            class="
+              w-30
+              px-5
+              py-2
+              font-medium
+              rounded-md
+              text-white
+              bg-near-green
+              hover:bg-green-600
+              hover:text-white
+              transform
+              hover:scale-105
+              sm:w-auto
+            "
+          >
+            Sign in to NEAR
+          </button>
+          <div v-else class="flex flex-col items-start">
+            <h1>{{ accountId }}</h1>
+            <button
+              @click="signOut"
+              class="
+                mt-4
+                block
+                px-4
+                py-2
+                text-sm
+                font-medium
+                rounded-md
+                bg-near-gray
+                hover:bg-green-600
+                hover:text-white
+                transform
+                hover:scale-105
+                sm:w-auto
+              "
+            >
+              Log out
+            </button>
+          </div>
+        </div>
         <div class="pt-4 pb-3 border-t border-gray-100">
           <button
             v-for="language in languages"
@@ -147,6 +243,9 @@
 import { useI18n } from "vue-i18n";
 import { ref, computed, watch, reactive } from "vue";
 import { useRoute } from "vue-router";
+
+import { useNearAuth, useWallet } from "@/composables/near";
+
 import {
   Disclosure,
   DisclosureButton,
@@ -219,7 +318,19 @@ export default {
       }
     });
 
-    return { languages, changeLanguage, open, nav };
+    const { wallet, signIn, signOut } = useWallet();
+    const { accountId } = useNearAuth();
+
+    return {
+      languages,
+      changeLanguage,
+      open,
+      nav,
+      wallet,
+      accountId,
+      signIn,
+      signOut,
+    };
   },
 };
 </script>
