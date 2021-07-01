@@ -43,10 +43,10 @@
               lg:left-auto
               lg:top-12
             "
-            width="404"
-            height="392"
+            width="350"
+            height="360"
             fill="none"
-            viewBox="0 0 404 392"
+            viewBox="0 0 350 360"
           >
             <defs>
               <pattern
@@ -68,8 +68,8 @@
               </pattern>
             </defs>
             <rect
-              width="404"
-              height="392"
+              width="350"
+              height="360"
               fill="url(#02f20b47-fd69-4224-a62a-4c9de5c763f7)"
             />
           </svg>
@@ -80,10 +80,9 @@
             mx-auto
             max-w-md
             px-4
-            sm:max-w-3xl
             sm:px-6
             lg:px-0
-            lg:max-w-none
+            sm:max-w-md
             lg:py-20
           "
         >
@@ -108,43 +107,7 @@
               "
             />
             <div class="relative px-8">
-              <div>
-                <img
-                  class="h-12"
-                  src="https://tailwindui.com/img/logos/workcation.svg?color=white"
-                  alt="Workcation"
-                />
-              </div>
               <blockquote class="mt-8">
-                <!-- <div
-                  class="relative text-lg font-medium text-white md:flex-grow"
-                >
-                  <svg
-                    class="
-                      absolute
-                      top-0
-                      left-0
-                      transform
-                      -translate-x-3 -translate-y-2
-                      h-8
-                      w-8
-                      text-indigo-400
-                    "
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"
-                    />
-                  </svg>
-                  <p class="relative">
-                    Tincidunt integer commodo, cursus etiam aliquam neque, et.
-                    Consectetur pretium in volutpat, diam. Montes, magna cursus
-                    nulla feugiat dignissim id lobortis amet.
-                  </p>
-                </div> -->
-
                 <footer class="mt-4">
                   <p class="text-base font-semibold text-indigo-200">
                     {{ author.fields.name }} // {{ author.fields.near_account }}
@@ -158,7 +121,7 @@
 
       <div class="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
         <!-- Content area -->
-        <div class="pt-12 sm:pt-16 lg:pt-20">
+        <div class="pt-12 sm:pt-16 lg:pt-20 xl:pt-0">
           <h2
             class="
               text-3xl text-gray-900
@@ -169,22 +132,6 @@
           >
             {{ author.fields.name }}'s Stats
           </h2>
-          <!-- <div class="mt-6 text-gray-500 space-y-6">
-            <p class="text-lg">
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi. Cursus faucibus nunc nisl netus morbi
-              vel porttitor vitae ut. Amet vitae fames senectus vitae.
-            </p>
-            <p class="text-base leading-7">
-              Sollicitudin tristique eros erat odio sed vitae, consequat turpis
-              elementum. Lorem nibh vel, eget pretium arcu vitae. Eros eu
-              viverra donec ut volutpat donec laoreet quam urna. Sollicitudin
-              tristique eros erat odio sed vitae, consequat turpis elementum.
-              Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut
-              volutpat donec laoreet quam urna.
-            </p>
-          </div> -->
         </div>
 
         <!-- Stats section -->
@@ -198,7 +145,15 @@
               <dt class="text-base font-medium text-gray-500">
                 {{ stat.label }}
               </dt>
-              <dd class="text-3xl font-extrabold tracking-tight text-gray-900">
+              <dd
+                class="
+                  text-3xl
+                  font-extrabold
+                  tracking-tight
+                  text-gray-900
+                  pr-4
+                "
+              >
                 {{ stat.value }}
               </dd>
             </div>
@@ -208,7 +163,7 @@
               to="/videos"
               class="text-base font-medium text-indigo-600"
             >
-              Learn more about NEAR by watching some videos
+              Learn more about NEAR by watching all videos
               <span aria-hidden="true">&rarr;</span>
             </router-link>
           </div>
@@ -216,19 +171,56 @@
       </div>
     </div>
   </div>
+  <div class="relative">
+    <h2
+      class="
+        text-center text-3xl
+        leading-8
+        font-extrabold
+        tracking-tight
+        text-gray-900
+        sm:text-4xl
+      "
+    >
+      Dive into the tutorials
+    </h2>
+    <p class="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
+      {{ author.fields.name }} created
+      {{ author.fields.contributions }} tutorial videos that explain how to use
+      NEAR better and faster!
+    </p>
+  </div>
+  <VideoListByAuthor :content="content" :author="author" />
 </template>
 
 <script>
 import { findOneAuthor } from "../services/airtable/index";
 
+import VideoListByAuthor from "@/components/VideoListByAuthor";
+
 export default {
   props: ["id"],
   async setup(props) {
     const author = await findOneAuthor(props.id);
-    console.log(author);
-    const authorLanguages = author.fields.languages
-      .toString()
-      .replace(",", ",  "); //add some space after comma
+    const content = author.fields.content;
+
+    const languages = author.fields.languages.map((lang) => {
+      if (lang == "en") {
+        return "English";
+      }
+      if (lang == "tr") {
+        return "Turkish";
+      }
+      if (lang == "ar") {
+        return "Arabic";
+      }
+      if (lang == "hi") {
+        return "Hindi";
+      }
+    });
+    // console.log(languages);
+    const authorLanguages = languages.toString().replace(",", ",  "); //add some space after comma
+    // console.log(authorLanguages);
 
     const authorGithubName = author.fields.github.slice(19);
 
@@ -237,10 +229,15 @@ export default {
       { label: "Videos", value: author.fields.contributions },
       { label: "Github", value: authorGithubName },
     ];
+
     return {
       stats,
       author,
+      content,
     };
+  },
+  components: {
+    VideoListByAuthor,
   },
 };
 </script>
