@@ -130,17 +130,17 @@
           <div class="py-20 mx-auto max-w-5xl px-4 bg-white">
             <div class="px-4">
               <h2 class="font-extrabold text-xl pb-4 text-near-green">
-                {{ t("setupSystemInstruction.title") }}
+                {{ t("makeVideoInstruction.title") }}
               </h2>
               <ol class="list-decimal font-bold">
                 <li>
-                  {{ t("setupSystemInstruction.stepOne") }}
+                  {{ t("makeVideoInstruction.stepOne") }}
                   <a
                     href="https://www.loom.com/"
                     class="font-medium underline"
                     target="_blank"
                   >
-                    {{ t("setupSystemInstruction.loom") }}</a
+                    {{ t("makeVideoInstruction.loom") }}</a
                   >
                   <img
                     class="w-full h-auto my-6"
@@ -150,7 +150,7 @@
                 </li>
 
                 <li>
-                  {{ t("setupSystemInstruction.stepTwo") }}
+                  {{ t("makeVideoInstruction.stepTwo") }}
 
                   <img
                     class="w-50 my-6 mx-auto"
@@ -159,7 +159,7 @@
                   />
                 </li>
                 <li>
-                  {{ t("setupSystemInstruction.stepThree") }}
+                  {{ t("makeVideoInstruction.stepThree") }}
                   <img
                     class="w-50 my-6 mx-auto"
                     src="@/assets/contribute/loom-download.png"
@@ -167,7 +167,7 @@
                   />
                 </li>
                 <li>
-                  {{ t("setupSystemInstruction.stepFour") }}
+                  {{ t("makeVideoInstruction.stepFour") }}
                   <img
                     class="w-50 my-6 mx-auto"
                     src="@/assets/contribute/loom-app.png"
