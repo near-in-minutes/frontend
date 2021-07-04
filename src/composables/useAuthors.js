@@ -2,7 +2,7 @@ import { ref } from 'vue';
 import { getAllAuthors } from '@/services/airtable';
 import initCache from './cache';
 
-const EXCLUSIONS = ['amgando'];
+const EXCLUSIONS = [];
 
 const cache = initCache();
 const CACHE_KEY = 'authors';
