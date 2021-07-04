@@ -1,8 +1,12 @@
-# vue-3 + tailwindui
+# NEAR in Minutes
+
+This is a NEAR-COOP (NEAR Community Owned and Operated Project)
+
+NEAR in Minutes makes it as easily as possible to learn about NEAR by binge-watching videos in your favorite language.
 
 ## Project setup
 ```
-yarn install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
