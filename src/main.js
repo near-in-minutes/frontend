@@ -1,20 +1,10 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
-import { createI18n } from "vue-i18n";
-import en from "./locales/en.json";
-import tr from "./locales/tr.json";
-import hi from "./locales/hi.json";
-import "tailwindcss/tailwind.css";
+import { createApp } from 'vue';
 
-const i18n = createI18n({
-  messages: {
-    en: en,
-    tr: tr,
-    hi: hi,
-  },
-  locale: "en",
-  fallbackLocale: "en",
-});
+import App from './App.vue';
+import router from '@/router';
 
-createApp(App).use(router).use(i18n).mount("#app");
+import 'tailwindcss/tailwind.css';
+
+import i18n from '@/i18n';
+
+createApp(App).use(router).use(i18n).mount('#app');

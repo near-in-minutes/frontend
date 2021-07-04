@@ -1,0 +1,38 @@
+{
+  "navbar": {
+    "home": "होम",
+    "videos": "वीडियोस",
+    "collections": "Collections",
+    "about": "केबारेमें"
+  },
+  "main": {
+    "title": "नियर सीखिए  एक {0}  पहल",
+    "titleHighlight": "कम्युनिटी बेस्ड "
+  },
+  "collections": {
+    "title": "Collections",
+    "subTitle": "Take a look at our collections",
+    "desc": "Start your journey with series of videos in each collection",
+    "meal": "FAST | DIET | SNACK | PICNIC | FEAST",
+    "posts": "No videos yet | {count} video | {count} videos"
+  },
+  "videos": {
+    "title": "वीडियो टुटोरिअल ",
+    "desc": "नियर सीखने के लिए हमारे नए टुटोरिअल्स ",
+    "btn": "सब वीडियोस देखिये ",
+    "more": "Load More Videos"
+  },
+  "cta": {
+    "title": "कंट्रीब्यूट करना चाहेंगे?",
+    "subTitle": "आप से सुनते है ",
+    "newContent": "नया कॉन्टेंट",
+    "newTopic": "नए विषय का सुझाव",
+    "translate": "कॉन्टेंट अनुवाद कीजिए"
+  },
+  "footer": {
+    "rights": "२०२१ नियर इन मिनिट्स, आल राइट्स रिजर्व्ड "
+  },
+  "singleVideo": {
+    "learnMore": "और जानिए"
+  }
+}

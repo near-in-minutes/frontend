@@ -1,0 +1,38 @@
+{
+  "navbar": {
+    "home": "Anasayfa",
+    "videos": "Videolar",
+    "collections": "Collections",
+    "about": "Hakkında"
+  },
+  "main": {
+    "title": "{0} girişim ile NEAR öğren",
+    "titleHighlight": "Topluluk-bazlı"
+  },
+  "collections": {
+    "title": "KOLEKSİYONLAR",
+    "subTitle": "Take a look at our collections",
+    "desc": "Start your journey with series of videos in each collection",
+    "meal": "FAST | DIET | SNACK | PICNIC | FEAST",
+    "posts": "No videos yet | {count} video | {count} videos"
+  },
+  "videos": {
+    "title": "Video eğitimleri",
+    "desc": "En son eğitimlerimize göz atın ve NEAR öğrenin",
+    "btn": "Tüm videolara göz atın",
+    "more": "Load More Videos"
+  },
+  "cta": {
+    "title": "Katkıda bulunmak ister miydiniz?",
+    "subTitle": "Sizi dinleyelim",
+    "newContent": "Yeni İçerik Gönder",
+    "newTopic": "Yeni Konu Öner",
+    "translate": "İçeriği Çevir"
+  },
+  "footer": {
+    "rights": "2021 NEAR in Minutes, Tüm hakları saklıdır."
+  },
+  "singleVideo": {
+    "learnMore": "Learn more about"
+  }
+}
