@@ -1,1 +1,1 @@
-export default require("./airtable");
+export default require('./airtable');
