@@ -1,28 +1,17 @@
 <template>
-  <Navbar />
-  <Suspense>
-    <template #default>
-      <router-view />
-    </template>
-    <template #fallback>
-      <span>Loading...</span>
-    </template>
-  </Suspense>
-  <Footer />
+  <NavigationComponent />
+  <router-view />
+  <FooterComponent />
 </template>
 
 <script>
-import Navbar from "@/components/TheNavbar.vue";
-import Footer from "@/components/TheFooter.vue";
+import NavigationComponent from '@/components/layout/NavigationComponent';
+import FooterComponent from '@/components/layout/FooterComponent';
+
 export default {
-  name: "App",
-  components: { Navbar, Footer },
+  components: {
+    NavigationComponent,
+    FooterComponent
+  }
 };
 </script>
-
-<style>
-#app {
-  font-family: Inter var;
-  -webkit-font-smoothing: antialiased;
-}
-</style>
