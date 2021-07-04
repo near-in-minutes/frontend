@@ -1,8 +1,11 @@
-/* eslint-disable */
-import { findOneContent, getMostRecent ,findAllTranslationsForContent} from '@/services/airtable';
 import { ref } from 'vue';
+import { findOneContent, findAllContent, getMostRecent, findAllTranslationsForContent } from '@/services/airtable';
+import initCache from './cache';
 
-export function useContent(locale) {
+const cache = initCache();
+
+export function useContent(loc) {
+  const locale = ref(loc);
   const content = ref([]);
   const limit = ref(3);
   const contentId = ref('');
@@ -16,24 +19,35 @@ export function useContent(locale) {
     contentId.value = id;
   }
 
+  function setLocale(loc) {
+    locale.value = loc;
+  }
+
   async function fetchMostRecent() {
-    status.value = 'fetching';
-    content.value = await getMostRecent(locale.value, limit.value);
-    status.value = 'ready';
+    waitFor(async () => {
+      const collection = `translations-${locale.value}`;
+      return await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value));
+    });
   }
 
   async function fetchOneContent(id) {
-    status.value = 'fetching';
-    content.value = await findOneContent(id);
-    status.value = 'ready';
+    waitFor(async () => {
+      return await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
+    });
+  }
+
+  async function fetchAllContent(ids) {
+    waitFor(async () => {
+      return await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
+    });
   }
 
   async function fetchTranslationsForContent(id) {
-    status.value = 'fetching';
-    content.value = await findAllTranslationsForContent(id);
-    status.value = 'ready';
+    waitFor(async () => {
+      const collection = `translations-${locale.value}`;
+      return await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
+    });
   }
-
 
   return {
     status,
@@ -42,8 +56,41 @@ export function useContent(locale) {
     limit,
     setLimit,
     setContentId,
+    setLocale,
     fetchMostRecent,
     fetchOneContent,
+    fetchAllContent,
     fetchTranslationsForContent
   };
+
+  /*
+  HELPER FUNCTIONS
+  */
+
+  async function checkCache(collection, predicate, asyncCall) {
+    if (predicate && !cache.isStale()) {
+      return cache.read(collection);
+    } else {
+      const results = await asyncCall();
+      cache.write(collection, results);
+      return results;
+    }
+  }
+
+  async function waitFor(fn) {
+    status.value = 'fetching';
+    const results = await fn();
+    updateContent(results);
+    status.value = 'ready';
+  }
+
+  function updateContent(results) {
+    content.value = results
+      .slice(0, limit.value)
+      .map(r => ({
+        id: r.id,
+        ...r.fields
+      }))
+      .sort((a, b) => a.order - b.order);
+  }
 }
