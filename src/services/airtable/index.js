@@ -5,6 +5,7 @@ const base = new Airtable({ apiKey: 'keykNpwoxgmMLfSPI' }).base('appQ1mAGld5xjou
 // prettier-ignore
 export {
   getAllContent,
+  findAllContent,
   findOneContent,
   getMostRecent,
   getAllTranslationsForLocale,
@@ -91,6 +92,10 @@ async function getAllContent() {
   return await getAll({ table: 'content', view: 'live' });
 }
 
+async function findAllContent(ids) {
+  return await findAll({ table: 'content', ids, view: 'live' });
+}
+
 async function findOneContent(contentId) {
   return await findOne({ table: 'content', id: contentId });
 }
@@ -119,7 +124,7 @@ async function findAllTranslations(translationIds) {
 async function findAllTranslationsForContent(contentId) {
   const content = await findOne({ table: 'content', id: contentId });
   if (!content.fields.translations) {
-    return "not found";
+    return 'not found';
   }
 
   return await findAll({
