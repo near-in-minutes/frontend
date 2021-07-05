@@ -1,14 +1,6 @@
 import { createWebHistory, createRouter } from 'vue-router';
 
 import HomePage from '@/pages/HomePage';
-import ListVideosPage from '@/pages/ListVideosPage';
-import SingleVideoPage from '@/pages/SingleVideoPage';
-import ListCollectionsPage from '@/pages/ListCollectionsPage';
-import SingleCollectionPage from '@/pages/SingleCollectionPage';
-import ListAuthorsPage from '@/pages/ListAuthorsPage';
-import SingleAuthorPage from '@/pages/SingleAuthorPage';
-import ContributePage from '@/pages/ContributePage.vue';
-import AboutPage from '@/pages/AboutPage';
 
 const routes = [
   {
@@ -19,45 +11,45 @@ const routes = [
   {
     path: '/videos',
     name: 'videos',
-    component: ListVideosPage
+    component: () => import(/* webpackChunkName: "videos" */ '@/pages/ListVideosPage')
   },
   {
     path: '/videos/:id',
     name: 'video',
-    component: SingleVideoPage,
-    props: true
+    props: true,
+    component: () => import(/* webpackChunkName: "videos" */ '@/pages/SingleVideoPage')
   },
   {
     path: '/collections',
     name: 'collections',
-    component: ListCollectionsPage
+    component: () => import(/* webpackChunkName: "collections" */ '@/pages/ListCollectionsPage')
   },
   {
     path: '/collections/:id',
     name: 'collection',
-    component: SingleCollectionPage,
-    props: true
+    props: true,
+    component: () => import(/* webpackChunkName: "collections" */ '@/pages/SingleCollectionPage')
   },
   {
     path: '/authors',
     name: 'authors',
-    component: ListAuthorsPage
+    component: () => import(/* webpackChunkName: "authors" */ '@/pages/ListAuthorsPage')
   },
   {
     path: '/authors/:id',
     name: 'author',
-    component: SingleAuthorPage,
-    props: true
+    props: true,
+    component: () => import(/* webpackChunkName: "authors" */ '@/pages/SingleAuthorPage')
   },
   {
     path: '/contribute',
     name: 'contribute',
-    component: ContributePage
+    component: () => import('@/pages/ContributePage')
   },
   {
     path: '/about',
     name: 'about',
-    component: AboutPage
+    component: () => import('@/pages/AboutPage')
   }
 ];
 
