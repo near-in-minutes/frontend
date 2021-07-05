@@ -1,17 +1,19 @@
 <template>
   <NavigationComponent />
-  <router-view />
+  <Suspense>
+    <router-view />
+  </Suspense>
   <FooterComponent />
 </template>
 
 <script>
-import NavigationComponent from '@/components/layout/NavigationComponent';
-import FooterComponent from '@/components/layout/FooterComponent';
+import NavigationComponent from "@/components/layout/NavigationComponent";
+import FooterComponent from "@/components/layout/FooterComponent";
 
 export default {
   components: {
     NavigationComponent,
-    FooterComponent
-  }
+    FooterComponent,
+  },
 };
 </script>

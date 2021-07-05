@@ -111,7 +111,7 @@ export default {
   setup() {
     const { t } = useI18n({ useScope: "global" });
     const { authors, fetchAllAuthors } = useAuthors();
-    console.log(authors);
+    // console.log(authors);
 
     onMounted(fetchAllAuthors);
 
