@@ -16,6 +16,7 @@ export {
   findOneAuthor,
   getAllCollections,
   findOneCollection,
+  getSummary
 };
 
 //---------------------------------------------------------
@@ -159,4 +160,12 @@ async function getAllCollections() {
 
 async function findOneCollection(collectionId) {
   return await findOne({ table: 'collections', id: collectionId });
+}
+
+//---------------------------------------------------------
+// SUMMARY API
+//---------------------------------------------------------
+
+async function getSummary() {
+  return await getAllFilteredArray('summary', 'all', 'name', 'all');
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative px-4 sm:px-6 lg:pb-28 lg:px-8">
+  <div class="relative pt-6 px-4 sm:px-6 lg:pb-28 lg:px-8">
     <div class="relative max-w-6xl m-auto">
       <ul v-if="collections" class="mt-12 max-w-lg mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:max-w-none">
         <li v-for="collection in collections" :key="collection.id" @click="$router.push({ name: 'collection', params: { id: collection.id } })" class="col-span-1 flex shadow-sm rounded-md cursor-pointer">
@@ -11,7 +11,6 @@
               <div class="text-gray-900 font-medium hover:text-gray-600">
                 {{ collection.name }}
               </div>
-
               <p class="text-gray-500">{{ t('collections.posts', collection.total_posts) }}</p>
             </div>
           </div>
