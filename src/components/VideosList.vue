@@ -114,7 +114,7 @@ export default {
     });
 
     const { currentRoute } = useRouter();
-    const readyToLoadMoreVideos = computed(() => currentRoute.value.name === 'Videos');
+    const readyToLoadMoreVideos = computed(() => currentRoute.value.name === 'videos');
 
     function formatDate(d) {
       const date = new Date(d);
