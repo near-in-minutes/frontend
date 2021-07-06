@@ -1,6 +1,6 @@
 // simple cache implementation
 const TIMEOUT = 12 * 60 * 60 * 1000; // 1 NEAR epoch (12 hours)
-const DEBUG = true;
+const DEBUG = false;
 
 let singleton;
 export default function initCache(timeout = TIMEOUT, debug = DEBUG) {
