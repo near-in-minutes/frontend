@@ -6,7 +6,8 @@
         lg:mx-auto
         lg:max-w-7xl
         lg:px-8
-        lg:grid lg:grid-cols-2
+        lg:grid
+        lg:grid-cols-2
         lg:gap-24
         lg:items-start
       "
@@ -17,10 +18,7 @@
           class="
             hidden
             sm:block
-            lg:absolute
-            lg:inset-y-0
-            lg:right-0
-            lg:w-screen
+            lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen
           "
         >
           <div
@@ -40,9 +38,7 @@
               top-8
               left-1/2
               -ml-3
-              lg:-right-8
-              lg:left-auto
-              lg:top-12
+              lg:-right-8 lg:left-auto lg:top-12
             "
             width="350"
             height="360"
@@ -216,7 +212,8 @@ export default {
 
     const author = await findOneAuthor(props.id);
     const content = author.fields.content;
-    // console.log(content);
+    const lang = author.fields.languages;
+    console.log(lang);
 
     const languages = author.fields.languages.map((lang) => {
       if (lang == "en") {
@@ -230,6 +227,9 @@ export default {
       }
       if (lang == "hi") {
         return "Hindi";
+      }
+      if (lang == "es") {
+        return "Spanish";
       }
     });
     // console.log(languages);

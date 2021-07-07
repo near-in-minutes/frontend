@@ -82,7 +82,7 @@ export default {
 
     await videoContentId.forEach((vc) => {
       findOneContent(vc).then((res) => {
-        console.log(res.fields);
+        // console.log(res.fields);
         return videoDetails.value.push(res);
       });
     });
