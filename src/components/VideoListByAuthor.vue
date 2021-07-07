@@ -1,4 +1,3 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <div class="w-full flex justify-center mt-8">
     <ul class="max-w-7xl grid grid-cols-1 gap-y-6 gap-x-12 sm:grid-cols-2 lg:grid-cols-3">
