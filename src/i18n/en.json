@@ -1,4 +1,7 @@
 {
+  "language": {
+    "en": "English"
+  },
   "navbar": {
     "home": "Home",
     "videos": "Videos",

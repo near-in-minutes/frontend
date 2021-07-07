@@ -1,11 +1,15 @@
 import { createI18n } from 'vue-i18n';
 
+import ar from './ar.json';
 import en from './en.json';
+import es from './es.json';
 import hi from './hi.json';
 import tr from './tr.json';
 
 const messages = {
+  ar,
   en,
+  es,
   hi,
   tr
 };
@@ -15,7 +19,9 @@ const config = {
   locale: 'en',
   fallbackLocale: 'en',
   pluralRules: {
+    ar: collectionSize,
     en: collectionSize,
+    es: collectionSize,
     hi: collectionSize,
     tr: collectionSize
   }
@@ -25,6 +31,10 @@ export default createI18n({
   messages,
   ...config
 });
+
+export function localeToLanguage(locale) {
+  return messages[locale].language.en;
+}
 
 function collectionSize(size, choices) {
   // "FAST | DIET | SNACK | PICNIC | FEAST",
