@@ -1,4 +1,8 @@
 {
+  "language": {
+    "en": "Turkish",
+    "tr": "Turkce"
+  },
   "navbar": {
     "home": "Anasayfa",
     "videos": "Videolar",

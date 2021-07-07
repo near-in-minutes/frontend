@@ -1,4 +1,8 @@
 {
+  "language": {
+    "en": "Hindi",
+    "hi": "हिंदी"
+  },
   "navbar": {
     "home": "होम",
     "videos": "वीडियोस",
