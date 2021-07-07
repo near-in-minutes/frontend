@@ -199,7 +199,6 @@
 
 <script>
 import { useI18n } from "vue-i18n";
-import moment from "moment";
 
 import { findOneAuthor } from "../services/airtable/index";
 
@@ -212,8 +211,6 @@ export default {
 
     const author = await findOneAuthor(props.id);
     const content = author.fields.content;
-    const lang = author.fields.languages;
-    console.log(lang);
 
     const languages = author.fields.languages.map((lang) => {
       if (lang == "en") {
@@ -245,7 +242,7 @@ export default {
       { label: "Github", value: authorGithubName, link: authorGithubLink },
     ];
 
-    return { t, moment, author, content, stats };
+    return { t, author, content, stats };
   },
   components: {
     VideoListByAuthor,

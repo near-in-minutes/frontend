@@ -47,7 +47,7 @@
               </p>
               <p class="mt-1 text-gray-500 text-sm text-right truncate">
                 Created at:
-                {{ moment(video.fields.created_at).format("MMM Do YY") }}
+                {{ formatDate(video.fields.created) }}
               </p>
             </div>
           </div>
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { ref, onMounted, toRaw, watch } from "vue";
+import { ref } from "vue";
 
 import moment from "moment";
 
@@ -87,10 +87,15 @@ export default {
       });
     });
 
+    function formatDate(d) {
+      const date = new Date(d);
+      return date.toLocaleDateString();
+    }
+
     return {
       videoDetails,
       authorId,
-      moment,
+      formatDate,
     };
   },
 };
