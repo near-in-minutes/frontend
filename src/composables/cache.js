@@ -22,19 +22,19 @@ class Cache {
 
   size(collection) {
     const check = this.data[collection] ? this.data[collection].length : -1;
-    this.debug && console.log(`size? [${check}]`);
+    this.debug && console.log(`size? [${collection}: ${check}]`);
     return check;
   }
 
   isEmpty(collection) {
     const check = this.data[collection] ? Object.keys(this.data[collection]).length === 0 : true;
-    this.debug && console.log(`isEmpty? [${check}]`);
+    this.debug && console.log(`isEmpty? [${collection}: ${check}]`);
     return check;
   }
 
   hasItem(collection, id) {
     const check = this.find(collection, id) !== -1;
-    this.debug && console.log(`hasItem? [${check}]`);
+    this.debug && console.log(`hasItem? [${collection}: ${check}]`);
     return check;
   }
 
@@ -72,7 +72,11 @@ class Cache {
   write(collection, data) {
     this.debug && console.log(`writing to cache: [${collection}]`);
     if (this.data[collection]) {
-      this.data[collection] = this.data[collection].concat(data);
+      if (collection === 'authors') {
+        this.data[collection] = data;
+      } else {
+        this.data[collection] = this.data[collection].concat(data);
+      }
     } else {
       this.data[collection] = data;
     }

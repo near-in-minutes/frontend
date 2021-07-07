@@ -1,14 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 
-import HomePage from "@/pages/HomePage";
-import ListVideosPage from "@/pages/ListVideosPage";
-import SingleVideoPage from "@/pages/SingleVideoPage";
-import ListCollectionsPage from "@/pages/ListCollectionsPage";
-import SingleCollectionPage from "@/pages/SingleCollectionPage";
-import ListAuthorsPage from "@/pages/ListAuthorsPage";
-import SingleAuthorPage from "@/pages/SingleAuthorPage";
-import ContributePage from "@/pages/ContributePage.vue";
-import AboutPage from "@/pages/AboutPage";
+import HomePage from '@/pages/HomePage';
 
 const routes = [
   {
@@ -17,49 +9,48 @@ const routes = [
     component: HomePage,
   },
   {
-    path: "/videos",
-    name: "videos",
-    component: ListVideosPage,
+    path: '/videos',
+    name: 'videos',
+    component: () => import(/* webpackChunkName: "videos" */ '@/pages/ListVideosPage')
   },
   {
-    path: "/videos/:id",
-    name: "video",
-    component: SingleVideoPage,
+    path: '/videos/:id',
+    name: 'video',
     props: true,
+    component: () => import(/* webpackChunkName: "videos" */ '@/pages/SingleVideoPage')
   },
   {
-    path: "/collections",
-    name: "collections",
-    component: ListCollectionsPage,
+    path: '/collections',
+    name: 'collections',
+    component: () => import(/* webpackChunkName: "collections" */ '@/pages/ListCollectionsPage')
   },
   {
-    path: "/collections/:id",
-    name: "collection",
-    component: SingleCollectionPage,
+    path: '/collections/:id',
+    name: 'collection',
     props: true,
+    component: () => import(/* webpackChunkName: "collections" */ '@/pages/SingleCollectionPage')
   },
   {
-    path: "/authors",
-    name: "authors",
-    component: ListAuthorsPage,
+    path: '/authors',
+    name: 'authors',
+    component: () => import(/* webpackChunkName: "authors" */ '@/pages/ListAuthorsPage')
+  },
+  {
+    path: '/authors/:id',
+    name: 'author',
     props: true,
+    component: () => import(/* webpackChunkName: "authors" */ '@/pages/SingleAuthorPage')
   },
   {
-    path: "/authors/:id",
-    name: "author",
-    component: SingleAuthorPage,
-    props: true,
+    path: '/contribute',
+    name: 'contribute',
+    component: () => import('@/pages/ContributePage')
   },
   {
-    path: "/contribute",
-    name: "contribute",
-    component: ContributePage,
-  },
-  {
-    path: "/about",
-    name: "about",
-    component: AboutPage,
-  },
+    path: '/about',
+    name: 'about',
+    component: () => import('@/pages/AboutPage')
+  }
 ];
 
 const router = createRouter({

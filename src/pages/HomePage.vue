@@ -1,5 +1,6 @@
 <template>
   <HeroSection />
+  <SummaryStatistics />
   <CollectionsList />
   <div class="relative my-20 max-w-sm sm:max-w-lg lg:max-w-6xl mx-auto">
     <div class="absolute inset-0 flex items-center" aria-hidden="true">
@@ -23,6 +24,7 @@ import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import HeroSection from '@/components/HeroSection';
+import SummaryStatistics from '@/components/SummaryStatistics';
 import CollectionsList from '@/components/CollectionsList';
 import VideosList from '@/components/VideosList';
 import ContributionCTA from '@/components/ContributionCTA';
@@ -36,7 +38,8 @@ export default {
     CollectionsList,
     ContributionCTA,
     HeroSection,
-    VideosList
+    VideosList,
+    SummaryStatistics
   },
   setup() {
     const { t } = useI18n({ useScope: 'global' });

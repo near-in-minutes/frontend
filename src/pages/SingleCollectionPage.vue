@@ -16,13 +16,13 @@
               <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 <div v-for="item in stats" :key="item.id" class="relative bg-white py-6 px-4 sm:py-4 sm:px-6 shadow rounded-lg overflow-hidden">
                   <dt>
-                    <div :class="[`bg-${item.color}`, 'absolute rounded-md p-3']">
+                    <div :class="[item.color.bg, 'absolute rounded-md p-3']">
                       <component :is="item.icon" class="h-8 w-8 text-white" aria-hidden="true" />
                     </div>
                     <p class="ml-16 text-sm font-bold text-gray-500 truncate">{{ item.name }}</p>
                   </dt>
                   <dd class="ml-16 flex items-baseline sm:pb-7">
-                    <p :class="[`text-${item.color}`, 'text-4xl font-semibold']">
+                    <p :class="[item.color.text, 'text-4xl font-semibold']">
                       {{ item.stat }}
                     </p>
                   </dd>
@@ -108,9 +108,9 @@ import { PlayIcon, VideoCameraIcon, UserGroupIcon, TranslateIcon } from '@heroic
 import marked from 'marked';
 
 const stats = reactive([
-  { name: 'Videos', color: 'near-red', icon: VideoCameraIcon },
-  { name: 'Authors', color: 'near-blue', icon: UserGroupIcon },
-  { name: 'Languages', color: 'near-orange', icon: TranslateIcon }
+  { name: 'Videos', color: { text: 'text-near-red', bg: 'bg-near-red' }, icon: VideoCameraIcon },
+  { name: 'Authors', color: { text: 'text-near-blue', bg: 'bg-near-blue' }, icon: UserGroupIcon },
+  { name: 'Languages', color: { text: 'text-near-orange', bg: 'bg-near-orange' }, icon: TranslateIcon }
 ]);
 
 function addStat(name, value) {
