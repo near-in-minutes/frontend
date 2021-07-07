@@ -43,20 +43,18 @@ export default {
   setup() {
     const { t } = useI18n({ useScope: 'global' });
     const { authors, fetchAllAuthors } = useAuthors();
-    // console.log(authors);
 
     onMounted(fetchAllAuthors);
 
-    return {
-      t,
-      authors
-    };
-  },
-  methods: {
-    formatDate(d) {
+    function formatDate(d) {
       const date = new Date(d);
       return date.toLocaleDateString();
     }
+    return {
+      t,
+      authors,
+      formatDate
+    };
   }
 };
 </script>

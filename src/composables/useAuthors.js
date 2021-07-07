@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { getAllAuthors } from '@/services/airtable';
+import { getAllAuthors, findOneAuthor } from '@/services/airtable';
 import initCache from './cache';
 
 const EXCLUSIONS = [];
@@ -44,18 +44,35 @@ export function useAuthors() {
     });
   }
 
-  return { status, authors, fetchAllAuthors, fetchAllAuthorsWithContributions };
+  async function fetchOneAuthor(id, expand = false) {
+    waitFor(async () => {
+      return await checkCache(async () => {
+        const result = await findOneAuthor(id, expand);
+        return {
+          id: result.id,
+          ...result.fields,
+          github: {
+            url: result.fields.github,
+            avatar: `${result.fields.github}.png`,
+            name: result.fields.github.replace('https://github.com/', '')
+          }
+        };
+      }, `author-${id}`);
+    });
+  }
+
+  return { status, authors, fetchAllAuthors, fetchAllAuthorsWithContributions, fetchOneAuthor };
 
   /*
   HELPER FUNCTIONS
   */
 
-  async function checkCache(asyncCall) {
-    if (!(cache.isEmpty(CACHE_KEY) || cache.isStale())) {
-      return cache.read(CACHE_KEY);
+  async function checkCache(asyncCall, key = CACHE_KEY) {
+    if (!(cache.isEmpty(key) || cache.isStale())) {
+      return cache.read(key);
     } else {
       const results = await asyncCall();
-      cache.write(CACHE_KEY, results);
+      cache.write(key, results);
       return results;
     }
   }
