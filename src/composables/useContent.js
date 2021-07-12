@@ -7,7 +7,7 @@ const cache = initCache();
 export function useContent(loc) {
   const locale = ref(loc);
   const content = ref([]);
-  const limit = ref(3);
+  const limit = ref(4);
   const contentId = ref('');
   const status = ref('');
 
