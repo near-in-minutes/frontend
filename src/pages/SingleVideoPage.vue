@@ -64,7 +64,7 @@ export default {
   },
   setup(props) {
     const { t, locale } = useI18n({ useScope: 'global' });
-    const { content, fetchTranslationsForContent, status: contentStatus } = useContent(locale);
+    const { content, fetchTranslationsForContent, status: contentStatus, setLimit } = useContent(locale);
     const { authors, fetchAllAuthors, status: authorStatus } = useAuthors();
 
     onMounted(async () => fetchTranslationsForContent(props.id));
@@ -77,6 +77,7 @@ export default {
     // populate author data as soon as it's ready
     watch(authorStatus, status => {
       if (status === 'ready') {
+        setLimit(content.length)
         const rawContent = toRaw(content.value);
         const rawAuthors = toRaw(authors.value);
         content.value = rawContent.filter(byLocale).map(video => {
