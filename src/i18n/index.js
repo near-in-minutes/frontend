@@ -1,6 +1,7 @@
 import { createI18n } from 'vue-i18n';
 
 import ar from './ar.json';
+import de from './de.json';
 import en from './en.json';
 import es from './es.json';
 import hi from './hi.json';
@@ -11,7 +12,8 @@ const messages = {
   en,
   es,
   hi,
-  tr
+  tr,
+  de
 };
 
 const config = {
@@ -23,7 +25,8 @@ const config = {
     en: collectionSize,
     es: collectionSize,
     hi: collectionSize,
-    tr: collectionSize
+    tr: collectionSize,
+    de: collectionSize
   }
 };
 

@@ -46,7 +46,8 @@ const languages = [
   { name: 'Hindi', code: 'hi', available: true },
   { name: 'Russian', code: 'ru', available: false },
   { name: 'Spanish', code: 'es', available: true },
-  { name: 'Turkish', code: 'tr', available: true }
+  { name: 'Turkish', code: 'tr', available: true },
+  { name: 'German', code: 'de', available: true }
 ];
 
 export default {

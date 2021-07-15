@@ -1,0 +1,90 @@
+{
+    "language": {
+        "en": "German",
+        "de": "Deutsch"
+    },
+    "navbar": {
+      "home": "Home",
+      "videos": "Videos",
+      "collections": "Sammlungen",
+      "authors": "Autoren",
+      "contribute": "Beitragen",
+      "about": "Über uns"
+    },
+    "main": {
+      "title": "Lerne NEAR mit einem {0} Ansatz",
+      "titleHighlight": "Communitiy-basierten"
+    },
+    "videos": {
+      "title": "Video-Tutorials",
+      "subtitle": "Sieh dir unsere neuesten Tutorials an und lerne mehr über NEAR",
+      "btn": "Sieh dir alle Videos an",
+      "more": "Mehr Videos laden",
+      "learnMore": "Mehr darüber lernen"
+    },
+    "collections": {
+      "title": "Video-Sammlungen",
+      "subtitle": "Sammlung ähnlicher Videos",
+      "desc": "Beginnen deine Reise mit einer Reihe von Videos in jeder Sammlung",
+      "meal": "FAST | DIET | SNACK | PICNIC | FEAST",
+      "posts": "Derzeit keine Videos | {count} Video | {count} Videos",
+      "single": {
+        "title": "Sammlung: {0}",
+        "subtitle": "Diese Sammlung hat {0} Videos, welche von {1} Autoren eingetragen wurden"
+      }
+    },
+    "authors": {
+      "title": "Videoersteller",
+      "subtitle": "Ein herzliches \"Willkomen!\" und \"Danke schön!\" an alle Unterstützer*innen"
+    },
+    "contribute": {
+      "title": "Werde Teil der Community",
+      "subTitle": "Zeig uns mehr von dir",
+      "newContent": "Neue Inhalte einreichen",
+      "newTopic": "Neue Themen vorschlagen",
+      "translate": "Inhalte übersetzen",
+      "btn": "Lerne, wie du beitragen kannst",
+      "instructions": {
+        "title": "Einen Beitrag leisten",
+        "desc": "Danke, dass du darüber nachdenkst NEAR in Minutes zu unterstützen. Sieh dir diese Anleitung an, um loszulegen.",
+        "warning": "Derzeit akzeptieren wir nur {0} Videos.",
+        "loomLink": "Loom",
+        "setup": {
+          "title": "Wie du dein System einrichtest",
+          "stepOne": "Teilen deinen Bildschirm nach dem Thema des Tutorials ein und platziere  die Dokumentenseite, das Terminal, den Code-Editor und die Werkzeuge auf deinem Bildschirm",
+          "stepTwo": "Zeigen deine Systeminformationen, Toolversionen und das Datum im geteilten Terminalbereich an",
+          "stepthree": "Öffnen die Loom-App und vergewisser dich, dass die Aufnahmeeinstellungen korrekt sind"
+        },
+        "video": {
+          "title": "Wie man ein Video macht",
+          "stepOne": "Besuche die Website",
+          "loom": "Loom",
+          "stepTwo": "Klick auf 'Get Loom for Free' und melde dich an",
+          "stepThree": "Klicke auf den Avatar in der rechten oberen Ecke der Seite und wähle deine präferierte Download-Methode.",
+          "stepFour": "Wenn du bereit für die Aufnahme bist, klicke auf 'Aufnahme starten'"
+        },
+        "issues": {
+          "subTitle": "So reichst du dein Video ein (über Github Issues)",
+          "stepOne": "Gehe zum issues Abschnitt",
+          "issues": "NEAR in Minutes Community",
+          "stepTwo": "Klicke auf 'New issue' und wählen die Art des Inhalts, den du beitragen möchtest.",          
+          "stepThree": "Wählen aus, wie du beitragen möchtest, und fülle die Informationen entsprechend aus.",
+          "seeExample": "Wenn du ein Beispiel für ein eingereichtes Issue sehen möchten",
+          "learnMore": "Wenn du weitere Informationen darüber erhalten möchtest, wie du ein gutes Video erstellen kannst",
+          "clickHere": "Klick hier",
+          "types": "Derzeit haben wir drei Arten von Beiträgen:",
+          "newContentDesc": "wenn du ein Video im Kopf hast, welches du gerne erstellen und der Videosammlung hinzufügen möchtest.",
+          "newTopicDesc": "Wenn du den Inhalt in eine andere Sprache übersetzen möchtest. Derzeit unterstützen wir Türkisch und Hindi.",
+          "translateDesc": "Wenn du ein Thema im Kopf hast und es vorschlagen möchtest, damit jemand anderes ein Tutorial darüber erstellen kann."
+        }
+      }
+    },
+    "about": {
+      "title": "Über NEAR in Minutes",
+      "desc": "NEAR in Minutes ist eine NEAR-COOP (NEAR Community Owned and Operated Project)"
+    },
+    "footer": {
+      "rights": "2021 NEAR in Minutes, Alle Rechte vorbehalten."
+    }
+  }
+  
