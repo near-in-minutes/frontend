@@ -77,7 +77,7 @@ export default {
     // populate author data as soon as it's ready
     watch(authorStatus, status => {
       if (status === 'ready') {
-        setLimit(content.length)
+        setLimit(content.value.length)
         const rawContent = toRaw(content.value);
         const rawAuthors = toRaw(authors.value);
         content.value = rawContent.filter(byLocale).map(video => {
