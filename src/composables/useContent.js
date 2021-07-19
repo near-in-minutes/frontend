@@ -30,7 +30,7 @@ export function useContent(loc) {
   }
 
   async function fetchMostRecent() {
-    waitFor(async () => {
+    waitForLimited(async () => {
       const collection = `translations-${locale.value}`;
       return await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value));
     });
@@ -91,10 +91,20 @@ export function useContent(loc) {
     status.value = 'ready';
   }
 
+  async function waitForLimited(fn) {
+    status.value = 'fetching';
+    const results = await fn();
+    updateContent(limitContent(results));
+    status.value = 'ready';
+  }
+    
+  function limitContent(results) {
+    return results.slice(0, limit.value);
+  }
+
   function updateContent(results) {
     fetched.prev = content.value.length;
     content.value = results
-      .slice(0, limit.value)
       .map(r => ({
         id: r.id,
         ...r.fields
