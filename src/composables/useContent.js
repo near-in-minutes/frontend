@@ -9,7 +9,8 @@ export function useContent(loc) {
   const content = ref([]);
   const limit = ref(3);
   const contentId = ref('');
-  const status = ref('');
+  const status =ref('');
+  const statuses = {ready:'ready',fetching:'fetching'}
 
   const fetched = reactive({
     prev: -1,
@@ -30,29 +31,32 @@ export function useContent(loc) {
   }
 
   async function fetchMostRecent() {
-    waitForLimited(async () => {
-      const collection = `translations-${locale.value}`;
-      return await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value));
-    });
+    waitForLimited(mostRecent);
   }
 
   async function fetchOneContent(id) {
-    waitFor(async () => {
+    waitFor(async function oneContent() {
       return await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
     });
   }
 
   async function fetchAllContent(ids) {
-    waitFor(async () => {
+    waitFor(async function allContent() {
       return await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
     });
   }
 
   async function fetchTranslationsForContent(id) {
-    waitFor(async () => {
+    waitFor(async function translationForContent() {
       const collection = `translations-${locale.value}`;
       return await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
     });
+  }
+
+  const mostRecent = async function() {
+    const collection = `translations-${locale.value}`;
+    return await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value)
+    );
   }
 
   return {
@@ -85,17 +89,17 @@ export function useContent(loc) {
   }
 
   async function waitFor(fn) {
-    status.value = 'fetching';
+    status.value = statuses.fetching
     const results = await fn();
     updateContent(results);
-    status.value = 'ready';
+    status.value = statuses.ready
   }
 
   async function waitForLimited(fn) {
-    status.value = 'fetching';
+    status.value = statuses.fetching
     const results = await fn();
     updateContent(limitContent(results));
-    status.value = 'ready';
+    status.value = statuses.ready
   }
     
   function limitContent(results) {
