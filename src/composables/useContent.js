@@ -35,22 +35,15 @@ export function useContent(loc) {
   }
 
   async function fetchOneContent(id) {
-    waitFor(async function oneContent() {
-      return await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
-    });
+    waitFor(function() {return oneContent(id)});
   }
 
   async function fetchAllContent(ids) {
-    waitFor(async function allContent() {
-      return await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
-    });
+    waitFor(function (){ return allContent(ids) });
   }
 
   async function fetchTranslationsForContent(id) {
-    waitFor(async function translationForContent() {
-      const collection = `translations-${locale.value}`;
-      return await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
-    });
+    waitFor(function (){return mostTranslations(id);});
   }
 
   const mostRecent = async function() {
@@ -58,6 +51,22 @@ export function useContent(loc) {
     return await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value)
     );
   }
+
+  const oneContent = async function (id) {
+    return await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
+
+  }
+
+  const allContent = async function(ids) {
+    return await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
+  }
+  
+  const mostTranslations = async function translationForContent(id) {
+    const collection = `translations-${locale.value}`;
+    return await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
+  }
+
+  
 
   return {
     status,
