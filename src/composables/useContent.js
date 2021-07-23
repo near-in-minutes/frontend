@@ -9,8 +9,8 @@ export function useContent(loc) {
   const content = ref([]);
   const limit = ref(3);
   const contentId = ref('');
-  const status =ref('');
-  const statuses = {ready:'ready',fetching:'fetching'}
+  const status = ref('');
+  const statuses = { ready: 'ready', fetching: 'fetching' };
 
   const fetched = reactive({
     prev: -1,
@@ -35,38 +35,44 @@ export function useContent(loc) {
   }
 
   async function fetchOneContent(id) {
-    waitFor(function() {return oneContent(id)});
+    waitFor(function () {
+      return oneContent(id);
+    });
   }
 
   async function fetchAllContent(ids) {
-    waitFor(function (){ return allContent(ids) });
+    waitFor(function () {
+      return allContent(ids);
+    });
   }
 
   async function fetchTranslationsForContent(id) {
-    waitFor(function (){return mostTranslations(id);});
+    waitFor(function () {
+      return mostTranslations(id);
+    });
   }
 
-  const mostRecent = async function() {
+  const mostRecent = async function () {
     const collection = `translations-${locale.value}`;
-    return await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value)
-    );
-  }
+    const recentCache = await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value));
+    return recentCache;
+  };
 
   const oneContent = async function (id) {
-    return await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
+    const oneContentCache = await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
+    return oneContentCache;
+  };
 
-  }
+  const allContent = async function (ids) {
+    const allContentCache = await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
+    return allContentCache;
+  };
 
-  const allContent = async function(ids) {
-    return await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
-  }
-  
   const mostTranslations = async function translationForContent(id) {
     const collection = `translations-${locale.value}`;
-    return await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
-  }
-
-  
+    const translationsCache = await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
+    return translationsCache;
+  };
 
   return {
     status,
@@ -97,20 +103,21 @@ export function useContent(loc) {
     }
   }
 
-  async function waitFor(fn) {
-    status.value = statuses.fetching
-    const results = await fn();
+  //waitFor() expects an airtable function as arg, it then calls the function to retreive data and updates the value of content
+  async function waitFor(airtableFunction) {
+    status.value = statuses.fetching;
+    const results = await airtableFunction();
     updateContent(results);
-    status.value = statuses.ready
+    status.value = statuses.ready;
   }
 
-  async function waitForLimited(fn) {
-    status.value = statuses.fetching
-    const results = await fn();
+  async function waitForLimited(airtableFunction) {
+    status.value = statuses.fetching;
+    const results = await airtableFunction();
     updateContent(limitContent(results));
-    status.value = statuses.ready
+    status.value = statuses.ready;
   }
-    
+
   function limitContent(results) {
     return results.slice(0, limit.value);
   }
