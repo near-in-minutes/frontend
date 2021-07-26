@@ -31,44 +31,44 @@ export function useContent(loc) {
   }
 
   async function fetchMostRecent() {
-    waitForLimited(mostRecent);
+    waitForLimited(fetchRecentFromAirtable);
   }
 
   async function fetchOneContent(id) {
     waitFor(function () {
-      return oneContent(id);
+      return fetchOneContentFromAirtable(id);
     });
   }
 
   async function fetchAllContent(ids) {
     waitFor(function () {
-      return allContent(ids);
+      return fetchAllContentFromAirtable(ids);
     });
   }
 
   async function fetchTranslationsForContent(id) {
     waitFor(function () {
-      return mostTranslations(id);
+      return fetchMostTranslationsFromAirtable(id);
     });
   }
 
-  const mostRecent = async function () {
+  const fetchRecentFromAirtable = async () => {
     const collection = `translations-${locale.value}`;
     const recentCache = await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value));
     return recentCache;
   };
 
-  const oneContent = async function (id) {
+  const fetchOneContentFromAirtable = async id => {
     const oneContentCache = await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
     return oneContentCache;
   };
 
-  const allContent = async function (ids) {
+  const fetchAllContentFromAirtable = async ids => {
     const allContentCache = await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
     return allContentCache;
   };
 
-  const mostTranslations = async function translationForContent(id) {
+  const fetchMostTranslationsFromAirtable = async id => {
     const collection = `translations-${locale.value}`;
     const translationsCache = await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
     return translationsCache;
