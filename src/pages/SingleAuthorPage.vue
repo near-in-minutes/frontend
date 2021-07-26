@@ -19,11 +19,11 @@
             <img class="absolute inset-0 h-full w-full object-cover" :src="author.github.avatar" alt="github avatar" />
             <div class="absolute inset-0 bg-white-300 mix-blend-multiply" />
             <div class="absolute inset-0 bg-gradient-to-tl from-near-green via-black opacity-30" />
-            <div class="relative px-8 bg-near-white opacity-50">
+            <div class="relative px-8 bg-near-black opacity-70">
               <blockquote class="mt-8">
                 <footer class="mt-4">
-                  <p class="text-base font-extrabold"><span class="text-gray-900">MainNet: </span> {{ author.near_account }}</p>
-                  <p class="text-base font-extrabold"><span class="text-gray-900">TestNet: </span> {{ author.near_testnet }}</p>
+                  <p class="text-base text-white font-bold"><span class="text-white">MainNet: </span> {{ author.near_account }}</p>
+                  <p class="text-base text-white font-bold"><span class="text-white">TestNet: </span> {{ author.near_testnet }}</p>
                 </footer>
               </blockquote>
             </div>
@@ -72,12 +72,12 @@
 </template>
 
 <script>
-import { useI18n } from "vue-i18n";
-import { onMounted, watch } from "vue";
+import { useI18n } from 'vue-i18n';
+import { onMounted, watch } from 'vue';
 
-import { localeToLanguage } from "@/i18n";
-import { useAuthors } from "@/composables/useAuthors";
-import VideoListByAuthor from "@/components/VideoListByAuthor.vue";
+import { localeToLanguage } from '@/i18n';
+import { useAuthors } from '@/composables/useAuthors';
+import VideoListByAuthor from '@/components/VideoListByAuthor.vue';
 
 export default {
   components: {
@@ -90,17 +90,17 @@ export default {
     }
   },
   async setup(props) {
-    const { t } = useI18n({ useScope: "global" });
+    const { t } = useI18n({ useScope: 'global' });
 
     const { status: authorStatus, authors: author, fetchOneAuthor } = useAuthors();
 
     onMounted(() => fetchOneAuthor(props.id, true));
 
     watch(authorStatus, status => {
-      if (status === "ready") {
+      if (status === 'ready') {
         author.value = {
           ...author.value,
-          languages: author.value.languages.map(localeToLanguage).join(", ")
+          languages: author.value.languages.map(localeToLanguage).join(', ')
         };
       }
     });
