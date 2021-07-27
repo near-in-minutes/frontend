@@ -1,13 +1,13 @@
-import LogRocket from 'logrocket';
-LogRocket.init('near/near-in-minutes');
+import LogRocket from "logrocket";
+LogRocket.init("near/near-in-minutes");
 
-import { createApp } from 'vue';
+import { createApp } from "vue";
 
-import App from './App.vue';
-import router from '@/router';
+import App from "./App.vue";
+import router from "@/router";
 
-import 'tailwindcss/tailwind.css';
+import "tailwindcss/tailwind.css";
 
-import i18n from '@/i18n';
+import i18n from "@/i18n";
 
-createApp(App).use(router).use(i18n).mount('#app');
+createApp(App).use(router).use(i18n).mount("#app");

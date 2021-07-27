@@ -20,16 +20,16 @@
 </template>
 
 <script>
-import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 
-import HeroSection from '@/components/HeroSection';
-import SummaryStatistics from '@/components/SummaryStatistics';
-import CollectionsList from '@/components/CollectionsList';
-import VideosList from '@/components/VideosList';
-import ContributionCTA from '@/components/ContributionCTA';
-import AuthorsList from '@/components/AuthorsList';
-import BaseButton from '@/components/base/BaseButton';
+import HeroSection from "@/components/HeroSection";
+import SummaryStatistics from "@/components/SummaryStatistics";
+import CollectionsList from "@/components/CollectionsList";
+import VideosList from "@/components/VideosList";
+import ContributionCTA from "@/components/ContributionCTA";
+import AuthorsList from "@/components/AuthorsList";
+import BaseButton from "@/components/base/BaseButton";
 
 export default {
   components: {
@@ -39,13 +39,13 @@ export default {
     ContributionCTA,
     HeroSection,
     VideosList,
-    SummaryStatistics
+    SummaryStatistics,
   },
   setup() {
-    const { t } = useI18n({ useScope: 'global' });
-    const ctaBtn = computed(() => t('contribute.btn'));
+    const { t } = useI18n({ useScope: "global" });
+    const ctaBtn = computed(() => t("contribute.btn"));
 
     return { t, ctaBtn };
-  }
+  },
 };
 </script>

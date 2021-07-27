@@ -1,11 +1,11 @@
-import { createI18n } from 'vue-i18n';
+import { createI18n } from "vue-i18n";
 
-import ar from './ar.json';
-import de from './de.json';
-import en from './en.json';
-import es from './es.json';
-import hi from './hi.json';
-import tr from './tr.json';
+import ar from "./ar.json";
+import de from "./de.json";
+import en from "./en.json";
+import es from "./es.json";
+import hi from "./hi.json";
+import tr from "./tr.json";
 
 const messages = {
   ar,
@@ -13,26 +13,26 @@ const messages = {
   es,
   hi,
   tr,
-  de
+  de,
 };
 
 const config = {
   legacy: false, // you must set `false`, to use Composition API
-  locale: 'en',
-  fallbackLocale: 'en',
+  locale: "en",
+  fallbackLocale: "en",
   pluralRules: {
     ar: collectionSize,
     en: collectionSize,
     es: collectionSize,
     hi: collectionSize,
     tr: collectionSize,
-    de: collectionSize
-  }
+    de: collectionSize,
+  },
 };
 
 export default createI18n({
   messages,
-  ...config
+  ...config,
 });
 
 export function localeToLanguage(locale) {
