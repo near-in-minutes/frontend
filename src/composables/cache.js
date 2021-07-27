@@ -74,6 +74,14 @@ class Cache {
     if (this.data[collection]) {
       if (collection === 'authors') {
         this.data[collection] = data;
+      } else if (/translations/.test(collection)) {
+        const newItems = [];
+        data.map(item => {
+          if (!this.find(collection, item.id)) {
+            newItems.push(item);
+          }
+        });
+        this.data[collection] = newItems;
       } else {
         this.data[collection] = this.data[collection].concat(data);
       }
