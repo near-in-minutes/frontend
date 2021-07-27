@@ -1,13 +1,13 @@
-import { ref } from "vue";
-import { getAllCollections, findOneCollection } from "@/services/airtable";
-import initCache from "./cache";
+import { ref } from 'vue';
+import { getAllCollections, findOneCollection } from '@/services/airtable';
+import initCache from './cache';
 
 const cache = initCache();
-const CACHE_KEY = "collections";
+const CACHE_KEY = 'collections';
 
 export function useCollections() {
   const collections = ref([]);
-  const status = ref("");
+  const status = ref('');
 
   async function fetchOneCollection(id) {
     waitFor(async () => {
@@ -15,7 +15,7 @@ export function useCollections() {
         const results = await findOneCollection(id);
         return {
           id: results.id,
-          ...results.fields,
+          ...results.fields
         };
       }, `collection-${id}`);
     });
@@ -25,10 +25,10 @@ export function useCollections() {
     waitFor(async () => {
       return await checkCache(async () => {
         const results = await getAllCollections();
-        return results.map((c) => {
+        return results.map(c => {
           return {
             id: c.id,
-            ...c.fields,
+            ...c.fields
           };
         });
       });
@@ -52,9 +52,9 @@ export function useCollections() {
   }
 
   async function waitFor(fn) {
-    status.value = "fetching";
+    status.value = 'fetching';
     const results = await fn();
     collections.value = results;
-    status.value = "ready";
+    status.value = 'ready';
   }
 }

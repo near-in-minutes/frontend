@@ -1,24 +1,13 @@
 <template>
   <div class="mt-10">
     <dl class="grid grid-cols-2">
-      <h2
-        class="
-          text-3xl text-near-green
-          font-extrabold
-          tracking-tight
-          sm:text-4xl
-        "
-      >
+      <h2 class="text-3xl text-near-green font-extrabold tracking-tight sm:text-4xl">
         {{ video.title }}
       </h2>
       <div class="flex justify-end">
         <div class="flex-shrink-0">
           <span class="sr-only">{{ video.author.name }}</span>
-          <img
-            class="h-10 w-10 rounded-full"
-            :src="video.author.githubAvatar"
-            alt=""
-          />
+          <img class="h-10 w-10 rounded-full" :src="video.author.githubAvatar" alt="" />
         </div>
         <div class="ml-3">
           <p class="text-sm font-medium text-gray-900">
@@ -42,8 +31,8 @@ export default {
   props: {
     video: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
   methods: {
     formatDate(d) {
@@ -56,7 +45,7 @@ export default {
       const mins = Math.floor(d / 60);
       const secs = d % 60;
       return `${mins}:${secs.toString().length === 1 ? `0${secs}` : secs}`;
-    },
-  },
+    }
+  }
 };
 </script>

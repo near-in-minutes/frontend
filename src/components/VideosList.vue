@@ -1,20 +1,8 @@
 <template>
   <div :key="Math.random()" class="relative px-4 sm:px-6 lg:pb-28 lg:px-8">
     <div class="relative max-w-6xl m-auto">
-      <div
-        class="mt-12 max-w-lg mx-auto grid gap-12 lg:grid-cols-3 lg:max-w-none"
-      >
-        <div
-          v-for="video in content"
-          :key="renderContentId(video)"
-          class="
-            flex flex-col
-            rounded-lg
-            shadow-md
-            hover:shadow-xl
-            overflow-hidden
-          "
-        >
+      <div class="mt-12 max-w-lg mx-auto grid gap-12 lg:grid-cols-3 lg:max-w-none">
+        <div v-for="video in content" :key="renderContentId(video)" class="flex flex-col rounded-lg shadow-md hover:shadow-xl overflow-hidden">
           <router-link :to="'/videos/' + renderContentId(video)">
             <div class="flex-shrink-0">
               <div class="h-50 w-full object-cover flex justify-center">
@@ -35,11 +23,7 @@
 
             <div class="flex-1 bg-white p-6 flex flex-col justify-between">
               <div class="h-32">
-                <span
-                  class="text-sm font-medium text-near-green mr-3"
-                  v-for="tag in video.content_tags"
-                  :key="tag"
-                >
+                <span class="text-sm font-medium text-near-green mr-3" v-for="tag in video.content_tags" :key="tag">
                   {{ tag }}
                 </span>
                 <p class="text-xl font-semibold text-gray-900">
@@ -52,11 +36,7 @@
               <div v-if="video.author" class="mt-6 flex items-center">
                 <div class="flex-shrink-0">
                   <span class="sr-only">{{ video.author.name }}</span>
-                  <img
-                    class="h-10 w-10 rounded-full"
-                    :src="video.author.githubAvatar"
-                    alt=""
-                  />
+                  <img class="h-10 w-10 rounded-full" :src="video.author.githubAvatar" alt="" />
                 </div>
                 <div class="ml-3">
                   <p class="text-sm font-medium text-gray-900">
@@ -76,46 +56,35 @@
         </div>
       </div>
     </div>
-    <BaseButton
-      v-if="readyToLoadMoreVideos"
-      btn-text="load more"
-      @click="loadMoreVideos"
-    />
+    <BaseButton v-if="readyToLoadMoreVideos" btn-text="load more" @click="loadMoreVideos" />
   </div>
 </template>
 
 <script>
-import { onMounted, watch, computed, toRaw } from "@vue/runtime-core";
-import { useI18n } from "vue-i18n";
-import { useRouter } from "vue-router";
-import { PlayIcon } from "@heroicons/vue/outline";
+import { onMounted, watch, computed, toRaw } from '@vue/runtime-core';
+import { useI18n } from 'vue-i18n';
+import { useRouter } from 'vue-router';
+import { PlayIcon } from '@heroicons/vue/outline';
 
-import { useContent } from "@/composables/useContent";
-import { useAuthors } from "@/composables/useAuthors";
+import { useContent } from '@/composables/useContent';
+import { useAuthors } from '@/composables/useAuthors';
 
-import BaseButton from "@/components/base/BaseButton";
+import BaseButton from '@/components/base/BaseButton';
 
 export default {
   props: {
     show: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   components: {
     BaseButton,
-    PlayIcon,
+    PlayIcon
   },
   setup(props) {
-    const { t, locale } = useI18n({ useScope: "global" });
-    const {
-      status: contentStatus,
-      content,
-      limit,
-      setLimit,
-      setLocale: setContentLocale,
-      fetchMostRecent,
-    } = useContent(locale);
+    const { t, locale } = useI18n({ useScope: 'global' });
+    const { status: contentStatus, content, limit, setLimit, setLocale: setContentLocale, fetchMostRecent } = useContent(locale);
 
     onMounted(() => {
       setLimit(props.show);
@@ -128,28 +97,26 @@ export default {
     const { status: authorStatus, authors, fetchAllAuthors } = useAuthors();
 
     // wait til content is available to fetch authors
-    watch(contentStatus, (status) => {
-      if (status === "ready") fetchAllAuthors();
+    watch(contentStatus, status => {
+      if (status === 'ready') fetchAllAuthors();
     });
 
     // populate author data as soon as it's ready
-    watch(authorStatus, (status) => {
-      if (status === "ready") {
+    watch(authorStatus, status => {
+      if (status === 'ready') {
         const rawContent = toRaw(content.value);
         const rawAuthors = toRaw(authors.value);
-        content.value = rawContent.map((video) => {
+        content.value = rawContent.map(video => {
           return {
             ...video,
-            author: rawAuthors.find((a) => a.id === video.author[0]),
+            author: rawAuthors.find(a => a.id === video.author[0])
           };
         });
       }
     });
 
     const { currentRoute } = useRouter();
-    const readyToLoadMoreVideos = computed(
-      () => currentRoute.value.name === "videos"
-    );
+    const readyToLoadMoreVideos = computed(() => currentRoute.value.name === 'videos');
 
     function formatDate(d) {
       const date = new Date(d);
@@ -165,7 +132,7 @@ export default {
 
     // render content id for video if it's available
     function renderContentId(v) {
-      return v.content ? v.content[0] : "";
+      return v.content ? v.content[0] : '';
     }
 
     // add another set of size `props.show` to the list of videos
@@ -182,8 +149,8 @@ export default {
       formatDuration,
       contentStatus,
       loadMoreVideos,
-      readyToLoadMoreVideos,
+      readyToLoadMoreVideos
     };
-  },
+  }
 };
 </script>

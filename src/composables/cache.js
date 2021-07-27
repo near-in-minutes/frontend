@@ -17,7 +17,7 @@ class Cache {
     this.data = {};
 
     this.debug = debug;
-    this.debug && console.log("cache initialized");
+    this.debug && console.log('cache initialized');
   }
 
   size(collection) {
@@ -27,9 +27,7 @@ class Cache {
   }
 
   isEmpty(collection) {
-    const check = this.data[collection]
-      ? Object.keys(this.data[collection]).length === 0
-      : true;
+    const check = this.data[collection] ? Object.keys(this.data[collection]).length === 0 : true;
     this.debug && console.log(`isEmpty? [${collection}: ${check}]`);
     return check;
   }
@@ -41,7 +39,7 @@ class Cache {
   }
 
   hasItems(collection, ids) {
-    return ids.every((id) => this.hasItem(collection, id));
+    return ids.every(id => this.hasItem(collection, id));
   }
 
   isStale() {
@@ -74,7 +72,7 @@ class Cache {
   write(collection, data) {
     this.debug && console.log(`writing to cache: [${collection}]`);
     if (this.data[collection]) {
-      if (collection === "authors") {
+      if (collection === 'authors') {
         this.data[collection] = data;
       } else {
         this.data[collection] = this.data[collection].concat(data);

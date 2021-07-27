@@ -1,13 +1,13 @@
-import { ref } from "vue";
-import { getSummary } from "@/services/airtable";
-import initCache from "./cache";
+import { ref } from 'vue';
+import { getSummary } from '@/services/airtable';
+import initCache from './cache';
 
 const cache = initCache();
-const CACHE_KEY = "summary";
+const CACHE_KEY = 'summary';
 
 export function useSummary() {
   const summary = ref({});
-  const status = ref("");
+  const status = ref('');
 
   async function fetchSummary(id) {
     waitFor(async () => {
@@ -15,7 +15,7 @@ export function useSummary() {
         const results = await getSummary();
         return {
           id: results[0].id,
-          ...results[0].fields,
+          ...results[0].fields
         };
       });
     });
@@ -38,9 +38,9 @@ export function useSummary() {
   }
 
   async function waitFor(fn) {
-    status.value = "fetching";
+    status.value = 'fetching';
     const results = await fn();
     summary.value = results;
-    status.value = "ready";
+    status.value = 'ready';
   }
 }

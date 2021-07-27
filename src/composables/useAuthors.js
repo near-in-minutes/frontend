@@ -1,24 +1,24 @@
-import { ref } from "vue";
-import { getAllAuthors, findOneAuthor } from "@/services/airtable";
-import initCache from "./cache";
+import { ref } from 'vue';
+import { getAllAuthors, findOneAuthor } from '@/services/airtable';
+import initCache from './cache';
 
 const EXCLUSIONS = [];
 
 const cache = initCache();
-const CACHE_KEY = "authors";
+const CACHE_KEY = 'authors';
 
 export function useAuthors() {
   const authors = ref([]);
-  const status = ref("");
+  const status = ref('');
 
   async function fetchAllAuthorsWithContributions() {
     waitFor(async () => {
       return await checkCache(async () => {
         const results = await getAllAuthors();
-        return results.map((a) => {
+        return results.map(a => {
           return {
             id: a.id,
-            ...a.fields,
+            ...a.fields
           };
         });
       });
@@ -30,15 +30,15 @@ export function useAuthors() {
       return await checkCache(async () => {
         const results = await getAllAuthors();
         return results
-          .map((a) => {
+          .map(a => {
             return {
               id: a.id,
               ...a.fields,
               githubAvatar: `${a.fields.github}.png`,
-              githubUname: a.fields.github.replace("https://github.com/", ""),
+              githubUname: a.fields.github.replace('https://github.com/', '')
             };
           })
-          .filter((a) => !EXCLUSIONS.includes(a.githubUname))
+          .filter(a => !EXCLUSIONS.includes(a.githubUname))
           .sort((a, b) => new Date(a.joined) - new Date(b.joined));
       });
     });
@@ -54,8 +54,8 @@ export function useAuthors() {
           github: {
             url: result.fields.github,
             avatar: `${result.fields.github}.png`,
-            name: result.fields.github.replace("https://github.com/", ""),
-          },
+            name: result.fields.github.replace('https://github.com/', '')
+          }
         };
       }, `author-${id}`);
     });
@@ -66,7 +66,7 @@ export function useAuthors() {
     authors,
     fetchAllAuthors,
     fetchAllAuthorsWithContributions,
-    fetchOneAuthor,
+    fetchOneAuthor
   };
 
   /*
@@ -84,9 +84,9 @@ export function useAuthors() {
   }
 
   async function waitFor(fn) {
-    status.value = "fetching";
+    status.value = 'fetching';
     const results = await fn();
     authors.value = results;
-    status.value = "ready";
+    status.value = 'ready';
   }
 }
