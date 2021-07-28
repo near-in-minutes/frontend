@@ -22,8 +22,14 @@
             <div class="relative px-8">
               <blockquote class="mt-8">
                 <footer class="mt-4">
-                  <p class="text-base font-semibold text-white"><span class="text-gray-300">MainNet: </span> {{ author.near_account }}</p>
-                  <p class="text-base font-semibold text-white"><span class="text-gray-300">TestNet: </span> {{ author.near_testnet }}</p>
+                  <p class="text-base font-semibold text-white">
+                    <span class="text-gray-300">MainNet: </span>
+                    {{ author.near_account }}
+                  </p>
+                  <p class="text-base font-semibold text-white">
+                    <span class="text-gray-300">TestNet: </span>
+                    {{ author.near_testnet }}
+                  </p>
                 </footer>
               </blockquote>
             </div>
@@ -34,7 +40,9 @@
       <div class="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
         <!-- Content area -->
         <div class="pb-6 sm:pb-16 lg:pb-20 xl:pb-0">
-          <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">{{ author.name }}</h2>
+          <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
+            {{ author.name }}
+          </h2>
         </div>
         <div>
           {{ author.notes }}
