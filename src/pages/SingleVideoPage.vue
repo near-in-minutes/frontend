@@ -30,7 +30,6 @@
   <div v-if="authorStatus === 'notAvailable'" class="text-center pt-16 sm:pt-24">
     <h1>Sorry, this video is not available in the selected language.</h1>
     <h2 class="pb-8">Would you like to contribute and make a related video in your language?</h2>
-    <ContributionCTA />
     <BaseButton :btn-text="ctaBtn" link="/contribute" />
   </div>
 </template>
@@ -42,7 +41,6 @@ import { useI18n } from 'vue-i18n';
 
 import SingleVideo from '@/components/SingleVideo';
 import SingleVideoTitle from '@/components/SingleVideoTitle';
-import ContributionCTA from '@/components/ContributionCTA';
 import BaseButton from '@/components/base/BaseButton';
 
 import { useContent } from '@/composables/useContent';
@@ -52,7 +50,6 @@ export default {
   components: {
     SingleVideo,
     SingleVideoTitle,
-    ContributionCTA,
     BaseButton
   },
   props: {
