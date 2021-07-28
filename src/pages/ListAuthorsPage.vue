@@ -11,7 +11,9 @@
       </div>
       <AuthorsList />
       <div class="mt-12 max-w-2xl mx-auto text-center">
-        <p><em>If you would like to join us, please register below as a video creator.</em></p>
+        <p>
+          <em>If you would like to join us, please register below as a video creator.</em>
+        </p>
         <button @click="openForm" type="button" class="my-6 inline-flex items-center px-2.5 py-1.5 border border-transparent font-medium rounded shadow-sm text-white bg-near-royal hover:bg-near-royal-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-near-royal-light uppercase">register as a video creator</button>
       </div>
     </div>

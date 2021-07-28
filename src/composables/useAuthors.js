@@ -61,7 +61,13 @@ export function useAuthors() {
     });
   }
 
-  return { status, authors, fetchAllAuthors, fetchAllAuthorsWithContributions, fetchOneAuthor };
+  return {
+    status,
+    authors,
+    fetchAllAuthors,
+    fetchAllAuthorsWithContributions,
+    fetchOneAuthor
+  };
 
   /*
   HELPER FUNCTIONS
