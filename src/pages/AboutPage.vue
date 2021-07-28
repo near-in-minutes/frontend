@@ -26,7 +26,9 @@
           <p class="ml-6">If you have, great! If not, you could earn NEAR tokens to teach others — we’re funding contributions now!</p>
         </li>
       </ul>
-      <p><em>Fill out the form below to share more about yourself and your interests, including the work you have already created. We will be reaching out to interested teachers and contributors over coming months as our demands for content and training continue to grow. </em></p>
+      <p>
+        <em>Fill out the form below to share more about yourself and your interests, including the work you have already created. We will be reaching out to interested teachers and contributors over coming months as our demands for content and training continue to grow. </em>
+      </p>
       <button @click="openForm" type="button" class="my-12 inline-flex items-center px-2.5 py-1.5 border border-transparent font-medium rounded shadow-sm text-white bg-near-royal hover:bg-near-royal-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-near-royal-light uppercase">register as a video creator</button>
     </div>
   </div>

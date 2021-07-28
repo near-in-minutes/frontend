@@ -34,7 +34,9 @@
       <div class="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
         <!-- Content area -->
         <div class="pb-6 sm:pb-16 lg:pb-20 xl:pb-0">
-          <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">{{ author.name }}</h2>
+          <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
+            {{ author.name }}
+          </h2>
         </div>
         <div>
           {{ author.notes }}
@@ -72,11 +74,11 @@
 </template>
 
 <script>
-import { useI18n } from "vue-i18n";
-import { onMounted, watch } from "vue";
-import { localeToLanguage } from "@/i18n";
-import { useAuthors } from "@/composables/useAuthors";
-import VideoListByAuthor from "@/components/VideoListByAuthor.vue";
+import { useI18n } from 'vue-i18n';
+import { onMounted, watch } from 'vue';
+import { localeToLanguage } from '@/i18n';
+import { useAuthors } from '@/composables/useAuthors';
+import VideoListByAuthor from '@/components/VideoListByAuthor.vue';
 export default {
   components: {
     VideoListByAuthor
@@ -88,14 +90,14 @@ export default {
     }
   },
   async setup(props) {
-    const { t } = useI18n({ useScope: "global" });
+    const { t } = useI18n({ useScope: 'global' });
     const { status: authorStatus, authors: author, fetchOneAuthor } = useAuthors();
     onMounted(() => fetchOneAuthor(props.id, true));
     watch(authorStatus, status => {
-      if (status === "ready") {
+      if (status === 'ready') {
         author.value = {
           ...author.value,
-          languages: author.value.languages.map(localeToLanguage).join(", ")
+          languages: author.value.languages.map(localeToLanguage).join(', ')
         };
       }
     });

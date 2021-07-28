@@ -43,7 +43,9 @@
                     {{ video.author.name }}
                   </p>
                   <div class="flex space-x-1 text-sm text-gray-500">
-                    <time :datetime="video.create_at"> {{ formatDate(video.created) }} </time>
+                    <time :datetime="video.create_at">
+                      {{ formatDate(video.created) }}
+                    </time>
                     <span aria-hidden="true"> &middot; </span>
                     <span> {{ formatDuration(video.duration) }} </span>
                   </div>
@@ -139,7 +141,16 @@ export default {
       fetchMostRecent();
     }
 
-    return { t, content, renderContentId, formatDate, formatDuration, contentStatus, loadMoreVideos, readyToLoadMoreVideos };
+    return {
+      t,
+      content,
+      renderContentId,
+      formatDate,
+      formatDuration,
+      contentStatus,
+      loadMoreVideos,
+      readyToLoadMoreVideos
+    };
   }
 };
 </script>
