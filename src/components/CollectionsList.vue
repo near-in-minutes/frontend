@@ -11,7 +11,9 @@
               <div class="text-gray-900 font-medium hover:text-gray-600">
                 {{ collection.name }}
               </div>
-              <p class="text-gray-500">{{ t('collections.posts', collection.total_posts) }}</p>
+              <p class="text-gray-500">
+                {{ t('collections.posts', collection.total_posts) }}
+              </p>
             </div>
           </div>
         </li>

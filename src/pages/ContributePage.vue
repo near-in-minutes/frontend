@@ -133,7 +133,9 @@
               </div>
               <div>
                 <div>
-                  <p class="mt-10">{{ t('contribute.instructions.issues.types') }}</p>
+                  <p class="mt-10">
+                    {{ t('contribute.instructions.issues.types') }}
+                  </p>
 
                   <ul class="list-disc" v-for="item in contribution" :key="item.name">
                     <li>

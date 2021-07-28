@@ -1,12 +1,12 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter } from 'vue-router';
 
 import HomePage from '@/pages/HomePage';
 
 const routes = [
   {
-    path: "/",
-    name: "home",
-    component: HomePage,
+    path: '/',
+    name: 'home',
+    component: HomePage
   },
   {
     path: '/videos',
@@ -58,8 +58,8 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     // always scroll to top
-    return { top: 0 }
-  },
+    return { top: 0 };
+  }
 });
 
 export default router;
