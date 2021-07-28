@@ -1,6 +1,6 @@
 <template>
   <!-- es-lint ignore -->
-  <div class="relative py-16 sm:py-24 mx-auto px-4 max-w-6xl">
+  <div v-if="authorStatus === 'ready'" class="relative pt-16 sm:pt-24 mx-auto px-4 max-w-6xl">
     <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-1 lg:gap-24 lg:items-start">
       <div class="relative sm:py-16 lg:py-0">
         <div aria-hidden="true" class="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">
@@ -22,28 +22,26 @@
       <div class="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
         <!-- Content area -->
         <div class="pt-12 sm:pt-16 lg:pt-20">
-          <SingleVideoTitle v-if="authorStatus === 'ready'" :video="content" />
-          <!--
-          <div class="mt-10 border-t-2 border-gray pt-6">
-            <a href="#" target="_blank" class="text-base font-medium">
-              {{ t('videos.learnMore') }}
-              <span v-if="contentStatus === 'ready'" aria-hidden="true">{{ content.title }} &rarr;</span>
-            </a>
-          </div>
-          -->
+          <SingleVideoTitle :video="content" />
         </div>
       </div>
     </div>
   </div>
+  <div v-if="authorStatus === 'notAvailable'" class="text-center pt-16 sm:pt-24">
+    <h1>Sorry, this video is not available in the selected language.</h1>
+    <h2 class="pb-8">Would you like to contribute and make a related video in your language?</h2>
+    <BaseButton :btn-text="ctaBtn" link="/contribute" />
+  </div>
 </template>
 <script>
 /* eslint-disable */
-import { onMounted, watch, toRaw } from 'vue';
+import { onMounted, watch, toRaw, computed } from 'vue';
 
 import { useI18n } from 'vue-i18n';
 
 import SingleVideo from '@/components/SingleVideo';
 import SingleVideoTitle from '@/components/SingleVideoTitle';
+import BaseButton from '@/components/base/BaseButton';
 
 import { useContent } from '@/composables/useContent';
 import { useAuthors } from '@/composables/useAuthors';
@@ -51,7 +49,8 @@ import { useAuthors } from '@/composables/useAuthors';
 export default {
   components: {
     SingleVideo,
-    SingleVideoTitle
+    SingleVideoTitle,
+    BaseButton
   },
   props: {
     id: {
@@ -64,6 +63,7 @@ export default {
   },
   setup(props) {
     const { t, locale } = useI18n({ useScope: 'global' });
+    const ctaBtn = computed(() => t('contribute.btn'));
     const { content, fetchTranslationsForContent, status: contentStatus } = useContent(locale);
     const { authors, fetchAllAuthors, status: authorStatus } = useAuthors();
 
@@ -79,12 +79,18 @@ export default {
       if (status === 'ready') {
         const rawContent = toRaw(content.value);
         const rawAuthors = toRaw(authors.value);
-        content.value = rawContent.filter(byLocale).map(video => {
-          return {
-            ...video,
-            author: rawAuthors.find(a => a.id === video.author[0])
-          };
-        })[0];
+        const translationContent = rawContent.filter(byLocale);
+
+        if (translationContent.length === 0) {
+          authorStatus.value = 'notAvailable';
+        } else {
+          content.value = translationContent.map(video => {
+            return {
+              ...video,
+              author: rawAuthors.find(a => a.id === video.author[0])
+            };
+          })[0];
+        }
       }
     });
 
@@ -100,7 +106,7 @@ export default {
       }
     }
 
-    return { t, content, authorStatus, embed };
+    return { t, content, authorStatus, embed, ctaBtn };
   }
 };
 </script>
