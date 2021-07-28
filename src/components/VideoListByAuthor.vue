@@ -1,4 +1,3 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <div class="w-full flex justify-center mt-8">
     <ul class="max-w-7xl grid grid-cols-1 gap-y-6 gap-x-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -28,8 +27,8 @@
 </template>
 
 <script>
-import { useI18n } from 'vue-i18n';
-import { useRouter } from 'vue-router';
+import { useI18n } from "vue-i18n";
+import { useRouter } from "vue-router";
 
 export default {
   props: {
@@ -39,7 +38,7 @@ export default {
     }
   },
   setup() {
-    const { locale } = useI18n({ useScope: 'global' });
+    const { locale } = useI18n({ useScope: "global" });
     const router = useRouter();
 
     function formatDate(d) {
@@ -49,7 +48,7 @@ export default {
 
     function maybeWatch(v) {
       if (isLocale(v.fields.language)) {
-        router.push({ name: 'video', params: { id: v.fields.content[0] } });
+        router.push({ name: "video", params: { id: v.fields.content[0] } });
       }
     }
 

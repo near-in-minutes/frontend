@@ -33,15 +33,14 @@
   </ul>
 </template>
 <script>
-import { onMounted } from 'vue';
+import { useI18n } from "vue-i18n";
+import { onMounted } from "vue";
 
-import { useI18n } from 'vue-i18n';
-
-import { useAuthors } from '@/composables/useAuthors';
+import { useAuthors } from "@/composables/useAuthors";
 
 export default {
   setup() {
-    const { t } = useI18n({ useScope: 'global' });
+    const { t } = useI18n({ useScope: "global" });
     const { authors, fetchAllAuthors } = useAuthors();
 
     onMounted(fetchAllAuthors);
