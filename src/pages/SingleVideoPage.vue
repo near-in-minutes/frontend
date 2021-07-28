@@ -31,17 +31,19 @@
     <h1>Sorry, this video is not available in the selected language.</h1>
     <h2 class="pb-8">Would you like to contribute and make a related video in your language?</h2>
     <ContributionCTA />
+    <BaseButton :btn-text="ctaBtn" link="/contribute" />
   </div>
 </template>
 <script>
 /* eslint-disable */
-import { onMounted, watch, toRaw } from 'vue';
+import { onMounted, watch, toRaw, computed } from 'vue';
 
 import { useI18n } from 'vue-i18n';
 
 import SingleVideo from '@/components/SingleVideo';
 import SingleVideoTitle from '@/components/SingleVideoTitle';
 import ContributionCTA from '@/components/ContributionCTA';
+import BaseButton from '@/components/base/BaseButton';
 
 import { useContent } from '@/composables/useContent';
 import { useAuthors } from '@/composables/useAuthors';
@@ -50,7 +52,8 @@ export default {
   components: {
     SingleVideo,
     SingleVideoTitle,
-    ContributionCTA
+    ContributionCTA,
+    BaseButton
   },
   props: {
     id: {
@@ -63,6 +66,7 @@ export default {
   },
   setup(props) {
     const { t, locale } = useI18n({ useScope: 'global' });
+    const ctaBtn = computed(() => t('contribute.btn'));
     const { content, fetchTranslationsForContent, status: contentStatus } = useContent(locale);
     const { authors, fetchAllAuthors, status: authorStatus } = useAuthors();
 
@@ -105,7 +109,7 @@ export default {
       }
     }
 
-    return { t, content, authorStatus, embed };
+    return { t, content, authorStatus, embed, ctaBtn };
   }
 };
 </script>
