@@ -11,7 +11,7 @@
                     <p class="text-sm font-medium text-near-green text-center">
                       {{ video.collection }}
                     </p>
-                    <p class="text-2xl font-semibold text-white">
+                    <p class="text-2xl font-semibold text-white w-64 text-center">
                       {{ video.title }}
                     </p>
                   </div>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-              <div class="h-32">
+              <div class="h-40">
                 <span class="text-sm font-medium text-near-green mr-3" v-for="tag in video.content_tags" :key="tag">
                   {{ tag }}
                 </span>

@@ -8,16 +8,16 @@
               <img class="w-28" src="@/assets/logo.png" alt="logo" />
             </router-link>
           </div>
-          <div class="hidden sm:ml-6 sm:flex sm:space-x-8 mt-8">
+          <div class="hidden lg:ml-6 lg:flex lg:space-x-8 mt-8">
             <router-link v-for="item in nav" :key="item.name" :to="item.href" :class="[item.current ? 'bg-near-gray ' : 'text-gray-600 hover:bg-near-gray hover:text-black', 'rounded-md my-4 px-3 inline-flex items-center font-medium h-10']" :aria-current="item.current ? 'page' : undefined">
               {{ item.label }}
             </router-link>
           </div>
         </div>
-        <div class="hidden sm:ml-6 sm:flex sm:items-center mt-4">
+        <div class="hidden lg:ml-6 lg:flex lg:items-center mt-4">
           <BaseLocaleSwitcher />
         </div>
-        <div class="-mr-2 flex items-center sm:hidden">
+        <div class="-mr-2 flex items-center lg:hidden">
           <!-- Mobile menu button -->
           <DisclosureButton class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
             <span class="sr-only">Open main menu</span>
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <DisclosurePanel class="sm:hidden">
+    <DisclosurePanel class="lg:hidden">
       <div class="pt-2 pb-3 space-y-1">
         <router-link v-for="item in nav" :key="item.name" :to="item.href" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-900 hover:bg-gray-50 hover:text-gray-900', 'block rounded-md py-2 px-3 text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.label }}</router-link>
       </div>
