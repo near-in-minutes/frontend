@@ -3,6 +3,7 @@ import { findOneContent, findAllContent, getMostRecent, findAllTranslationsForCo
 import initCache from './cache';
 
 const cache = initCache();
+const STATUS = { READY: 'ready', FETCHING: 'fetching' };
 
 export function useContent(loc) {
   const locale = ref(loc);
@@ -10,7 +11,6 @@ export function useContent(loc) {
   const limit = ref(3);
   const contentId = ref('');
   const status = ref('');
-  const statuses = { ready: 'ready', fetching: 'fetching' };
 
   const fetched = reactive({
     prev: -1,
@@ -105,17 +105,17 @@ export function useContent(loc) {
 
   //waitFor() expects an airtable function as arg, it then calls the function to retreive data and updates the value of content
   async function waitFor(airtableFunction) {
-    status.value = statuses.fetching;
+    status.value = STATUS.FETCHING;
     const results = await airtableFunction();
     updateContent(results);
-    status.value = statuses.ready;
+    status.value = STATUS.READY;
   }
 
   async function waitForLimited(airtableFunction) {
-    status.value = statuses.fetching;
+    status.value = STATUS.FETCHING;
     const results = await airtableFunction();
     updateContent(limitContent(results));
-    status.value = statuses.ready;
+    status.value = STATUS.READY;
   }
 
   function limitContent(results) {
