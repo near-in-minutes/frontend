@@ -52,28 +52,6 @@ export function useContent(loc) {
     });
   }
 
-  const fetchRecentFromAirtable = async () => {
-    const collection = `translations-${locale.value}`;
-    const recentCache = await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value));
-    return recentCache;
-  };
-
-  const fetchOneContentFromAirtable = async id => {
-    const oneContentCache = await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
-    return oneContentCache;
-  };
-
-  const fetchAllContentFromAirtable = async ids => {
-    const allContentCache = await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
-    return allContentCache;
-  };
-
-  const fetchMostTranslationsFromAirtable = async id => {
-    const collection = `translations-${locale.value}`;
-    const translationsCache = await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
-    return translationsCache;
-  };
-
   return {
     status,
     content,
@@ -92,6 +70,24 @@ export function useContent(loc) {
   /*
   HELPER FUNCTIONS
   */
+
+  async function fetchRecentFromAirtable() {
+    const collection = `translations-${locale.value}`;
+    return await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value));
+  }
+
+  async function fetchOneContentFromAirtable(id) {
+    return await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
+  }
+
+  async function fetchAllContentFromAirtable(ids) {
+    return await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
+  }
+
+  async function fetchMostTranslationsFromAirtable(id) {
+    const collection = `translations-${locale.value}`;
+    return await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
+  }
 
   async function checkCache(collection, predicate, asyncCall) {
     if (predicate && !cache.isStale()) {
