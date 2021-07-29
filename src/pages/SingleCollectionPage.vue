@@ -149,6 +149,9 @@ export default {
       const date = new Date(d);
       return date.toLocaleDateString();
     },
+    openForm() {
+      window.open('https://near-edu.typeform.com/to/POs9XeBv?source=near-in-minutes');
+    },
     renderMarkdown(md) {
       return marked(md);
     }
