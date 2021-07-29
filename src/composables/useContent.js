@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref, reactive, computed } from 'vue';
 import { findOneContent, findAllContent, getMostRecent, findAllTranslationsForContent } from '@/services/airtable';
 import initCache from './cache';
 
@@ -10,6 +10,12 @@ export function useContent(loc) {
   const limit = ref(3);
   const contentId = ref('');
   const status = ref('');
+
+  const fetched = reactive({
+    prev: -1,
+    curr: -1
+  });
+  const hasMore = computed(() => fetched.curr !== fetched.prev);
 
   function setLimit(lim) {
     limit.value = parseInt(lim);
@@ -54,6 +60,7 @@ export function useContent(loc) {
     content,
     contentId,
     limit,
+    hasMore,
     setLimit,
     setContentId,
     setLocale,
@@ -85,6 +92,7 @@ export function useContent(loc) {
   }
 
   function updateContent(results) {
+    fetched.prev = content.value.length;
     content.value = results
       .slice(0, limit.value)
       .map(r => ({
@@ -92,5 +100,6 @@ export function useContent(loc) {
         ...r.fields
       }))
       .sort((a, b) => a.order - b.order);
+    fetched.curr = content.value.length;
   }
 }
