@@ -10,7 +10,7 @@
         </p>
       </div>
     </div>
-    <div class="relative max-w-6xl m-auto">
+    <div class="relative max-w-7xl m-auto">
       <CollectionsList />
     </div>
   </div>

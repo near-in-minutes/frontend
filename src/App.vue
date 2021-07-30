@@ -24,6 +24,7 @@ import { useI18n } from 'vue-i18n';
 import NavigationComponent from "@/components/layout/NavigationComponent";
 import FooterComponent from "@/components/layout/FooterComponent";
 
+
 export default {
   components: {
     NavigationComponent,

@@ -19,7 +19,9 @@
                     <div :class="[item.color.bg, 'absolute rounded-md p-3']">
                       <component :is="item.icon" class="h-8 w-8 text-white" aria-hidden="true" />
                     </div>
-                    <p class="ml-16 text-sm font-bold text-gray-500 truncate">{{ item.name }}</p>
+                    <p class="ml-16 text-sm font-bold text-gray-500 truncate">
+                      {{ item.name }}
+                    </p>
                   </dt>
                   <dd class="ml-16 flex items-baseline sm:pb-7">
                     <p :class="[item.color.text, 'text-4xl font-semibold']">
@@ -68,7 +70,9 @@
                   <td class="hidden sm:table-cell px-6 py-3 text-sm text-gray-600 font-light">
                     <div class="flex items-center space-x-2">
                       <div class="flex flex-col min-w-max">
-                        <p v-for="author in video.authors" :key="author">{{ author }}</p>
+                        <p v-for="author in video.authors" :key="author">
+                          {{ author }}
+                        </p>
                       </div>
                     </div>
                   </td>
@@ -108,9 +112,21 @@ import { PlayIcon, VideoCameraIcon, UserGroupIcon, TranslateIcon } from '@heroic
 import marked from 'marked';
 
 const stats = reactive([
-  { name: 'Videos', color: { text: 'text-near-red', bg: 'bg-near-red' }, icon: VideoCameraIcon },
-  { name: 'Authors', color: { text: 'text-near-blue', bg: 'bg-near-blue' }, icon: UserGroupIcon },
-  { name: 'Languages', color: { text: 'text-near-orange', bg: 'bg-near-orange' }, icon: TranslateIcon }
+  {
+    name: 'Videos',
+    color: { text: 'text-near-red', bg: 'bg-near-red' },
+    icon: VideoCameraIcon
+  },
+  {
+    name: 'Authors',
+    color: { text: 'text-near-blue', bg: 'bg-near-blue' },
+    icon: UserGroupIcon
+  },
+  {
+    name: 'Languages',
+    color: { text: 'text-near-orange', bg: 'bg-near-orange' },
+    icon: TranslateIcon
+  }
 ]);
 
 function addStat(name, value) {
@@ -132,6 +148,9 @@ export default {
     formatDate(d) {
       const date = new Date(d);
       return date.toLocaleDateString();
+    },
+    openForm() {
+      window.open('https://near-edu.typeform.com/to/POs9XeBv?source=near-in-minutes');
     },
     renderMarkdown(md) {
       return marked(md);

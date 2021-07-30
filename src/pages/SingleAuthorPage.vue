@@ -19,11 +19,11 @@
             <img class="absolute inset-0 h-full w-full object-cover" :src="author.github.avatar" alt="github avatar" />
             <div class="absolute inset-0 bg-white-300 mix-blend-multiply" />
             <div class="absolute inset-0 bg-gradient-to-tl from-near-green via-black opacity-30" />
-            <div class="relative px-8">
+            <div class="relative px-8 bg-near-black opacity-70">
               <blockquote class="mt-8">
                 <footer class="mt-4">
-                  <p class="text-base font-semibold text-white"><span class="text-gray-300">MainNet: </span> {{ author.near_account }}</p>
-                  <p class="text-base font-semibold text-white"><span class="text-gray-300">TestNet: </span> {{ author.near_testnet }}</p>
+                  <p class="text-base text-white font-bold"><span class="text-white">MainNet: </span> {{ author.near_account }}</p>
+                  <p class="text-base text-white font-bold"><span class="text-white">TestNet: </span> {{ author.near_testnet }}</p>
                 </footer>
               </blockquote>
             </div>
@@ -34,7 +34,9 @@
       <div class="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
         <!-- Content area -->
         <div class="pb-6 sm:pb-16 lg:pb-20 xl:pb-0">
-          <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">{{ author.name }}</h2>
+          <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
+            {{ author.name }}
+          </h2>
         </div>
         <div>
           {{ author.notes }}
@@ -74,11 +76,9 @@
 <script>
 import { useI18n } from 'vue-i18n';
 import { onMounted, watch } from 'vue';
-
 import { localeToLanguage } from '@/i18n';
 import { useAuthors } from '@/composables/useAuthors';
 import VideoListByAuthor from '@/components/VideoListByAuthor.vue';
-
 export default {
   components: {
     VideoListByAuthor
@@ -91,11 +91,8 @@ export default {
   },
   async setup(props) {
     const { t } = useI18n({ useScope: 'global' });
-
     const { status: authorStatus, authors: author, fetchOneAuthor } = useAuthors();
-
     onMounted(() => fetchOneAuthor(props.id, true));
-
     watch(authorStatus, status => {
       if (status === 'ready') {
         author.value = {
@@ -104,7 +101,6 @@ export default {
         };
       }
     });
-
     return { t, author, authorStatus };
   }
 };

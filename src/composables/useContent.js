@@ -1,8 +1,9 @@
-import { ref } from 'vue';
+import { ref, reactive, computed } from 'vue';
 import { findOneContent, findAllContent, getMostRecent, findAllTranslationsForContent } from '@/services/airtable';
 import initCache from './cache';
 
 const cache = initCache();
+const STATUS = { READY: 'ready', FETCHING: 'fetching' };
 
 export function useContent(loc) {
   const locale = ref(loc);
@@ -10,6 +11,12 @@ export function useContent(loc) {
   const limit = ref(3);
   const contentId = ref('');
   const status = ref('');
+
+  const fetched = reactive({
+    prev: -1,
+    curr: -1
+  });
+  const hasMore = computed(() => fetched.curr !== fetched.prev);
 
   function setLimit(lim) {
     limit.value = parseInt(lim);
@@ -24,28 +31,24 @@ export function useContent(loc) {
   }
 
   async function fetchMostRecent() {
-    waitFor(async () => {
-      const collection = `translations-${locale.value}`;
-      return await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value));
-    });
+    waitForLimited(fetchRecentFromAirtable);
   }
 
   async function fetchOneContent(id) {
-    waitFor(async () => {
-      return await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
+    waitFor(function () {
+      return fetchOneContentFromAirtable(id);
     });
   }
 
   async function fetchAllContent(ids) {
-    waitFor(async () => {
-      return await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
+    waitFor(function () {
+      return fetchAllContentFromAirtable(ids);
     });
   }
 
   async function fetchTranslationsForContent(id) {
-    waitFor(async () => {
-      const collection = `translations-${locale.value}`;
-      return await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
+    waitFor(function () {
+      return fetchMostTranslationsFromAirtable(id);
     });
   }
 
@@ -54,6 +57,7 @@ export function useContent(loc) {
     content,
     contentId,
     limit,
+    hasMore,
     setLimit,
     setContentId,
     setLocale,
@@ -67,6 +71,24 @@ export function useContent(loc) {
   HELPER FUNCTIONS
   */
 
+  async function fetchRecentFromAirtable() {
+    const collection = `translations-${locale.value}`;
+    return await checkCache(collection, cache.size(collection) >= limit.value, async () => await getMostRecent(locale.value, limit.value));
+  }
+
+  async function fetchOneContentFromAirtable(id) {
+    return await checkCache('content', cache.hasItem('content', id), async () => await findOneContent(id));
+  }
+
+  async function fetchAllContentFromAirtable(ids) {
+    return await checkCache('content', cache.hasItems('content', ids), async () => await findAllContent(ids));
+  }
+
+  async function fetchMostTranslationsFromAirtable(id) {
+    const collection = `translations-${locale.value}`;
+    return await checkCache(collection, cache.hasItem(collection, id), async () => await findAllTranslationsForContent(id));
+  }
+
   async function checkCache(collection, predicate, asyncCall) {
     if (predicate && !cache.isStale()) {
       return cache.read(collection);
@@ -77,20 +99,33 @@ export function useContent(loc) {
     }
   }
 
-  async function waitFor(fn) {
-    status.value = 'fetching';
-    const results = await fn();
+  //waitFor() expects an airtable function as arg, it then calls the function to retreive data and updates the value of content
+  async function waitFor(airtableFunction) {
+    status.value = STATUS.FETCHING;
+    const results = await airtableFunction();
     updateContent(results);
-    status.value = 'ready';
+    status.value = STATUS.READY;
+  }
+
+  async function waitForLimited(airtableFunction) {
+    status.value = STATUS.FETCHING;
+    const results = await airtableFunction();
+    updateContent(limitContent(results));
+    status.value = STATUS.READY;
+  }
+
+  function limitContent(results) {
+    return results.slice(0, limit.value);
   }
 
   function updateContent(results) {
+    fetched.prev = content.value.length;
     content.value = results
-      .slice(0, limit.value)
       .map(r => ({
         id: r.id,
         ...r.fields
       }))
       .sort((a, b) => a.order - b.order);
+    fetched.curr = content.value.length;
   }
 }

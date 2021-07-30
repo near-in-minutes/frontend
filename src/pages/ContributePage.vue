@@ -121,7 +121,7 @@
                   <div class="ml-3 flex-1 md:flex md:justify-between flex flex-col">
                     <p class="text-sm text-near-green">
                       {{ t('contribute.instructions.issues.seeExample') }}
-                      <a href="#" class="whitespace-nowrap font-medium text-green-700 hover:text-green-600" target="_blank">{{ t('contribute.instructions.issues.clickHere') }}<span aria-hidden="true">&rarr;</span></a>
+                      <a href="https://github.com/near-in-minutes/community/issues/47" class="whitespace-nowrap font-medium text-green-700 hover:text-green-600" target="_blank">{{ t('contribute.instructions.issues.clickHere') }}<span aria-hidden="true">&rarr;</span></a>
                     </p>
                     <br />
                     <p class="text-sm text-near-green">
@@ -133,7 +133,9 @@
               </div>
               <div>
                 <div>
-                  <p class="mt-10">{{ t('contribute.instructions.issues.types') }}</p>
+                  <p class="mt-10">
+                    {{ t('contribute.instructions.issues.types') }}
+                  </p>
 
                   <ul class="list-disc" v-for="item in contribution" :key="item.name">
                     <li>

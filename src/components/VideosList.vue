@@ -11,7 +11,7 @@
                     <p class="text-sm font-medium text-near-green text-center">
                       {{ video.collection }}
                     </p>
-                    <p class="text-2xl font-semibold text-white">
+                    <p class="text-2xl font-semibold text-white w-64 text-center">
                       {{ video.title }}
                     </p>
                   </div>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-              <div class="h-32">
+              <div class="h-40">
                 <span class="text-sm font-medium text-near-green mr-3" v-for="tag in video.content_tags" :key="tag">
                   {{ tag }}
                 </span>
@@ -43,7 +43,9 @@
                     {{ video.author.name }}
                   </p>
                   <div class="flex space-x-1 text-sm text-gray-500">
-                    <time :datetime="video.create_at"> {{ formatDate(video.created) }} </time>
+                    <time :datetime="video.create_at">
+                      {{ formatDate(video.created) }}
+                    </time>
                     <span aria-hidden="true"> &middot; </span>
                     <span> {{ formatDuration(video.duration) }} </span>
                   </div>
@@ -54,20 +56,20 @@
         </div>
       </div>
     </div>
-    <BaseButton v-if="readyToLoadMoreVideos" btn-text="load more" @click="loadMoreVideos" />
+    <div v-if="readyToLoadMoreVideos" class="max-w-2xl mx-auto text-center pb-28 px-4 sm:py-20 sm:px-6 lg:px-8">
+      <div @click="loadMoreVideos" class="cursor-pointer mt-8 w-30 inline-flex items-center justify-center px-5 py-3 font-medium rounded-md text-white bg-near-green hover:bg-green-600 hover:text-white transform hover:scale-105 sm:w-auto">load more</div>
+    </div>
   </div>
 </template>
 
 <script>
-import { onMounted, watch, computed, toRaw } from '@vue/runtime-core';
+import { onMounted, watch, computed, toRaw, ref } from '@vue/runtime-core';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 import { PlayIcon } from '@heroicons/vue/outline';
 
 import { useContent } from '@/composables/useContent';
 import { useAuthors } from '@/composables/useAuthors';
-
-import BaseButton from '@/components/base/BaseButton';
 
 export default {
   props: {
@@ -77,12 +79,11 @@ export default {
     }
   },
   components: {
-    BaseButton,
     PlayIcon
   },
   setup(props) {
     const { t, locale } = useI18n({ useScope: 'global' });
-    const { status: contentStatus, content, limit, setLimit, setLocale: setContentLocale, fetchMostRecent } = useContent(locale);
+    const { status: contentStatus, content, limit, hasMore, setLimit, setLocale: setContentLocale, fetchMostRecent } = useContent(locale);
 
     onMounted(() => {
       setLimit(props.show);
@@ -114,7 +115,7 @@ export default {
     });
 
     const { currentRoute } = useRouter();
-    const readyToLoadMoreVideos = computed(() => currentRoute.value.name === 'videos');
+    const readyToLoadMoreVideos = computed(() => currentRoute.value.name === 'videos' && hasMore.value);
 
     function formatDate(d) {
       const date = new Date(d);
@@ -139,7 +140,16 @@ export default {
       fetchMostRecent();
     }
 
-    return { t, content, renderContentId, formatDate, formatDuration, contentStatus, loadMoreVideos, readyToLoadMoreVideos };
+    return {
+      t,
+      content,
+      renderContentId,
+      formatDate,
+      formatDuration,
+      contentStatus,
+      loadMoreVideos,
+      readyToLoadMoreVideos
+    };
   }
 };
 </script>
