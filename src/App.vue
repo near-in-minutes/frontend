@@ -4,7 +4,7 @@
     <meta property="description" :content="metadata.description">
     <meta property="og:title" :content="metadata.title">
     <meta property="og:description" :content="metadata.description">
-    <meta property="og:image" content="https://near-in-minutes.com/img/logo.dbccf5a9.png" />
+    <meta property="og:image" content="https://near-in-minutes.com/og-preview-image.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="NEAR in minutes" />
     <meta property="twitter:card" content="summary">
