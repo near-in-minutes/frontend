@@ -1,42 +1,90 @@
 {
   "language": {
     "en": "Turkish",
-    "tr": "Turkce"
+    "tr": "Türkçe"
   },
   "navbar": {
     "home": "Anasayfa",
     "videos": "Videolar",
-    "collections": "Collections",
+    "collections": "Koleksiyonlar",
+    "authors": "Yazarlar",
+    "contribute": "Katkıda Bulun",
     "about": "Hakkında"
   },
   "main": {
     "title": "{0} girişim ile NEAR öğren",
     "titleHighlight": "Topluluk-bazlı"
   },
-  "collections": {
-    "title": "KOLEKSİYONLAR",
-    "subTitle": "Take a look at our collections",
-    "desc": "Start your journey with series of videos in each collection",
-    "meal": "FAST | DIET | SNACK | PICNIC | FEAST",
-    "posts": "No videos yet | {count} video | {count} videos"
-  },
   "videos": {
     "title": "Video eğitimleri",
-    "desc": "En son eğitimlerimize göz atın ve NEAR öğrenin",
+    "subtitle": "En son eğitimlerimize göz atın ve NEAR öğrenin",
     "btn": "Tüm videolara göz atın",
-    "more": "Load More Videos"
+    "more": "Daha Fazla Video Yükle",
+    "learnMore": "Daha fazla öğrenin"
   },
-  "cta": {
-    "title": "Katkıda bulunmak ister miydiniz?",
-    "subTitle": "Sizi dinleyelim",
+  "collections": {
+    "title": "Video Koleksiyonları",
+    "subtitle": "İlgili videoların koleksiyonları",
+    "desc": "Seyahatinize her bir koleksiyondaki video serileri ile başlayın",
+    "meal": "FAST | DIET | SNACK | PICNIC | FEAST",
+    "posts": "Henüz video yok | {count} video | {count} videolar",
+    "single": {
+      "title": "Koleksiyon: {0}",
+      "subtitle": "Bu koleksiyonda {1} yazar tarafından gönderilen {0} video var "
+    }
+  },
+  "authors": {
+    "title": "Video Yaratıcıları",
+    "subtitle": "Bu çabaya katılan herkes \"hoş geldi!\" ve onlara \"teşekkürler!\""
+  },
+
+  "contribute": {
+    "title": "Katkıda Bulunma İmkanları",
+    "subTitle": "Hadi, seni dinliyoruz!",
     "newContent": "Yeni İçerik Gönder",
     "newTopic": "Yeni Konu Öner",
-    "translate": "İçeriği Çevir"
+    "translate": "İçeriği Çevir",
+    "btn": "Nasıl katkıda bulunacağını öğren",
+    "instructions": {
+      "title": "Katkıda Bulun",
+      "desc": "Near in Minutes'e katkıda bulunmayı düşündüğün için teşekkür ederiz 🚀 Başlamak için bu rehbere göz at.",
+      "warning": "Şu anda sadece {0} videoları kabul ediyoruz.",
+      "loomLink": "Loom",
+      "setup": {
+        "title": "1. Adım: Sistemini kur",
+        "stepOne": "Ekranını tutorial konusuna göre ikiye böl ve dökümentasyon sayfanı, terminalini ve kod editörünü ekranına yerleştir.",
+        "stepTwo": "Bölünmüş terminal bölmesinde sistem bilgilerini, kullanacağın paketlerin versiyonlarını ve tarihini göster.",
+        "stepthree": "Loom uygulamasını aç ve kayıt ayarlarının doğru olduğundan emin ol."
+      },
+      "video": {
+        "title": "2. Adım: Videonu oluştur",
+        "stepOne": "Şu web sayfasına git: ",
+        "loom": "Loom",
+        "stepTwo": "'Get Loom for Free' butonuna tıkla ve kayıt ol.",
+        "stepThree": "Sağ üst köşedeki avatara tıkla ve indirme metodunu seç.",
+        "stepFour": "Kayıt yapmaya hazır olduğunda 'Start Recording' butonuna tıkla."
+      },
+      "issues": {
+        "subTitle": "3. Adım: Videonu gönder",
+        "stepOne": "Buradaki issues bölümüne git:",
+        "issues": "NEAR in Minutes Community",
+        "stepTwo": "'New issue'ya tıkla ve katkıda bulunmak istediğin içeriği seç.",
+        "stepThree": "Nasıl katkıda bulunmak istediğini seç ve bilgileri ona göre doldur.",
+        "seeExample": "Daha önceden submit edilmiş bir issue görmek istersen",
+        "learnMore": "İyi bir videonun nasıl yapılacağı hakkında daha fazla bilgi almak istiyorsan",
+        "clickHere": "buraya tıkla",
+        "types": "Şu anda üç tür katkıda bulunma şeklimiz var:",
+        "newContentDesc": "Aklında koleksiyonlara eklemek istediğin bir video varsa...",
+        "newTopicDesc": "İçeriği başka bir dile çevirmek istersen... Şu anda Türkçe ve Hintçe destekliyoruz.",
+        "translateDesc": "Aklında bir konu varsa ve önermek istiyorsan, başka biri bu konuda bir tutorial hazırlayabilir."
+      }
+    }
+  },
+  "about": {
+    "title": "NEAR in Minutes Hakkında",
+    "desc": "NEAR in Minutes Topluluk Tarafından Sahiplenilen ve İşletilen Bir Proje"
   },
   "footer": {
     "rights": "2021 NEAR in Minutes, Tüm hakları saklıdır."
-  },
-  "singleVideo": {
-    "learnMore": "Learn more about"
   }
 }
