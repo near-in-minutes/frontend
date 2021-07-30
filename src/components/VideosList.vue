@@ -5,7 +5,7 @@
         <div v-for="video in content" :key="renderContentId(video)" class="flex flex-col rounded-lg shadow-md hover:shadow-xl overflow-hidden">
           <router-link :to="'/videos/' + renderContentId(video)">
             <div class="flex-shrink-0">
-              <div class="h-50 w-full object-cover flex justify-center">
+              <div class="w-full object-cover flex justify-center">
                 <div class="absolute h-40 flex flex-col">
                   <div class="pt-12">
                     <p class="text-sm font-medium text-near-green text-center">
@@ -17,7 +17,7 @@
                   </div>
                   <PlayIcon class="mt-5 text-white w-10 mx-auto" />
                 </div>
-                <img src="@/assets/video-thumbnail.png" alt="logo" />
+                <img src="@/assets/video-thumbnail.png" alt="logo" class="h-52" />
               </div>
             </div>
 
