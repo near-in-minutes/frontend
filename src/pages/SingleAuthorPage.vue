@@ -89,7 +89,7 @@ export default {
       required: true
     }
   },
-  async setup(props) {
+  setup(props) {
     const { t } = useI18n({ useScope: 'global' });
     const { status: authorStatus, authors: author, fetchOneAuthor } = useAuthors();
     onMounted(() => fetchOneAuthor(props.id, true));

@@ -1,8 +1,8 @@
 <template>
   <NavigationComponent />
-  <Suspense>
-    <router-view />
-  </Suspense>
+
+  <router-view />
+
   <FooterComponent />
 </template>
 
