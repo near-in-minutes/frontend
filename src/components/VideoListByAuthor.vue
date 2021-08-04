@@ -4,13 +4,14 @@
       <li v-for="video in author.content" :key="video.id" class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200 relative">
         <!-- Goes to Loom website for now -->
         <div @click="maybeWatch(video)" :class="[isLocale(video.fields.language) ? 'cursor-pointer hover:bg-near-yellow-light' : '', 'w-full flex items-center justify-between p-6 space-x-6']">
-          <div class="flex-1 truncate">
+          <div class="flex-1 w-full">
             <div class="flex items-center space-x-3">
               <h3 class="text-gray-900 text-sm font-medium truncate">
                 {{ video.fields.title }}
               </h3>
-              <span v-for="tag in video.fields.content_tags" :key="tag" class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">{{ tag }}</span>
             </div>
+            <div v-for="tag in video.fields.content_tags" :key="tag" class="flex-shrink-0 flex-wrap inline-block px-2 mr-2 py-0.5 my-1 text-green-800 text-xs font-medium bg-green-100 rounded-full">{{ tag }}</div>
+
             <p class="mt-1 text-gray-500 text-sm truncate">
               {{ video.fields.subheadline }}
             </p>
