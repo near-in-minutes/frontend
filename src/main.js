@@ -13,4 +13,4 @@ import i18n from '@/i18n';
 
 import VueAnalytics from 'vue3-analytics';
 
-createApp(App).use(router).use(i18n).use(VueAnalytics, { id: 'UA-179825760-1', disabled: false }).mount('#app');
+createApp(App).use(router).use(i18n).use(VueAnalytics, { id: process.env.GOOGLE_ANALYTICS, disabled: false }).mount('#app');
