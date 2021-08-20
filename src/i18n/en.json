@@ -53,13 +53,13 @@
       "warning": "Currently we accept {0} videos only.",
       "loomLink": "Loom",
       "setup": {
-        "title": "How to setup your system",
+        "title": "Step 1. Setup your system",
         "stepOne": "Divide you screen according to topic of to tutorial and place your documents page, terminal, code editor and tools on your screen",
         "stepTwo": "Show your sytem info, tool versions and date on the divided terminal pane",
         "stepthree": "Open loom app and be sure your recording settings are set"
       },
       "video": {
-        "title": "How to make a video",
+        "title": "Step 2. Create your video",
         "stepOne": "Go to the website of",
         "loom": "Loom",
         "stepTwo": "Click on the 'Get Loom for Free' and sign up",
@@ -67,7 +67,7 @@
         "stepFour": "When you are ready to record, click on `Start Recording`"
       },
       "issues": {
-        "subTitle": "How to submit your video (using Github Issues)",
+        "subTitle": "Step 3. Submit your video ",
         "stepOne": "Go to the issues section in",
         "issues": "NEAR in Minutes Community",
         "stepTwo": "Click on a  New issue and choose the type of content you would like to contribute.",
