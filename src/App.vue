@@ -11,9 +11,9 @@
     <meta property="twitter:site" content="@NEARProtocol" />
   </teleport>
   <NavigationComponent />
-  <Suspense>
-    <router-view />
-  </Suspense>
+
+  <router-view />
+
   <FooterComponent />
 </template>
 
