@@ -1,5 +1,7 @@
 <template>
-  <img class="w-full animate-pulse border shadow" src="@/assets/metabuidl-banner.png" alt="banner" />
+  <a href="https://metabuidl.splashthat.com/" target="_blank">
+    <img class="w-full animate-pulse border shadow" src="@/assets/metabuidl-banner.png" alt="banner" />
+  </a>
   <Disclosure as="nav" v-slot="{ open }">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-28">
