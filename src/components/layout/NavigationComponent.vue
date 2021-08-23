@@ -1,5 +1,5 @@
 <template>
-  <a href="https://metabuidl.splashthat.com/" target="_blank">
+  <a href="https://metabuidl.splashthat.com/edu" target="_blank">
     <img class="w-full animate-pulse border shadow" src="@/assets/metabuidl-banner.png" alt="banner" />
   </a>
   <Disclosure as="nav" v-slot="{ open }">
