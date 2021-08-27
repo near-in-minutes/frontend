@@ -3,10 +3,10 @@
     <div class="relative max-w-6xl m-auto">
       <div class="text-center">
         <h2 class="text-3xl tracking-tight font-extrabold sm:text-4xl text-near-green">
-          {{ t('collections.title') }}
+          {{ t('videos.title') }}
         </h2>
         <p class="mt-3 max-w-6xl mx-auto text-xl sm:mt-4 text-gray-500">
-          {{ t('collections.subtitle') }}
+          {{ t('videos.subtitle') }}
         </p>
       </div>
     </div>

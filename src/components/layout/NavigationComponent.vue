@@ -66,31 +66,31 @@ export default {
 
     const navigation = [
       {
-        name: 'Videos',
+        name: 'videos',
         label: computed(() => t('navbar.videos')),
         href: '/videos',
         current: false
       },
       {
-        name: 'Collections',
+        name: 'collections',
         label: computed(() => t('navbar.collections')),
         href: '/collections',
         current: false
       },
       {
-        name: 'Authors',
+        name: 'authors',
         label: computed(() => t('navbar.authors')),
         href: '/authors',
         current: false
       },
       {
-        name: 'Contribute',
+        name: 'contribute',
         label: computed(() => t('navbar.contribute')),
         href: '/contribute',
         current: false
       },
       {
-        name: 'About',
+        name: 'about',
         label: computed(() => t('navbar.about')),
         href: '/about',
         current: false
