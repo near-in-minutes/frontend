@@ -50,7 +50,17 @@ const routes = [
     path: '/about',
     name: 'about',
     component: () => import('@/pages/AboutPage')
-  }
+  },
+  {
+    path: '/nim-dao',
+    name: 'nim-dao',
+    component: () => import('@/pages/NimDao')
+  },
+  {
+    path: '/bounties',
+    name: 'bounties',
+    component: () => import(/* webpackChunkName: "authors" */ '@/pages/UserBounties')
+  },
 ];
 
 const router = createRouter({
