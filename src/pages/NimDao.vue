@@ -1,19 +1,15 @@
 <template>
-  <div class="relative pt-10  sm:px-6 lg:pb-28 ">
+  <div class="relative pt-10 sm:px-6 lg:pb-28">
     <DaoHeroSection />
-    <DaoInfo/>
+    <DaoInfo />
 
     <div class="mt-20 pb-20 bg-near-gray">
-       <div class="pt-10 my-20 text-center">
-        <h2 class="text-3xl tracking-tight font-extrabold sm:text-4xl text-near-green">
-          Bounties
-        </h2>
-         <p class="mt-3 text-xl sm:mt-4 text-near-gray-dark">
-          Explore all the availble bounties
-        </p>
+      <div class="pt-10 my-20 text-center">
+        <h2 class="text-3xl tracking-tight font-extrabold sm:text-4xl text-near-green">Bounties</h2>
+        <p class="mt-3 text-xl sm:mt-4 text-near-gray-dark">Explore all the availble bounties</p>
       </div>
 
-      <ul role="list" class="max-w-6xl  mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
+      <ul role="list" class="max-w-6xl mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
         <li v-for="bounty in bounties" :key="bounty.info.id" class="bg-white shadow overflow-hidden py-4 sm:rounded-2xl">
           <div class="flex justify-between my-6 text-gray-500 sm:px-6 px-4">
             <p class="truncate text-xl text-near-green">
@@ -61,7 +57,7 @@ import { ref, reactive } from 'vue';
 import BountyModal from '@/components/BountyModal';
 import ClaimBountyModal from '@/components/ClaimBountyModal';
 import DaoHeroSection from '@/components/DaoHeroSection';
-import DaoInfo from '@/components/DaoInfo'
+import DaoInfo from '@/components/DaoInfo';
 
 export default {
   components: {
@@ -86,12 +82,12 @@ export default {
 
     let isClaimOpen = ref(false);
     let claimId = ref();
-    let claimDeadline = ref()
+    let claimDeadline = ref();
 
     const setBountyClaimModal = (value, id, deadline) => {
       isClaimOpen.value = value;
       claimId.value = id;
-      claimDeadline.value = deadline
+      claimDeadline.value = deadline;
     };
 
     return {

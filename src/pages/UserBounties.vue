@@ -31,11 +31,10 @@
           <div>
             <div class="-mt-px flex divide-x divide-gray-200">
               <div class="w-0 flex-1 flex">
-                        <button @click="handleBountyGiveUp(bounty.bounty.bounty_id)" class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500">Giveup</button>
+                <button @click="handleBountyGiveUp(bounty.bounty.bounty_id)" class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500">Giveup</button>
               </div>
               <div class="-ml-px w-0 flex-1 flex">
-                  <button @click="handleBountyDone(bounty.bounty.bounty_id, accountId, 'I am done with this bounty')" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">Submit</button>
-      
+                <button @click="handleBountyDone(bounty.bounty.bounty_id, accountId, 'I am done with this bounty')" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">Submit</button>
               </div>
             </div>
           </div>
