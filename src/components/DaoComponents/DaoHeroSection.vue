@@ -1,9 +1,10 @@
 <template>
   <kinesis-container>
-    <div class="background relative max-w-6xl m-auto rounded-3xl overflow-hidden flex justify-between">
-      <div class="flex flex-col my-auto ml-20">
-        <h2 class="text-3xl tracking-tight font-extrabold sm:text-4xl">A new learning experience</h2>
+    <div class="background relative max-w-6xl m-auto rounded-3xl overflow-hidden flex">
+      <div class="flex flex-col my-auto ml-10 w-1/2">
+        <h2 class="text-3xl tracking-tight font-extrabold sm:text-4xl">Create short video tutorials about NEAR and earn money</h2>
         <p class="mt-3 max-w-6xl mx-auto text-xl sm:mt-4">Share your knowledge and earn money in a boundless system</p>
+        <button class="cursor-pointer py-2 mt-8 w-48 inline-flex items-center justify-center px-5 py-3 font-medium rounded-md text-white bg-near-royal hover:bg-near-royal-dark hover:text-white transform hover:scale-105 sm:w-auto">Pick a bounty</button>
       </div>
       <div class="grid grid-cols-3 grid-row-6">
         <kinesis-element :strength="-60" type="translate" axis="y" class="col-start-0 col-end-1 justify-self-end -mt-6"

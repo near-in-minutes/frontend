@@ -18,10 +18,12 @@
               Bounty reciever: <br />
               <span class="font-semibold">{{ bountyDone.kind.BountyDone.receiver_id }}</span>
             </p>
-            <p v-if="bountyDone.status === 'Approved'" class="px-6 py-3 inline-flex text-xs leading-5 font-semibold rounded-full border border-near-red">{{ bountyDone.status }}</p>
+            <p class="px-6 py-3 inline-flex text-xs leading-5 font-semibold rounded-full border border-near-green-light">{{ bountyDone.status }}</p>
           </div>
 
-          <p class="text-sm text-gray-500 px-10 pt-2">{{ bountyDone.submission_time }}</p>
+          <p class="text-sm text-gray-500 px-10 pt-2">Submission date: {{ 
+            format(new Date(fromUnixTime(parseInt(bountyDone.submission_time  / 1000000000))), 'HH:mm, dd MMMM yyyy')
+            }}</p>
         </div>
         <div class="mt-5 flex justify-center p-5">
           <button type="button" class="w-48 inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 bg-near-green text-xl font-medium text-white hover:bg-green-600 sm:text-sm" @click="setBountyDoneModal(false, bountyDone)">Ok</button>
@@ -33,25 +35,27 @@
 
 <script>
 import { Dialog, DialogOverlay, DialogTitle } from '@headlessui/vue';
+import { fromUnixTime, format } from 'date-fns';
 
 export default {
   components: { Dialog, DialogOverlay, DialogTitle },
-  props: {
-    isOpen: {
-      type: Boolean,
-      required: true
-    },
-    setBountyDoneModal: {
-      type: Function,
-      required: true
-    },
-    bountyDone: {
-      type: Object,
-      required: true
-    }
-  },
+  props:['isOpen', 'setBountyDoneModal', 'bountyDone'],
+  // props: {
+  //   isOpen: {
+  //     type: Boolean,
+  //     required: true
+  //   },
+  //   setBountyDoneModal: {
+  //     type: Function,
+  //     required: true
+  //   },
+  //   bountyDone: {
+  //     type: Object,
+  //     required: true
+  //   }
+  // },
   setup() {
-    return {};
+    return {fromUnixTime, format};
   }
 };
 </script>
