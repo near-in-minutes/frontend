@@ -8967,6 +8967,11 @@ vue-i18n@^9.1.6:
     "@intlify/vue-devtools" "9.1.7"
     "@vue/devtools-api" "^6.0.0-beta.7"
 
+vue-kinesis@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/vue-kinesis/-/vue-kinesis-2.0.5.tgz#48b68861d6dc50c256cd811fb5bad0203c439dea"
+  integrity sha512-uO2lG9A/L4I9KvyJuUzAkAWqd37In/kWxQ6rZ3/heJZ8+7rHAbBO5Knz6xG+cpO+9Q4cYurxXsPfWM6e7X9E3Q==
+
 "vue-loader-v16@npm:vue-loader@^16.1.0":
   version "16.5.0"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-16.5.0.tgz#09c4e0712466899e34b99a686524f19165fb2892"
