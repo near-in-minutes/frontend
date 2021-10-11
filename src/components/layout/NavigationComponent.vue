@@ -10,8 +10,8 @@
           </div>
           <div class="hidden lg:ml-6 lg:flex lg:space-x-6 mt-8">
             <Popover class="relative" v-slot="{ open }">
-              <PopoverButton :class="[open ? 'text-gray-900' : 'text-gray-600 hover:bg-near-gray hover:text-black', nav1[0].current | nav1[1].current  ? 'bg-near-gray ' : 'text-gray-600 hover:bg-near-gray hover:text-black', 'rounded-md my-4 px-3 inline-flex items-center font-medium h-10']">
-                <router-link :to="nav[0].href" >
+              <PopoverButton :class="[open ? 'text-gray-900' : 'text-gray-600 hover:bg-near-gray hover:text-black', nav1[0].current | nav1[1].current ? 'bg-near-gray ' : 'text-gray-600 hover:bg-near-gray hover:text-black', 'rounded-md my-4 px-3 inline-flex items-center font-medium h-10']">
+                <router-link :to="nav[0].href">
                   {{ nav[0].label }}
                 </router-link>
                 <ChevronDownIcon :class="[open ? 'text-gray-600' : 'text-gray-400', 'ml-2 h-5 w-5 group-hover:text-gray-500']" aria-hidden="true" />
@@ -35,9 +35,9 @@
               </transition>
             </Popover>
 
-             <Popover class="relative" v-slot="{ open }">
-              <PopoverButton :class="[open ? 'text-gray-900' : 'text-gray-600 hover:bg-near-gray hover:text-black', nav2[0].current | nav2[1].current  ? 'bg-near-gray ' : 'text-gray-600 hover:bg-near-gray hover:text-black', 'rounded-md my-4 px-3 inline-flex items-center font-medium h-10']">
-                <router-link :to="nav[1].href" >
+            <Popover class="relative" v-slot="{ open }">
+              <PopoverButton :class="[open ? 'text-gray-900' : 'text-gray-600 hover:bg-near-gray hover:text-black', nav2[0].current | nav2[1].current ? 'bg-near-gray ' : 'text-gray-600 hover:bg-near-gray hover:text-black', 'rounded-md my-4 px-3 inline-flex items-center font-medium h-10']">
+                <router-link :to="nav[1].href">
                   {{ nav[1].label }}
                 </router-link>
                 <ChevronDownIcon :class="[open ? 'text-gray-600' : 'text-gray-400', 'ml-2 h-5 w-5 group-hover:text-gray-500']" aria-hidden="true" />
@@ -67,9 +67,8 @@
           </div>
         </div>
         <div class="hidden lg:ml-6 lg:flex lg:items-center mt-4">
-            <NearLogin />
+          <NearLogin />
           <BaseLocaleSwitcher />
-        
         </div>
         <div class="-mr-2 flex items-center lg:hidden">
           <!-- Mobile menu button -->
@@ -142,15 +141,14 @@ export default {
       //   href: '/authors',
       //   current: false
       // },
-     
+
       {
         name: 'about',
         label: computed(() => t('navbar.about')),
         href: '/about',
         current: false
-      }
-      ,
-        {
+      },
+      {
         name: 'NimDAO',
         label: 'NimDAO',
         href: '/nim-dao',
@@ -189,8 +187,8 @@ export default {
       }
     ];
 
-  const about = [
-     {
+    const about = [
+      {
         name: 'about',
         label: computed(() => t('navbar.about')),
         description: computed(() => t('about.desc')),
@@ -204,7 +202,6 @@ export default {
         href: '/authors',
         current: false
       }
-     
     ];
 
     const route = useRoute();
@@ -234,7 +231,7 @@ export default {
       }
     });
 
-    return { open, nav, nav1 , nav2};
+    return { open, nav, nav1, nav2 };
   }
 };
 </script>
