@@ -59,7 +59,7 @@ const routes = [
   {
     path: '/bounties',
     name: 'bounties',
-    component: () => import(/* webpackChunkName: "authors" */ '@/pages/UserBounties')
+    component: () => import('@/pages/UserBounties')
   }
 ];
 

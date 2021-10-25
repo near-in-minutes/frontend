@@ -9,7 +9,7 @@
         <div class="flex flex-col items-center rounded-lg justify-center px-4 py-2">
           <img :src="item.image" class="w-20 my-10 text-near-orange" />
           <h1 class="text-gray-900 font-medium hover:text-near-green text-md">{{ item.title }}</h1>
-          <p class="text-gray-500 text-sm mt-2 text-center">{{ item.description }} Members</p>
+          <p class="text-gray-500 text-sm mt-2 text-center">{{ item.description }}</p>
         </div>
       </li>
     </ul>
@@ -23,7 +23,7 @@ export default {
       { title: 'Select a bounty', description: 'Browse the list of bounties and select the most suitable bounty for you', image: require('@/assets/nim-dao/icons/select.svg'), color: 'near-orange' },
       { title: 'Claim the bounty', description: 'Check the deadline of each bounty and claim it', image: require('@/assets/nim-dao/icons/verify.svg') },
       { title: 'Do your magic', description: 'Create your work and make sure to submit in the My bounties page before the deadline', image: require('@/assets/nim-dao/icons/shuttle.svg') },
-      { title: 'Get paid', description: 'Wait until your work is approved and check the result bounty done proposal to earn your reward', image:  require('@/assets/nim-dao/icons/earn.svg') }
+      { title: 'Get paid', description: 'Wait until your work is approved and check the result bounty done proposal to earn your reward', image: require('@/assets/nim-dao/icons/earn.svg') }
     ];
     return {
       infos

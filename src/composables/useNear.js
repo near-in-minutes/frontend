@@ -1,4 +1,4 @@
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 import { getProposals, BountyClaim, getBounties, getBountyNumberOfClaims } from '../services/near';
 
@@ -11,11 +11,10 @@ export const useNear = () => {
   const bounties = ref(null);
 
   onMounted(async () => {
-    // when the component first mounts it get the memes from the blockchain
     try {
       const proposals = await getProposals();
       bountyDoneProposals.value = await proposals.filter(proposal => proposal.kind.BountyDone);
-      // console.log("result", proposals.value)
+      // console.log("bountyDoneProposals.value", bountyDoneProposals.value)
 
       const bountiesList = await getBounties();
       // bounties.value = getFakeBounties()
@@ -44,14 +43,15 @@ export const useNear = () => {
     BountyClaim(id, deadline);
   };
 
+  //   const getFakeBounties = () => {
+  //   return [{ info: { id: 0, description: " # Building projects  \n #### this is description of the project I want to submit and it's related to a and b and c \n\n [Click here for more details](https://www.example.com)", token: "", amount: "20", times: 1, max_deadline: "500000000" }, claimNum: 0, amount: "20 yN", duration: "less than a minute" }]
+
+  // }
+
+  // " # Building projects  \n #### this is description of the project I want to submit and it's related to a and b and c \n\n [Click here for more details](https://www.example.com)"
+
   return {
     handleClaimBounty,
     bounties
   };
 };
-
-// function getFakeBounties() {
-//   return (
-
-//   )
-// }

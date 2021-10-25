@@ -26,6 +26,12 @@ export const getProposals = async () => {
   });
 };
 
+export const getProposal = () => {
+  return wallet.account().viewFunction(CONTRACT_ID, 'get_proposal', {
+    id: 12
+  });
+};
+
 export const getLastBountyId = () => {
   return wallet.account().viewFunction(CONTRACT_ID, 'get_last_bounty_id', {});
 };
