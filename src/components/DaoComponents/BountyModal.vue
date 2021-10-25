@@ -39,20 +39,21 @@ import { fromUnixTime, format } from 'date-fns';
 
 export default {
   components: { Dialog, DialogOverlay, DialogTitle },
-  props: {
-    isOpen: {
-      type: Boolean,
-      required: true
-    },
-    setBountyDoneModal: {
-      type: Function,
-      required: true
-    },
-    bountyDone: {
-      type: Object,
-      required: true
-    }
-  },
+  props:['isOpen', 'setBountyDoneModal', 'bountyDone'],
+  // props: {
+  //   isOpen: {
+  //     type: Boolean,
+  //     required: true
+  //   },
+  //   setBountyDoneModal: {
+  //     type: Function,
+  //     required: true
+  //   },
+  //   bountyDone: {
+  //     type: Object,
+  //     required: true
+  //   }
+  // },
   setup() {
     return {fromUnixTime, format};
   }
