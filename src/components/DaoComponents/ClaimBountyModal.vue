@@ -5,9 +5,9 @@
 
       <!-- This element is to trick the browser into centering the modal contents. -->
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-     
-        <div class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6 p-10">
-           <div v-if="accountId" class="">
+
+      <div class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6 p-10">
+        <div v-if="accountId" class="">
           <DialogTitle as="h3" class="text-lg font-medium text-gray-900">
             <p class="">You are about to claim this bounty are you sure ?</p>
             <!-- <p class="text-sm text-gray-700">Proposed by: {{ bountyDone.proposer }}</p> -->
@@ -21,14 +21,13 @@
             <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-near-green text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:col-start-2 sm:text-sm" @click="handleClaimBounty(id, claimDeadline)">Claim</button>
             <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:mt-0 sm:col-start-1 sm:text-sm" @click="setBountyClaimModal(false, id, maxDeadline)">Cancel</button>
           </div>
-
         </div>
         <div v-else>
           <DialogTitle as="h3" class="text-lg font-medium text-gray-900">
-            <p class="">You need to be logged in first </p>
+            <p class="">You need to be logged in first</p>
             <!-- <p class="text-sm text-gray-700">Proposed by: {{ bountyDone.proposer }}</p> -->
           </DialogTitle>
-           <button type="button" class="mt-10 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-near-green text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:col-start-2 sm:text-sm" @click="setBountyClaimModal(false, id, maxDeadline)">Ok</button>
+          <button type="button" class="mt-10 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-near-green text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:col-start-2 sm:text-sm" @click="setBountyClaimModal(false, id, maxDeadline)">Ok</button>
         </div>
       </div>
     </div>
@@ -41,7 +40,7 @@ import { wallet } from '@/services/near';
 
 export default {
   components: { Dialog, DialogOverlay, DialogTitle },
-props: ['isOpen','setBountyClaimModal',  'id','handleClaimBounty','claimDeadline'],
+  props: ['isOpen', 'setBountyClaimModal', 'id', 'handleClaimBounty', 'claimDeadline'],
   // props:  {
   //   isOpen: {
   //     type: Boolean,

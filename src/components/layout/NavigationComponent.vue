@@ -86,6 +86,7 @@
         <router-link v-for="item in nav" :key="item.name" :to="item.href" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-900 hover:bg-gray-50 hover:text-gray-900', 'block rounded-md py-2 px-3 text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.label }}</router-link>
       </div>
       <div class="pt-2 pb-3 px-2">
+        <NearLogin />
         <BaseLocaleSwitcher />
       </div>
     </DisclosurePanel>
