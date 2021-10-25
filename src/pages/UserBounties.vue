@@ -34,11 +34,13 @@
                 <button @click="handleBountyGiveUp(bounty.bounty.bounty_id)" class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500">Giveup</button>
               </div>
               <div class="-ml-px w-0 flex-1 flex">
-                <button @click="handleBountyDone(bounty.bounty.bounty_id, accountId, 'I am done with this bounty')" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">Submit</button>
+                <button @click="setBountyDoneModal(true, bounty.bounty.bounty_id)">Submit</button>
+                <!-- <button @click="handleBountyDone(bounty.bounty.bounty_id, accountId, 'I am done with this bounty')" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">Submit</button> -->
               </div>
             </div>
           </div>
         </li>
+        <SubmitBountyModal :isOpen="isOpen" :setBountyDoneModal="setBountyDoneModal" :handleBountyDone="handleBountyDone" :accountId="accountId" :bountyId="bountyId" />
       </ul>
     </div>
     <div v-else class="mt-3 max-w-6xl mx-auto text-xl sm:mt-4 text-gray-500 text-center">You have no claimed bounties yet</div>
@@ -47,16 +49,29 @@
 
 <script>
 import { format, fromUnixTime } from 'date-fns';
+import { ref, reactive, watch } from 'vue';
 import { wallet } from '@/services/near';
 import { useBounties } from '@/composables/useBounties';
 import { useI18n } from 'vue-i18n';
+import SubmitBountyModal from '@/components/DaoComponents/SubmitBountyModal';
 
 export default {
-  props: {},
+  components: { SubmitBountyModal },
   setup() {
     const { t } = useI18n({ useScope: 'global' });
     const accountId = wallet.getAccountId();
     const { userBounties, handleBountyDone, handleBountyGiveUp } = useBounties(accountId);
+
+    let isOpen = ref(false);
+    // let bountyDone = reactive({ data: {} });
+    let bountyId = ref();
+    
+    const setBountyDoneModal = (value, id) => {
+      isOpen.value = value;
+      bountyId.value = id;
+      // bountyDone.data = BountyDone;
+    };
+
     return {
       t,
       userBounties,
@@ -64,7 +79,10 @@ export default {
       handleBountyGiveUp,
       format,
       fromUnixTime,
-      accountId
+      accountId,
+      isOpen,
+      setBountyDoneModal,
+      bountyId
     };
   }
 };
