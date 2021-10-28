@@ -23,7 +23,7 @@ export default {
       { title: 'Select a bounty', description: 'Browse the list of bounties and select the most suitable bounty for you', image: require('@/assets/nim-dao/icons/select.svg'), color: 'near-orange' },
       { title: 'Claim the bounty', description: 'Check the deadline of each bounty and claim it', image: require('@/assets/nim-dao/icons/verify.svg') },
       { title: 'Do your magic', description: 'Create your work and make sure to submit in the My bounties page before the deadline', image: require('@/assets/nim-dao/icons/shuttle.svg') },
-      { title: 'Get paid', description: 'Wait until your work is approved and check the result bounty done proposal to earn your reward', image:  require('@/assets/nim-dao/icons/earn.svg') }
+      { title: 'Get paid', description: 'Wait until your work is approved and check the result bounty done proposal to earn your reward', image: require('@/assets/nim-dao/icons/earn.svg') }
     ];
     return {
       infos

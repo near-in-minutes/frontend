@@ -103,11 +103,7 @@ import SubmitBountyModal from '@/components/DaoComponents/SubmitBountyModal';
 import marked from 'marked';
 
 export default {
-  props: [
-    'activeBounties',
-    'awaitingEvaluationBounties',
-    'doneBounties'
-  ],
+  props: ['activeBounties', 'awaitingEvaluationBounties', 'doneBounties'],
   components: {
     BountyModal,
     SubmitBountyModal
@@ -150,7 +146,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="postcss">
 #description h1 {

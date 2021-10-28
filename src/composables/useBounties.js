@@ -1,30 +1,14 @@
-import {
-  ref,
-  onMounted
-} from 'vue';
-import {
-  getBountyClaims,
-  getBounty,
-  BountyDone,
-  BountyGiveUp,
-  getProposal,
-  getProposals
-} from '../services/near';
-import {
-  fromUnixTime,
-  format
-} from 'date-fns';
+import { ref, onMounted } from 'vue';
+import { getBountyClaims, getBounty, BountyDone, BountyGiveUp, getProposal, getProposals } from '../services/near';
+import { fromUnixTime, format } from 'date-fns';
 
-import {
-  NEAR
-} from 'near-units';
+import { NEAR } from 'near-units';
 
 export const useBounties = accountId => {
   const userBounties = ref([]);
-  const error = ref(false)
+  const error = ref(false);
 
   onMounted(async () => {
-
     try {
       const bountyClaims = await getBountyClaims(accountId);
       const proposals = await getProposals();
@@ -45,9 +29,9 @@ export const useBounties = accountId => {
       );
     } catch (error) {
       console.error(error);
-      alert(error)
-      error.value === true
-      return error
+      alert(error);
+      error.value === true;
+      return error;
     }
   });
 

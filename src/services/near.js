@@ -27,8 +27,8 @@ export const getProposals = async () => {
 };
 
 export const getProposal = () => {
-  return wallet.account().viewFunction(CONTRACT_ID, "get_proposal", {
-    id: 12,
+  return wallet.account().viewFunction(CONTRACT_ID, 'get_proposal', {
+    id: 12
   });
 };
 

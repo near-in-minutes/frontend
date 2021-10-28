@@ -63,7 +63,7 @@ import { useI18n } from 'vue-i18n';
 import { useNear } from '@/composables/useNear';
 import { format, fromUnixTime } from 'date-fns';
 import { CalendarIcon } from '@heroicons/vue/solid';
-import { ref, reactive,  watch } from 'vue';
+import { ref, reactive, watch } from 'vue';
 import BountyModal from '@/components/DaoComponents/BountyModal';
 import ClaimBountyModal from '@/components/DaoComponents/ClaimBountyModal';
 import DaoHeroSection from '@/components/DaoComponents/DaoHeroSection';
@@ -119,7 +119,7 @@ export default {
 
     watch(bounties, () => {
       filteredBounties.value = bounties.value;
-      console.log(bounties.value)
+      console.log(bounties.value);
     });
 
     watch(selectedProposals, () => {
