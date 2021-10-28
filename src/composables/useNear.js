@@ -11,11 +11,11 @@ export const useNear = () => {
   const bounties = ref(null);
 
   onMounted(async () => {
-    // when the component first mounts it get the memes from the blockchain
+
     try {
       const proposals = await getProposals();
       bountyDoneProposals.value = await proposals.filter(proposal => proposal.kind.BountyDone);
-      // console.log("result", proposals.value)
+      // console.log("bountyDoneProposals.value", bountyDoneProposals.value)
 
       const bountiesList = await getBounties();
       // bounties.value = getFakeBounties()

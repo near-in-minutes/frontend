@@ -119,6 +119,7 @@ export default {
 
     watch(bounties, () => {
       filteredBounties.value = bounties.value;
+      console.log(bounties.value)
     });
 
     watch(selectedProposals, () => {
@@ -160,12 +161,12 @@ export default {
 
 <style lang="postcss">
 #description h1 {
-  @apply text-xl font-bold mb-5;
+  @apply text-xl font-bold text-near-green;
 }
 
-#description h4 {
+/* #description h4 {
   @apply pb-6;
-}
+} */
 
 #description a {
   @apply underline text-near-green;

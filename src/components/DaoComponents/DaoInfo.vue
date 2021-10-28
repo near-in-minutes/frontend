@@ -9,7 +9,7 @@
         <div class="flex flex-col items-center rounded-lg justify-center px-4 py-2">
           <img :src="item.image" class="w-20 my-10 text-near-orange" />
           <h1 class="text-gray-900 font-medium hover:text-near-green text-md">{{ item.title }}</h1>
-          <p class="text-gray-500 text-sm mt-2 text-center">{{ item.description }} Members</p>
+          <p class="text-gray-500 text-sm mt-2 text-center">{{ item.description }}</p>
         </div>
       </li>
     </ul>
