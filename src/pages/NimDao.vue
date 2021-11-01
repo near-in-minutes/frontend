@@ -21,7 +21,7 @@
         <!-- <button v-for="filter in filters" :key="filter.id" @click="selectedProposals = filter.id" :disabled="selectedProposals === filter.id"> {{filter.name}}</button> -->
       </div>
       <ul role="list" class="max-w-6xl mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
-        <li v-for="bounty in filteredBounties" :key="bounty.info.id" class="bg-white shadow overflow-hidden py-4 sm:rounded-2xl">
+        <li v-for="bounty in filteredBounties" :key="bounty.info.id" class="bg-white shadow overflow-hidden py-4 sm:rounded-2xl flex flex-col justify-between">
           <div class="flex justify-between my-6 text-gray-500 sm:px-6 px-4">
             <p class="truncate text-xl text-near-green">Reward: {{ bounty.amount }}</p>
             <div class="flex-shrink-0 flex">
