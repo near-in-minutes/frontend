@@ -1,6 +1,6 @@
 import { keyStores, Near, WalletConnection, utils } from 'near-api-js';
 import BN from 'bn.js';
-export const CONTRACT_ID = 'hundred.testnet';
+export const CONTRACT_ID = 'nimdao.sputnikv2.testnet';
 
 const gas = new BN('70000000000000');
 // use new NEAR here to avoid needing async/await
@@ -12,7 +12,7 @@ export const near = new Near({
 });
 
 // can now create a new WalletConnection with the created Near object
-export const wallet = new WalletConnection(near, 'hundred');
+export const wallet = new WalletConnection(near, 'nimdao');
 
 export const getLastProposalId = () => {
   return wallet.account().viewFunction(CONTRACT_ID, 'get_last_proposal_id', {});
