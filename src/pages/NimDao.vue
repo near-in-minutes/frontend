@@ -31,7 +31,7 @@
             </div>
           </div>
           <div class="flex flex-col justify-between sm:px-6 px-4">
-            <div v-html="marked(bounty.info.description)" id="description"></div>
+            <div v-html="clean(marked(bounty.info.description))" id="description"></div>
 
             <div class="flex items-center text-gray-400 text-sm sm:mt-0 pt-3">
               <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -137,6 +137,10 @@ export default {
       }
     });
 
+    const clean = (description) => {
+     return description.replace(/[$]/g, ' ')
+    };
+
     return {
       t,
       handleClaimBounty,
@@ -153,7 +157,8 @@ export default {
       marked,
       selectedProposals,
       filteredBounties,
-      filters
+      filters,
+      clean
     };
   }
 };

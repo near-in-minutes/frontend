@@ -2,7 +2,7 @@
   <ul v-if="activeBounties" role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
     <li v-for="bounty in activeBounties" :key="bounty.id" class="col-span-1 flex flex-col text-center bg-white rounded-2xl shadow divide-y divide-bg-20">
       <div class="flex-1 flex flex-col p-8">
-        <div v-html="marked(bounty.info.description)" id="description"></div>
+        <div v-html="clean(marked(bounty.info.description))" id="description"></div>
         <dl class="mt-1 flex-grow flex flex-col justify-between">
           <dt class="sr-only">Claimed on:</dt>
           <dd class="text-gray-500 text-sm">
@@ -35,7 +35,7 @@
   <ul v-else-if="awaitingEvaluationBounties" role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
     <li v-for="bounty in awaitingEvaluationBounties" :key="bounty.id" class="col-span-1 flex flex-col text-center bg-white rounded-2xl shadow divide-y divide-bg-20">
       <div class="flex-1 flex flex-col p-8">
-        <div v-html="marked(bounty.info.description)" id="description"></div>
+        <div v-html="clean(marked(bounty.info.description))" id="description"></div>
         <dl class="mt-1 flex-grow flex flex-col justify-between">
           <dt class="sr-only">Claimed on:</dt>
           <dd class="text-gray-500 text-sm">
@@ -64,7 +64,7 @@
   <ul v-else-if="doneBounties" role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
     <li v-for="bounty in doneBounties" :key="bounty.id" class="col-span-1 flex flex-col text-center bg-white rounded-2xl shadow divide-y divide-bg-20">
       <div class="flex-1 flex flex-col p-8">
-        <div v-html="marked(bounty.info.description)" id="description"></div>
+        <div v-html="clean(marked(bounty.info.description))" id="description"></div>
         <dl class="mt-1 flex-grow flex flex-col justify-between">
           <dt class="sr-only">Claimed on:</dt>
           <dd class="text-gray-500 text-sm">
@@ -129,6 +129,10 @@ export default {
       bountyId.value = id;
     };
 
+         const clean = (description) => {
+     return description.replace(/[$]/g, ' ')
+    };
+
     return {
       setBountyDoneModal,
       isOpen,
@@ -141,7 +145,8 @@ export default {
       format,
       handleBountyGiveUp,
       fromUnixTime,
-      marked
+      marked,
+      clean
     };
   }
 };

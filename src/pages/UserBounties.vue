@@ -18,7 +18,7 @@
     </div>
 
     <div v-else-if="error">
-      <div v-html="marked(bounty.info.description)" id="description"></div>
+      <div v-html="clean(marked(bounty.info.description))" id="description"></div>
     </div>
 
     <div v-else class="mt-3 max-w-6xl mx-auto text-xl sm:mt-4 text-gray-500 text-center">You have no claimed bounties yet</div>
@@ -57,13 +57,18 @@ export default {
       console.log('error', error.value);
     });
 
+       const clean = (description) => {
+     return description.replace(/[$]/g, ' ')
+    };
+
     return {
       t,
       userBounties,
       activeBounties,
       awaitingEvaluationBounties,
       doneBounties,
-      error
+      error,
+      clean
     };
   }
 };
