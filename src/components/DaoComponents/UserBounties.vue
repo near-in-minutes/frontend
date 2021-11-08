@@ -129,8 +129,8 @@ export default {
       bountyId.value = id;
     };
 
-         const clean = (description) => {
-     return description.replace(/[$]/g, ' ')
+    const clean = description => {
+      return description.replace(/[$]/g, ' ');
     };
 
     return {

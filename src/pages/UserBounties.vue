@@ -57,8 +57,8 @@ export default {
       console.log('error', error.value);
     });
 
-       const clean = (description) => {
-     return description.replace(/[$]/g, ' ')
+    const clean = description => {
+      return description.replace(/[$]/g, ' ');
     };
 
     return {
