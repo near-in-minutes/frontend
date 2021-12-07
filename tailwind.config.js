@@ -57,7 +57,10 @@ module.exports = {
     width: ['hover'],
     padding: ['hover'],
     fontWeight: ['hover'],
-    extend: {}
+    extend: {
+      borderColor: ['disabled'],
+      textColor: ['disabled']
+    }
   },
   plugins: []
 };
