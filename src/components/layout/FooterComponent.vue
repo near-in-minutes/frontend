@@ -12,11 +12,13 @@
 
       <p class="mt-8 text-center text-base text-gray-400">&copy; {{ t('footer.rights') }}</p>
     </div>
+    <CookieConsent />
   </footer>
 </template>
 
 <script>
 import { useI18n } from 'vue-i18n';
+import CookieConsent from '@/components/CookieConsent';
 const navigation = {
   main: [
     {
@@ -30,6 +32,7 @@ const navigation = {
 
 export default {
   name: 'Footer',
+  components: { CookieConsent },
   setup() {
     const { t } = useI18n({ useScope: 'global' });
 
