@@ -59,10 +59,10 @@
     <div v-if="readyToLoadMoreVideos" class="max-w-2xl mx-auto text-center pb-28 px-4 sm:py-20 sm:px-6 lg:px-8">
       <div @click="loadMoreVideos" class="cursor-pointer mt-8 w-30 inline-flex items-center justify-center px-5 py-3 font-medium rounded-md text-white bg-near-green hover:bg-green-600 hover:text-white transform hover:scale-105 sm:w-auto">load more</div>
     </div>
-    <div v-else-if="show=='3'" class="max-w-2xl mx-auto text-center pb-28 px-4 sm:py-20 sm:px-6 lg:px-8">
-       <router-link to="/videos">
-      <div class="cursor-pointer mt-8 w-30 inline-flex items-center justify-center px-5 py-3 font-medium rounded-md text-white bg-near-green hover:bg-green-600 hover:text-white transform hover:scale-105 sm:w-auto">View all videos</div>
-     </router-link>
+    <div v-else-if="show == '3'" class="max-w-2xl mx-auto text-center pb-28 px-4 sm:py-20 sm:px-6 lg:px-8">
+      <router-link to="/videos">
+        <div class="cursor-pointer mt-8 w-30 inline-flex items-center justify-center px-5 py-3 font-medium rounded-md text-white bg-near-green hover:bg-green-600 hover:text-white transform hover:scale-105 sm:w-auto">View all videos</div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -153,7 +153,7 @@ export default {
       formatDuration,
       contentStatus,
       loadMoreVideos,
-      readyToLoadMoreVideos,
+      readyToLoadMoreVideos
     };
   }
 };
