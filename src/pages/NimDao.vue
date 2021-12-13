@@ -4,8 +4,12 @@
     <DaoInfo />
 
     <div class="mt-20 pb-20 bg-near-gray">
-      <div class="pt-10 my-20 text-center">
-        <h2 class="text-3xl tracking-tight font-extrabold sm:text-4xl text-near-green">Bounties</h2>
+      <div class="text-center bg-near-red py-3 animate-pulse">
+        <p>NimDAO is still underdevelopment, all the bounties below are still being developed.</p>
+        <p>Nim is a community project, if you can help please reach out. we appreciate your help.</p>
+      </div>
+      <div class="pt-5 my-20 text-center">
+        <h2 class="text-3xl tracking-tight font-extrabold sm:text-4xl text-near-green" id="bounties-div">Bounties</h2>
         <p class="mt-3 text-xl sm:mt-4 text-near-gray-dark">Explore all the availble bounties</p>
       </div>
       <div>
