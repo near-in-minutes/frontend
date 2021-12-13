@@ -45,12 +45,12 @@ export default {
     KinesisElement
   },
 
-setup() {
-  const scrollToElement = () => {
-      document.getElementById("bounties-div").scrollIntoView({behavior: "smooth"});
+  setup() {
+    const scrollToElement = () => {
+      document.getElementById('bounties-div').scrollIntoView({ behavior: 'smooth' });
+    };
+    return { scrollToElement };
   }
-return { scrollToElement };
-}
 };
 </script>
 

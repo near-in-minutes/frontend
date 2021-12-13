@@ -5,7 +5,7 @@
 
     <div class="mt-20 pb-20 bg-near-gray">
       <div class="text-center bg-near-red py-3 animate-pulse">
-        <p>NimDAO is still underdevelopment, all the bounties below are still being developed.</p>
+        <p>NimDAO is still underdevelopment and is running on testnet, all the bounties below are just for testing.</p>
         <p>Nim is a community project, if you can help please reach out. we appreciate your help.</p>
       </div>
       <div class="pt-5 my-20 text-center">
