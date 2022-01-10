@@ -49,7 +49,7 @@ async function getAll({ table, view = 'all' }) {
   }
 }
 
-async function getAllFilter({ table, view = 'all' , filterByFormula}) {
+async function getAllFilter({ table, view = 'all', filterByFormula }) {
   try {
     const url = `${API_ROOT}/${BASE_ID}?tableName=${table}&view=${view}&filterByFormula=${filterByFormula}`;
     const response = await fetch(url, requestOptions);
@@ -86,7 +86,7 @@ async function findOne({ table, id }) {
 /**
  * https://community.airtable.com/t/most-efficient-way-to-retrieve-specific-records-by-id/23224
  */
- async function findAll({ table, ids, view = 'all' }) {
+async function findAll({ table, ids, view = 'all' }) {
   try {
     const filterByFormula = `SEARCH(RECORD_ID(), "${ids.join(',')}") != ""`;
     const url = `${API_ROOT}/${BASE_ID}?tableName=${table}&view=${view}&filterByFormula=${filterByFormula}`;

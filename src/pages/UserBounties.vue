@@ -2,9 +2,7 @@
   <div class="relative pt-20 px-4 sm:px-6 lg:pb-28 lg:px-8">
     <div class="relative max-w-6xl m-auto">
       <div class="text-center">
-        <h2 class="text-3xl tracking-tight font-extrabold sm:text-4xl text-near-green">
-          Your bounties
-        </h2>
+        <h2 class="text-3xl tracking-tight font-extrabold sm:text-4xl text-near-green">Your bounties</h2>
       </div>
     </div>
 

@@ -8,9 +8,8 @@
 
       <div class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
         <div class="relative">
-              <img :src="[require('@/assets/video-thumb-'+randomIntFromInterval(1, 5).toString()+'.png')]" alt="my-logo" class="absolute z-0 w-full" />
+          <img :src="[require('@/assets/video-thumb-' + randomIntFromInterval(1, 5).toString() + '.png')]" alt="my-logo" class="absolute z-0 w-full" />
           <DialogTitle as="h3" class="text-lg font-medium text-gray-900 bg-near-gray pl-20 pr-40 py-20 z-1 h-72">
-          
             <!-- <p class="">{{ bountyDone.description }}</p> -->
             <div v-html="marked(bountyDone.description)" id="description"></div>
 
@@ -58,11 +57,11 @@ export default {
   //   }
   // },
   setup() {
-           function randomIntFromInterval(min, max) {
+    function randomIntFromInterval(min, max) {
       // min and max included
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
-    return { fromUnixTime, format, marked,randomIntFromInterval };
+    return { fromUnixTime, format, marked, randomIntFromInterval };
   }
 };
 </script>
