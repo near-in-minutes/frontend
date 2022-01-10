@@ -91,7 +91,7 @@ export const BountyDone = (id, account_id, description) => {
         }
       }
     },
-    attachedDeposit: utils.format.parseNearAmount('3')
+    attachedDeposit: utils.format.parseNearAmount('1')
   });
 };
 

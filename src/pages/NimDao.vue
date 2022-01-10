@@ -25,24 +25,31 @@
         <!-- <button v-for="filter in filters" :key="filter.id" @click="selectedProposals = filter.id" :disabled="selectedProposals === filter.id"> {{filter.name}}</button> -->
       </div>
       <ul role="list" class="max-w-6xl mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
-        <li v-for="bounty in filteredBounties" :key="bounty.info.id" class="bg-white shadow overflow-hidden py-4 sm:rounded-2xl flex flex-col justify-between">
-          <div class="flex justify-between my-6 text-gray-500 sm:px-6 px-4">
-            <p class="truncate text-xl text-near-green">Reward: {{ bounty.amount }}</p>
-            <div class="flex-shrink-0 flex">
-              <p v-if="bounty.info.times > bounty.claimNum" class="px-4 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">active</p>
-              <p v-else-if="bounty.bountyDone" class="px-4 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Done</p>
-              <p v-else class="px-4 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">in Progress</p>
-            </div>
-          </div>
-          <div class="flex flex-col justify-between sm:px-6 px-4">
-            <div v-html="clean(marked(bounty.info.description))" id="description"></div>
+        <li v-for="bounty in filteredBounties" :key="bounty.info.id" class="h-96 bg-white shadow overflow-hidden sm:rounded-2xl flex flex-col justify-between">
+          <div class="relative h-full">
+            <!-- <img src="@/assets/video-thumb-1.png" alt="logo"  /> -->
+            <img :src="[require('@/assets/video-thumb-' + randomIntFromInterval(1, 5).toString() + '.png')]" alt="my-logo" class="absolute z-0 h-full" />
+            <div class="px-20">
+              <div class="flex justify-between my-6 text-gray-500 sm:px-6">
+                <p class="truncate text-xl text-near-green">Reward: {{ bounty.amount }}</p>
+                <div class="flex-shrink-0 flex">
+                  <p v-if="bounty.info.times > bounty.claimNum" class="px-4 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">active</p>
+                  <p v-else-if="bounty.bountyDone" class="px-4 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Done</p>
+                  <p v-else class="px-4 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">in Progress</p>
+                </div>
+              </div>
+              <div class="flex flex-col justify-between sm:px-6 px-4">
+                <!-- <p>{{bounty.info.description}}</p> -->
+                <div v-html="clean(marked(bounty.info.description))" id="description"></div>
 
-            <div class="flex items-center text-gray-400 text-sm sm:mt-0 pt-3">
-              <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
-              <p>{{ bounty.duration }}</p>
+                <div class="flex items-center text-gray-400 text-sm sm:mt-0 pt-3">
+                  <CalendarIcon class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
+                  <p>{{ bounty.duration }}</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="mt-6 pt-4 flex border-t border-gray-200">
+          <div class="py-4 flex border-t border-gray-200">
             <div v-if="bounty.info.times > bounty.claimNum" class="w-0 flex-1 flex">
               <button @click="setBountyClaimModal(true, bounty.info.id, bounty.info.max_deadline)" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-near-green">Claim</button>
             </div>
@@ -145,6 +152,11 @@ export default {
       return description.replace(/[$]/g, ' ');
     };
 
+    function randomIntFromInterval(min, max) {
+      // min and max included
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
     return {
       t,
       handleClaimBounty,
@@ -162,7 +174,8 @@ export default {
       selectedProposals,
       filteredBounties,
       filters,
-      clean
+      clean,
+      randomIntFromInterval
     };
   }
 };
@@ -170,7 +183,7 @@ export default {
 
 <style lang="postcss">
 #description h1 {
-  @apply text-xl font-bold text-near-green;
+  @apply text-xl font-bold text-black;
 }
 
 /* #description h4 {

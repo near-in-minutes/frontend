@@ -11,7 +11,7 @@
           <DialogTitle as="h3" class="text-lg font-medium text-gray-900 bg-near-gray p-10 py-20"> Fill in the following information to submit your work </DialogTitle>
           <form class="flex flex-col justify-between m-3">
             <input v-model="title" placeholder="Title" class="border rounded p-1 px-3 mt-2" />
-            <input v-model="description" placeholder="Description" class="border rounded p-1 px-3 mt-2" />
+            <input v-model="description" placeholder="Description" class="border rounded p-1 px-3 mt-2 h-60" />
             <input v-model="link" placeholder="Link" class="border rounded p-1 px-3 mt-2" />
           </form>
           <div class="-mt-px flex divide-x divide-gray-200 border border-t-1 border-gray-200">
