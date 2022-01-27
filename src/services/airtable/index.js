@@ -1,6 +1,15 @@
 /* eslint-disable */
 const Airtable = require('airtable');
-const base = new Airtable({ apiKey: 'keykNpwoxgmMLfSPI' }).base('appQ1mAGld5xjoujt');
+const API_ROOT = 'https://v1.nocodeapi.com/near/airtable';
+const BASE_ID = 'kbiDvMDzZglVdlPP';
+
+const headers = new Headers();
+headers.append('Content-Type', 'application/json');
+var requestOptions = {
+  method: 'get',
+  redirect: 'follow',
+  headers: headers
+};
 
 // prettier-ignore
 export {
@@ -25,8 +34,33 @@ export {
 
 async function getAll({ table, view = 'all' }) {
   try {
-    const records = await base(table).select({ view }).all();
-    return records.map(r => ({ id: r.id, fields: r.fields }));
+    const url = `${API_ROOT}/${BASE_ID}?tableName=${table}&view=${view}`;
+    const response = await fetch(url, requestOptions);
+
+    const data = await response.text();
+    const { records } = JSON.parse(data);
+
+    return records.map(r => ({
+      id: r.id,
+      fields: r.fields
+    }));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function getAllFilter({ table, view = 'all', filterByFormula }) {
+  try {
+    const url = `${API_ROOT}/${BASE_ID}?tableName=${table}&view=${view}&filterByFormula=${filterByFormula}`;
+    const response = await fetch(url, requestOptions);
+
+    const data = await response.text();
+    const { records } = JSON.parse(data);
+
+    return records.map(r => ({
+      id: r.id,
+      fields: r.fields
+    }));
   } catch (error) {
     console.log(error);
   }
@@ -34,8 +68,16 @@ async function getAll({ table, view = 'all' }) {
 
 async function findOne({ table, id }) {
   try {
-    const record = await base(table).find(id);
-    return { id: record.id, fields: record.fields };
+    const url = `${API_ROOT}/${BASE_ID}/record?tableName=${table}&id=${id}`;
+    const response = await fetch(url, requestOptions);
+
+    const data = await response.text();
+    const record = JSON.parse(data);
+
+    return {
+      id: record.id,
+      fields: record.fields
+    };
   } catch (error) {
     console.log(error);
   }
@@ -46,13 +88,17 @@ async function findOne({ table, id }) {
  */
 async function findAll({ table, ids, view = 'all' }) {
   try {
-    const records = await base(table)
-      .select({
-        view,
-        filterByFormula: `SEARCH(RECORD_ID(), "${ids.join(',')}") != ""`
-      })
-      .all();
-    return records.map(r => ({ id: r.id, fields: r.fields }));
+    const filterByFormula = `SEARCH(RECORD_ID(), "${ids.join(',')}") != ""`;
+    const url = `${API_ROOT}/${BASE_ID}?tableName=${table}&view=${view}&filterByFormula=${filterByFormula}`;
+
+    const response = await fetch(url, requestOptions);
+    const data = await response.text();
+    const { records } = JSON.parse(data);
+
+    return records.map(r => ({
+      id: r.id,
+      fields: r.fields
+    }));
   } catch (error) {
     console.log(error);
   }
@@ -65,7 +111,13 @@ async function findAll({ table, ids, view = 'all' }) {
 // prettier-ignore
 async function getAllFiltered(table, view = 'all', filterByFormula = '', options = {}) {
   try {
-    const records = await base(table).select({ view, filterByFormula, ...options }).all()
+    const records = await getAllFilter({
+      table: table,
+      view: view,
+      filterByFormula:filterByFormula,
+      options:options
+    });
+    // const records = await base(table).select({ view, filterByFormula, ...options }).all()
     return records.map((r) => ({ id: r.id, fields: r.fields }))
   } catch (error) {
     console.log(error)

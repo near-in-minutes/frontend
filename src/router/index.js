@@ -50,6 +50,27 @@ const routes = [
     path: '/about',
     name: 'about',
     component: () => import('@/pages/AboutPage')
+  },
+  {
+    path: '/nim-dao',
+    name: 'nim-dao',
+    component: () => import('@/pages/NimDao')
+  },
+  {
+    path: '/nim-dao/user-bounties',
+    name: 'user-bounties',
+    component: () => import('@/pages/UserBounties')
+  },
+  {
+    path: '/nim-dao/bounty/:id',
+    name: 'bounty',
+    props: true,
+    component: () => import('@/pages/SingleBounty')
+  },
+  {
+    path: '/nim-dao/proposals',
+    name: 'proposals',
+    component: () => import('@/pages/Proposals')
   }
 ];
 

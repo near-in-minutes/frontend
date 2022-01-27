@@ -4,7 +4,7 @@ module.exports = {
   purge: {
     content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
     options: {
-      safelist: [/bg-(gray|red|yellow|green|blue|indigo|purple|pink)-[3-7]00/]
+      safelist: [/bg-(gray|red|yellow|green|blue|indigo|purple|pink)-[3-7]00/, ]
     }
   },
   darkMode: false, // or 'media' or 'class'
@@ -57,7 +57,10 @@ module.exports = {
     width: ['hover'],
     padding: ['hover'],
     fontWeight: ['hover'],
-    extend: {}
+    extend: {
+      borderColor: ['disabled'],
+      textColor: ['disabled']
+    }
   },
   plugins: []
 };
