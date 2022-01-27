@@ -70,6 +70,7 @@ export const getBountyClaims = accountId => {
 };
 
 export const getBounty = id => {
+  console.log('services', id);
   return wallet.account().viewFunction(CONTRACT_ID, 'get_bounty', {
     id: id
   });
@@ -103,5 +104,32 @@ export const BountyGiveUp = id => {
     args: {
       id: id
     }
+  });
+};
+
+// a service to add a Bounty from the blockchain but this is not working for now
+export const addBounty = ({ description, bountyDescription, amount, times = 1, maxDeadline }) => {
+  console.log(description, bountyDescription, amount, times, maxDeadline);
+  return wallet.account().functionCall({
+    contractId: CONTRACT_ID,
+    methodName: 'add_proposal',
+    gas,
+    args: {
+      proposal: {
+        description: description,
+        kind: {
+          AddBounty: {
+            bounty: {
+              description: bountyDescription,
+              token: '',
+              amount: amount,
+              times: times,
+              max_deadline: maxDeadline
+            }
+          }
+        }
+      }
+    },
+    attachedDeposit: utils.format.parseNearAmount('1')
   });
 };

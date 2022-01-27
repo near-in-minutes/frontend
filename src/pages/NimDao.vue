@@ -3,11 +3,7 @@
     <DaoHeroSection />
     <DaoInfo />
 
-    <div class="mt-20 pb-20 bg-near-gray">
-      <div class="text-center bg-near-red py-3 animate-pulse">
-        <p>NimDAO is still underdevelopment and is running on testnet, all the bounties below are just for testing.</p>
-        <p>Nim is a community project, if you can help please reach out. we appreciate your help.</p>
-      </div>
+    <div class="mt-20 pb-20 bg-white">
       <div class="pt-5 my-20 text-center">
         <h2 class="text-3xl tracking-tight font-extrabold sm:text-4xl text-near-green" id="bounties-div">Bounties</h2>
         <p class="mt-3 text-xl sm:mt-4 text-near-gray-dark">Explore all the availble bounties</p>
@@ -29,7 +25,7 @@
           <div class="relative h-full">
             <!-- <img src="@/assets/video-thumb-1.png" alt="logo"  /> -->
             <img :src="[require('@/assets/video-thumb-' + randomIntFromInterval(1, 5).toString() + '.png')]" alt="my-logo" class="absolute z-0 h-full" />
-            <div class="px-20">
+            <div class="px-20 relative z-10">
               <div class="flex justify-between my-6 text-gray-500 sm:px-6">
                 <p class="truncate text-xl text-near-green">Reward: {{ bounty.amount }}</p>
                 <div class="flex-shrink-0 flex">
@@ -47,6 +43,7 @@
                   <p>{{ bounty.duration }}</p>
                 </div>
               </div>
+              <router-link :to="{ name: 'bounty', params: { id: bounty.info.id } }"> Read more </router-link>
             </div>
           </div>
           <div class="py-4 flex border-t border-gray-200">
@@ -65,6 +62,7 @@
         <ClaimBountyModal :isOpen="isClaimOpen" :setBountyClaimModal="setBountyClaimModal" :id="claimId" :claimDeadline="claimDeadline" :handleClaimBounty="handleClaimBounty" />
       </ul>
     </div>
+    <ProposalsSection />
     <DaoFAQ />
   </div>
 </template>
@@ -74,13 +72,14 @@ import { useI18n } from 'vue-i18n';
 import { useNear } from '@/composables/useNear';
 import { format, fromUnixTime } from 'date-fns';
 import { CalendarIcon } from '@heroicons/vue/solid';
-import { ref, reactive, watch } from 'vue';
+import { ref, reactive, watch, onMounted } from 'vue';
 import BountyModal from '@/components/DaoComponents/BountyModal';
 import ClaimBountyModal from '@/components/DaoComponents/ClaimBountyModal';
 import DaoHeroSection from '@/components/DaoComponents/DaoHeroSection';
 import DaoInfo from '@/components//DaoComponents/DaoInfo';
 import DaoFAQ from '@/components/DaoComponents/DaoFAQ';
 import marked from 'marked';
+import ProposalsSection from '@/components/DaoComponents/ProposalsSection';
 
 export default {
   components: {
@@ -89,14 +88,18 @@ export default {
     ClaimBountyModal,
     DaoHeroSection,
     DaoInfo,
-    DaoFAQ
+    DaoFAQ,
+    ProposalsSection
   },
 
   setup() {
     const { t } = useI18n({ useScope: 'global' });
 
-    const { bounties, handleClaimBounty } = useNear();
+    const { bounties, handleClaimBounty, handleGetBounties } = useNear();
 
+    onMounted(() => {
+      handleGetBounties();
+    });
     // This set of functions is related to opening a view proposal bounty modal
     let isOpen = ref(false);
     let bountyDone = reactive({ data: {} });
@@ -137,14 +140,14 @@ export default {
       if (selectedProposals.value === 'all') {
         filteredBounties.value = bounties.value;
       } else if (selectedProposals.value === 'available') {
-        const filterdArr = bounties.value.filter(bounty => bounty.info.times > bounty.claimNum);
-        filteredBounties.value = filterdArr;
+        const filteredArr = bounties.value.filter(bounty => bounty.info.times > bounty.claimNum);
+        filteredBounties.value = filteredArr;
       } else if (selectedProposals.value === 'done') {
-        const filterdArr = bounties.value.filter(bounty => bounty.bountyDone && bounty.info.times === bounty.claimNum);
-        filteredBounties.value = filterdArr;
+        const filteredArr = bounties.value.filter(bounty => bounty.bountyDone && bounty.info.times === bounty.claimNum);
+        filteredBounties.value = filteredArr;
       } else if (selectedProposals.value === 'claimed') {
-        const filterdArr = bounties.value.filter(bounty => !bounty.bountyDone && bounty.claimNum > 0);
-        filteredBounties.value = filterdArr;
+        const filteredArr = bounties.value.filter(bounty => !bounty.bountyDone && bounty.claimNum > 0);
+        filteredBounties.value = filteredArr;
       }
     });
 

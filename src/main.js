@@ -1,6 +1,6 @@
-import LogRocket from 'logrocket';
+// import LogRocket from 'logrocket';
 
-LogRocket.init('near/near-in-minutes');
+// LogRocket.init('near/near-in-minutes');
 
 import { createApp } from 'vue';
 
