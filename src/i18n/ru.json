@@ -1,34 +1,35 @@
 {
   "language": {
-    "en": "English"
+    "en": "Russian",
+    "ru": "Русский"
   },
   "metadata": {
     "title": "NEAR in minutes",
-    "description": "Learn NEAR in a Community-based initiative"
+    "description": "Изучите NEAR в инициативе сообщества"
   },
   "navbar": {
-    "home": "Home",
-    "videos": "Videos",
-    "collections": "Collections",
-    "authors": "Authors",
-    "contribute": "Contribute",
-    "about": "About"
+    "home": "Главная",
+    "videos": "Видео",
+    "collections": "Коллекции",
+    "authors": "Авторы",
+    "contribute": "Делать вклад",
+    "about": "О нас"
   },
   "main": {
-    "title": "Learn NEAR in a {0} initiative",
-    "titleHighlight": "Community-based"
+    "title": "Изучите NEAR в инициативе {0}",
+    "titleHighlight": "Сообществ"
   },
   "videos": {
-    "title": "Video Tutorials",
-    "subtitle": "Check out our latest tutorials and learn NEAR",
-    "btn": "Check out all videos",
-    "more": "Load More Videos",
-    "learnMore": "Learn more about"
+    "title": "Видеоуроки",
+    "subtitle": "Ознакомьтесь с нашими последними руководствами и изучите NEAR",
+    "btn": "Посмотреть все видео",
+    "more": "Загрузить больше видео",
+    "learnMore": "Узнать больше о"
   },
   "collections": {
-    "title": "Video Collections",
-    "subtitle": "Collections of related videos",
-    "desc": "Start your journey with series of videos in each collection",
+    "title": "Видео коллекции",
+    "subtitle": "Коллекции похожих видео",
+    "desc": "Начните свое путешествие с серии видео в каждой коллекции",
     "meal": "FAST | DIET | SNACK | PICNIC | FEAST",
     "posts": "No videos yet | {count} video | {count} videos",
     "single": {
