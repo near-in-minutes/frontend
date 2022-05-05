@@ -6,6 +6,7 @@ import en from './en.json';
 import es from './es.json';
 import hi from './hi.json';
 import tr from './tr.json';
+import ru from './ru.json';
 
 const messages = {
   ar,
@@ -13,7 +14,8 @@ const messages = {
   es,
   hi,
   tr,
-  de
+  de,
+  ru
 };
 
 const config = {
@@ -26,7 +28,8 @@ const config = {
     es: collectionSize,
     hi: collectionSize,
     tr: collectionSize,
-    de: collectionSize
+    de: collectionSize,
+    ru: collectionSize
   }
 };
 

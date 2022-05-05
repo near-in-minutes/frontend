@@ -1,0 +1,92 @@
+{
+  "language": {
+    "en": "English"
+  },
+  "metadata": {
+    "title": "NEAR in minutes",
+    "description": "Learn NEAR in a Community-based initiative"
+  },
+  "navbar": {
+    "home": "Home",
+    "videos": "Videos",
+    "collections": "Collections",
+    "authors": "Authors",
+    "contribute": "Contribute",
+    "about": "About"
+  },
+  "main": {
+    "title": "Learn NEAR in a {0} initiative",
+    "titleHighlight": "Community-based"
+  },
+  "videos": {
+    "title": "Video Tutorials",
+    "subtitle": "Check out our latest tutorials and learn NEAR",
+    "btn": "Check out all videos",
+    "more": "Load More Videos",
+    "learnMore": "Learn more about"
+  },
+  "collections": {
+    "title": "Video Collections",
+    "subtitle": "Collections of related videos",
+    "desc": "Start your journey with series of videos in each collection",
+    "meal": "FAST | DIET | SNACK | PICNIC | FEAST",
+    "posts": "No videos yet | {count} video | {count} videos",
+    "single": {
+      "title": "Collection: {0}",
+      "subtitle": "This collection has {0} videos submitted by {1} authors"
+    }
+  },
+  "authors": {
+    "title": "Video Creators",
+    "subtitle": "A warm \"welcome!\" and \"thank you!\" to all who are joining this effort"
+  },
+  "contribute": {
+    "title": "Opportunities to Contribute",
+    "subTitle": "Let's hear from you",
+    "newContent": "Submit New Content",
+    "newTopic": "Suggest New Topic",
+    "translate": "Translate Content",
+    "btn": "Learn how to contribute",
+    "instructions": {
+      "title": "Making a Contribution",
+      "desc": "Thank you for thinking to contribute to NEAR in Minutes 🚀 Checkout this guide to get started.",
+      "warning": "Currently we accept {0} videos only.",
+      "loomLink": "Loom",
+      "setup": {
+        "title": "Step 1. Setup your system",
+        "stepOne": "Divide you screen according to topic of to tutorial and place your documents page, terminal, code editor and tools on your screen",
+        "stepTwo": "Show your sytem info, tool versions and date on the divided terminal pane",
+        "stepthree": "Open loom app and be sure your recording settings are set"
+      },
+      "video": {
+        "title": "Step 2. Create your video",
+        "stepOne": "Go to the website of",
+        "loom": "Loom",
+        "stepTwo": "Click on the 'Get Loom for Free' and sign up",
+        "stepThree": "Click on the avatar at top right corner of the side and choose your download method.",
+        "stepFour": "When you are ready to record, click on `Start Recording`"
+      },
+      "issues": {
+        "subTitle": "Step 3. Submit your video ",
+        "stepOne": "Go to the issues section in",
+        "issues": "NEAR in Minutes Community",
+        "stepTwo": "Click on a  New issue and choose the type of content you would like to contribute.",
+        "stepThree": "Choose how you want to contribute and fill in the information accordingly.",
+        "seeExample": "If you like to see an example of a submitted issue",
+        "learnMore": "If you want to get more information on how to make a good video",
+        "clickHere": "click here",
+        "types": "Currently we have three types of contribution:",
+        "newContentDesc": "if you have a video in mind you would like to create and add to the collection of videos.",
+        "newTopicDesc": "if you would like to translate the content to another language. Currently we support Turkish and Hindi.",
+        "translateDesc": "if you have a topic in mind and you would like to suggest so someone else can make a tutorial about it."
+      }
+    }
+  },
+  "about": {
+    "title": "About NEAR in Minutes",
+    "desc": "NEAR in Minutes is a NEAR-COOP (NEAR Community Owned and Operated Project"
+  },
+  "footer": {
+    "rights": "2021 NEAR in Minutes, All rights reserved."
+  }
+}

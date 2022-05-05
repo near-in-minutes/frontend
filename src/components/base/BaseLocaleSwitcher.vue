@@ -44,7 +44,7 @@ const languages = [
   { name: 'English', code: 'en', available: true },
   { name: 'Chinese', code: 'zh', available: false },
   { name: 'Hindi', code: 'hi', available: true },
-  { name: 'Russian', code: 'ru', available: false },
+  { name: 'Russian', code: 'ru', available: true },
   { name: 'Spanish', code: 'es', available: true },
   { name: 'Turkish', code: 'tr', available: true },
   { name: 'German', code: 'de', available: true }
