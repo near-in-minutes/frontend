@@ -1,6 +1,6 @@
 /* eslint-disable */
 const Airtable = require('airtable');
-const base = new Airtable({ apiKey: 'process.env.API_KEY' }).base('appQ1mAGld5xjoujt');
+const base = new Airtable({ apiKey: 'process.env.VUE_APP_API_KEY' }).base('appQ1mAGld5xjoujt');
 
 // prettier-ignore
 export {
